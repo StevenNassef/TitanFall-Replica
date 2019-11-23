@@ -2038,6 +2038,10 @@ PrefabInstance:
       propertyPath: advancedSettings.airControl
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: advancedSettings.wallCheckDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: field of view
       value: 80

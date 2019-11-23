@@ -97,7 +97,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private CapsuleCollider m_Capsule;
         private float m_YRotation;
         private Vector3 m_GroundContactNormal, m_WallContactNormal;
-        private bool m_Jump, m_PreviouslyGrounded, m_Jumping, m_IsGrounded, m_PreviouslyWalled, m_IsWalled;
+        private bool m_Jump, m_WallRun, m_PreviouslyGrounded, m_Jumping, m_WallRunning, m_IsGrounded, m_PreviouslyWalled, m_IsWalled;
         private PlayerMovementState currentMovementState;
         private PlayerMovementState previousMovementState;
 
@@ -152,6 +152,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void FixedUpdate()
         {
             GroundCheck();
+            WallCheck();
             Vector2 input = GetInput();
 
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
@@ -191,15 +192,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.Sleep();
                 }
             }
-            else
+            else //The Player is Airborn.
             {
+                if (m_IsWalled)
+                {
+
+                }
+                else
+                {
+                }
                 m_RigidBody.drag = 0f;
-                if (m_PreviouslyGrounded && !m_Jumping)
+                if (m_PreviouslyGrounded && !(m_Jumping || m_WallRunning))
                 {
                     StickToGroundHelper();
                 }
             }
             m_Jump = false;
+            m_WallRun = false;
         }
 
         private void SwitchMovementState(PlayerMovementState newState)
@@ -294,8 +303,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_PreviouslyWalled = m_IsWalled;
             RaycastHit hitInfo;
-            if (Physics.SphereCast(transform.position, m_Capsule.radius, transform.forward.normalized, out hitInfo,
-                                   (m_Capsule.radius) + advancedSettings.wallCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+            Vector3 HeightFactor = Vector3.up * m_Capsule.height * 0.1f;
+            if (Physics.CapsuleCast(transform.position + HeightFactor, transform.position - HeightFactor, m_Capsule.radius * 1f,
+                transform.up + transform.position, out hitInfo, 0.5f, Physics.AllLayers, QueryTriggerInteraction.Ignore))
             {
                 m_IsWalled = true;
                 m_WallContactNormal = hitInfo.normal;
