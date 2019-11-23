@@ -15,6 +15,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public float BackwardSpeed = 4.0f;  // Speed when walking backwards
             public float StrafeSpeed = 4.0f;    // Speed when walking sideways
             public float RunMultiplier = 2.0f;   // Speed when sprinting
+
+            public int MaxNumberOfJumps = 2;
+            [HideInInspector] public int RemainingJumps;
             public KeyCode RunKey = KeyCode.LeftShift;
             public float JumpForce = 30f;
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
@@ -69,7 +72,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public class AdvancedSettings
         {
             public float groundCheckDistance = 0.01f; // distance for checking if the controller is grounded ( 0.01f seems to work best for this )
+            public float wallCheckDistance = 0.05f; // distance for checking if the controller is grounded ( 0.01f seems to work best for this )
             public float stickToGroundHelperDistance = 0.5f; // stops the character
+            public float stickToWallHelperDistance = 0.5f; // stops the character
             public float slowDownRate = 20f; // rate at which the controller comes to a stop when there is no input
             public bool airControl; // can the user control the direction that is being moved in the air
             [Tooltip("set it to 0.1 or more if you get stuck in wall")]
@@ -91,8 +96,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Rigidbody m_RigidBody;
         private CapsuleCollider m_Capsule;
         private float m_YRotation;
-        private Vector3 m_GroundContactNormal;
-        private bool m_Jump, m_PreviouslyGrounded, m_Jumping, m_IsGrounded;
+        private Vector3 m_GroundContactNormal, m_WallContactNormal;
+        private bool m_Jump, m_PreviouslyGrounded, m_Jumping, m_IsGrounded, m_PreviouslyWalled, m_IsWalled;
         private PlayerMovementState currentMovementState;
         private PlayerMovementState previousMovementState;
 
@@ -164,11 +169,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.AddForce(desiredMove * SlopeMultiplier(), ForceMode.Impulse);
                 }
             }
-
-            if (m_IsGrounded)
+            if (movementSettings.RemainingJumps > 0)
             {
-                m_RigidBody.drag = 5f;
-
                 if (m_Jump)
                 {
                     m_RigidBody.drag = 0f;
@@ -176,6 +178,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.AddForce(new Vector3(0f, movementSettings.JumpForce, 0f), ForceMode.Impulse);
                     m_Jumping = true;
                 }
+            }
+
+            if (m_IsGrounded)
+            {
+                m_RigidBody.drag = 5f;
+
+                movementSettings.RemainingJumps = movementSettings.MaxNumberOfJumps;
 
                 if (!m_Jumping && Mathf.Abs(input.x) < float.Epsilon && Mathf.Abs(input.y) < float.Epsilon && m_RigidBody.velocity.magnitude < 1f)
                 {
@@ -219,6 +228,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.velocity = Vector3.ProjectOnPlane(m_RigidBody.velocity, hitInfo.normal);
                 }
             }
+        }
+
+        private void StickToWallHelper()
+        {
+            m_RigidBody.velocity = Vector3.ProjectOnPlane(m_RigidBody.velocity, m_WallContactNormal);
+
         }
 
 
@@ -272,6 +287,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!m_PreviouslyGrounded && m_IsGrounded && m_Jumping)
             {
                 m_Jumping = false;
+            }
+        }
+
+        private void WallCheck()
+        {
+            m_PreviouslyWalled = m_IsWalled;
+            RaycastHit hitInfo;
+            if (Physics.SphereCast(transform.position, m_Capsule.radius, transform.forward.normalized, out hitInfo,
+                                   (m_Capsule.radius) + advancedSettings.wallCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+            {
+                m_IsWalled = true;
+                m_WallContactNormal = hitInfo.normal;
+            }
+            else
+            {
+                m_IsWalled = false;
+                m_WallContactNormal = Vector3.up;
             }
         }
     }
