@@ -17,7 +17,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public float RunMultiplier = 2.0f;   // Speed when sprinting
 
             public int MaxNumberOfJumps = 2;
-            [HideInInspector] public int RemainingJumps;
+            public int RemainingJumps;
             public KeyCode RunKey = KeyCode.LeftShift;
             public float JumpForce = 30f;
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
@@ -46,25 +46,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     //handled last as if strafing and moving forward at the same time forwards speed should take precedence
                     CurrentTargetSpeed = ForwardSpeed;
                 }
-#if !MOBILE_INPUT
+            }
+
+            public void UpdateInput()
+            {
                 if (Input.GetKey(RunKey))
                 {
-                    CurrentTargetSpeed *= RunMultiplier;
                     m_Running = true;
                 }
                 else
                 {
                     m_Running = false;
                 }
-#endif
             }
 
-#if !MOBILE_INPUT
+
             public bool Running
             {
                 get { return m_Running; }
             }
-#endif
+
         }
 
 
@@ -149,6 +150,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Jump = true;
             }
+
+            movementSettings.UpdateInput();
         }
 
 
@@ -160,15 +163,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
             {
+                //Target Speed
+                float TargetSpeed = movementSettings.Running && m_IsGrounded ? movementSettings.RunMultiplier * movementSettings.CurrentTargetSpeed :
+                movementSettings.CurrentTargetSpeed;
+
                 // always move along the camera forward as it is the direction that it being aimed at
                 Vector3 desiredMove = cam.transform.forward * input.y + cam.transform.right * input.x;
-                desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
+                if (m_WallRunning)
+                {
+                    desiredMove = Vector3.ProjectOnPlane(desiredMove, m_WallContactNormal).normalized;
+                }
+                else
+                {
+                    desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
+                }
 
-                desiredMove.x = desiredMove.x * movementSettings.CurrentTargetSpeed;
-                desiredMove.z = desiredMove.z * movementSettings.CurrentTargetSpeed;
-                desiredMove.y = desiredMove.y * movementSettings.CurrentTargetSpeed;
+
+                desiredMove = desiredMove * TargetSpeed;
+
                 if (m_RigidBody.velocity.sqrMagnitude <
-                    (movementSettings.CurrentTargetSpeed * movementSettings.CurrentTargetSpeed))
+                    (TargetSpeed * TargetSpeed))
                 {
                     m_RigidBody.AddForce(desiredMove * SlopeMultiplier(), ForceMode.Impulse);
                 }
@@ -196,8 +210,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (m_IsGrounded)
             {
                 m_RigidBody.drag = 5f;
-                downVelocity = 0;
-                movementSettings.RemainingJumps = movementSettings.MaxNumberOfJumps;
 
                 if (!m_Jumping && Mathf.Abs(input.x) < float.Epsilon && Mathf.Abs(input.y) < float.Epsilon && m_RigidBody.velocity.magnitude < 1f)
                 {
@@ -207,19 +219,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
             else //The Player is Airborn.
             {
                 downVelocity += Physics.gravity.y * Time.fixedDeltaTime * advancedSettings.gravityModifier;
+                m_RigidBody.drag = 2.5f;
 
                 if (m_IsWalled)
                 {
-                    if (!m_WallRunning && movementSettings.Running)
+                    if (!m_WallRunning && movementSettings.Running && (Mathf.Abs(input.y) > 0.1f))
                     {
                         m_WallRunning = true;
+                        movementSettings.RemainingJumps = 1;
+                    }
+                    else
+                    {
+                        m_WallRunning = false;
                     }
                 }
-                else
-                {
-                    m_WallRunning = false;
-                }
-                m_RigidBody.drag = 2.5f;
+
                 if (m_PreviouslyGrounded && !(m_Jumping || m_WallRunning))
                 {
                     StickToGroundHelper();
@@ -228,10 +242,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     downVelocity = 0;
                     StickToWallHelper();
-
                     //Check if there is any of the wall run conditions are broken
-                    if((Mathf.Abs(input.y) > float.Epsilon || !movementSettings.Running))
+                    if ((Mathf.Abs(input.y) < 0.1f || !movementSettings.Running))
                     {
+                        Debug.Log(input.y);
                         m_WallRunning = false;
                     }
                 }
@@ -261,7 +275,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RaycastHit hitInfo;
             if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
-                                   ((m_Capsule.height / 2f) - m_Capsule.radius) +
+                                   ((m_Capsule.height / 2f) - m_Capsule.radius * (1.0f - advancedSettings.shellOffset)) +
                                    advancedSettings.stickToGroundHelperDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
             {
                 if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Vector3.up)) < 85f)
@@ -316,7 +330,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_PreviouslyGrounded = m_IsGrounded;
             RaycastHit hitInfo;
             if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
-                                   ((m_Capsule.height / 2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+                                   ((m_Capsule.height / 2f) - m_Capsule.radius * (1.0f - advancedSettings.shellOffset)) + advancedSettings.groundCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
             {
                 m_IsGrounded = true;
                 m_GroundContactNormal = hitInfo.normal;
@@ -326,9 +340,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_IsGrounded = false;
                 m_GroundContactNormal = Vector3.up;
             }
-            if (!m_PreviouslyGrounded && m_IsGrounded && m_Jumping)
+            if (!m_PreviouslyGrounded && m_IsGrounded)
             {
                 m_Jumping = false;
+                movementSettings.RemainingJumps = movementSettings.MaxNumberOfJumps;
+                downVelocity = 0;
             }
         }
 
@@ -336,10 +352,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_PreviouslyWalled = m_IsWalled;
             RaycastHit hitInfo;
+            Vector3 direction = transform.position - (m_WallContactNormal);
+            if (!m_PreviouslyWalled)
+            {
+                direction = transform.forward + transform.position;
+            }
+
+            Debug.DrawRay(transform.position, (direction - transform.position) * (1 + m_Capsule.radius + advancedSettings.wallCheckDistance), Color.red, Time.fixedDeltaTime);
 
             Vector3 HeightFactor = Vector3.up * m_Capsule.height * 0.1f;
             if (Physics.CapsuleCast(transform.position + HeightFactor, transform.position - HeightFactor, m_Capsule.radius + advancedSettings.wallCheckRadius,
-                transform.forward + transform.position, out hitInfo, advancedSettings.wallCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+                direction, out hitInfo, advancedSettings.wallCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
             {
                 m_IsWalled = true;
                 m_WallContactNormal = hitInfo.normal;
