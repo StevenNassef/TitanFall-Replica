@@ -352,26 +352,43 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_PreviouslyWalled = m_IsWalled;
             RaycastHit hitInfo;
-            Vector3 direction = transform.position - (m_WallContactNormal);
-            if (!m_PreviouslyWalled)
-            {
-                direction = transform.forward + transform.position;
-            }
+            // Vector3 direction = transform.position - (m_WallContactNormal);
+            // if (!m_PreviouslyWalled)
+            // {
+            // }
 
-            Debug.DrawRay(transform.position, (direction - transform.position) * (1 + m_Capsule.radius + advancedSettings.wallCheckDistance), Color.red, Time.fixedDeltaTime);
+            Vector3 [] directions = {
+                transform.forward,
+                -transform.forward,
+                transform.right,
+                -transform.right
+            };
+
 
             Vector3 HeightFactor = Vector3.up * m_Capsule.height * 0.1f;
-            if (Physics.CapsuleCast(transform.position + HeightFactor, transform.position - HeightFactor, m_Capsule.radius + advancedSettings.wallCheckRadius,
-                direction, out hitInfo, advancedSettings.wallCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+            for (int i = 0; i < directions.Length; i++)
             {
-                m_IsWalled = true;
-                m_WallContactNormal = hitInfo.normal;
+                Vector3 direction = directions[i];
+                Debug.DrawRay(transform.position, (direction) * (1 + m_Capsule.radius + advancedSettings.wallCheckDistance), Color.red, Time.fixedDeltaTime);
+                if (Physics.CapsuleCast(transform.position + HeightFactor, transform.position - HeightFactor, m_Capsule.radius - advancedSettings.wallCheckRadius,
+                    direction, out hitInfo, advancedSettings.wallCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+                {
+                    m_IsWalled = true;
+                    m_WallContactNormal = hitInfo.normal;
+                    break;
+                }
+                else
+                {
+                    m_IsWalled = false;
+                    m_WallContactNormal = Vector3.up;
+                }
             }
-            else
-            {
-                m_IsWalled = false;
-                m_WallContactNormal = Vector3.up;
-            }
+        }
+
+        private void UpdateRotationWhileWallRunning(Transform inputTransform)
+        {
+            Vector3 newUpVector = (m_WallContactNormal + Vector3.up).normalized;
+            inputTransform.rotation = Quaternion.LookRotation(inputTransform.forward, newUpVector);
         }
     }
 }
