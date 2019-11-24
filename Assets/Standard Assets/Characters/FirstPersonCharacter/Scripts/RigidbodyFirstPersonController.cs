@@ -73,12 +73,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             public float groundCheckDistance = 0.01f; // distance for checking if the controller is grounded ( 0.01f seems to work best for this )
             public float wallCheckDistance = 0.05f; // distance for checking if the controller is grounded ( 0.01f seems to work best for this )
+            public float wallCheckRadius = 0.05f; // distance for checking if the controller is grounded ( 0.01f seems to work best for this )
             public float stickToGroundHelperDistance = 0.5f; // stops the character
             public float stickToWallHelperDistance = 0.5f; // stops the character
             public float slowDownRate = 20f; // rate at which the controller comes to a stop when there is no input
             public bool airControl; // can the user control the direction that is being moved in the air
             [Tooltip("set it to 0.1 or more if you get stuck in wall")]
             public float shellOffset; //reduce the radius by that ratio to avoid getting stuck in wall (a value of 0.1f is nice)
+            [Range(0, 1)] public float gravityModifier;
         }
 
         public enum PlayerMovementState
@@ -100,6 +102,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jump, m_WallRun, m_PreviouslyGrounded, m_Jumping, m_WallRunning, m_IsGrounded, m_PreviouslyWalled, m_IsWalled;
         private PlayerMovementState currentMovementState;
         private PlayerMovementState previousMovementState;
+        private float downVelocity = 0;
 
 
         public Vector3 Velocity
@@ -174,17 +177,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 if (m_Jump)
                 {
-                    m_RigidBody.drag = 0f;
+                    // m_RigidBody.drag = 0f;
                     m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
-                    m_RigidBody.AddForce(new Vector3(0f, movementSettings.JumpForce, 0f), ForceMode.Impulse);
+
+                    Vector3 jumpDirection = Vector3.up;
+                    if (m_WallRunning)
+                    {
+                        jumpDirection = (m_WallContactNormal + Vector3.up).normalized;
+                        Debug.Log("WallJump");
+                    }
+                    m_RigidBody.AddForce(jumpDirection * movementSettings.JumpForce, ForceMode.Impulse);
                     m_Jumping = true;
+                    downVelocity = 0;
+                    movementSettings.RemainingJumps--;
                 }
             }
 
             if (m_IsGrounded)
             {
                 m_RigidBody.drag = 5f;
-
+                downVelocity = 0;
                 movementSettings.RemainingJumps = movementSettings.MaxNumberOfJumps;
 
                 if (!m_Jumping && Mathf.Abs(input.x) < float.Epsilon && Mathf.Abs(input.y) < float.Epsilon && m_RigidBody.velocity.magnitude < 1f)
@@ -194,18 +206,38 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             else //The Player is Airborn.
             {
+                downVelocity += Physics.gravity.y * Time.fixedDeltaTime * advancedSettings.gravityModifier;
+
                 if (m_IsWalled)
                 {
-
+                    if (!m_WallRunning && movementSettings.Running)
+                    {
+                        m_WallRunning = true;
+                    }
                 }
                 else
                 {
+                    m_WallRunning = false;
                 }
-                m_RigidBody.drag = 0f;
+                m_RigidBody.drag = 2.5f;
                 if (m_PreviouslyGrounded && !(m_Jumping || m_WallRunning))
                 {
                     StickToGroundHelper();
                 }
+                else if (m_WallRunning)
+                {
+                    downVelocity = 0;
+                    StickToWallHelper();
+
+                    //Check if there is any of the wall run conditions are broken
+                    if((Mathf.Abs(input.y) > float.Epsilon || !movementSettings.Running))
+                    {
+                        m_WallRunning = false;
+                    }
+                }
+
+                //Add gravity effect
+                m_RigidBody.velocity += Vector3.up * downVelocity;
             }
             m_Jump = false;
             m_WallRun = false;
@@ -241,6 +273,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void StickToWallHelper()
         {
+            Debug.Log("Wall Helper");
             m_RigidBody.velocity = Vector3.ProjectOnPlane(m_RigidBody.velocity, m_WallContactNormal);
 
         }
@@ -303,9 +336,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_PreviouslyWalled = m_IsWalled;
             RaycastHit hitInfo;
+
             Vector3 HeightFactor = Vector3.up * m_Capsule.height * 0.1f;
-            if (Physics.CapsuleCast(transform.position + HeightFactor, transform.position - HeightFactor, m_Capsule.radius * 1f,
-                transform.up + transform.position, out hitInfo, 0.5f, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+            if (Physics.CapsuleCast(transform.position + HeightFactor, transform.position - HeightFactor, m_Capsule.radius + advancedSettings.wallCheckRadius,
+                transform.forward + transform.position, out hitInfo, advancedSettings.wallCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
             {
                 m_IsWalled = true;
                 m_WallContactNormal = hitInfo.normal;
