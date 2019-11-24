@@ -1096,7 +1096,7 @@ Light:
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 5
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 1.069e-42, y: 1.04e-43, z: 0, w: 0}
@@ -2724,7 +2724,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.9339623, g: 0.68338704, b: 0, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3223,6 +3223,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1899559682}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1936848784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6721949951681584178, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2356559098478146550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1818360609 &1936848786
+RotationConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936848784}
+  m_Enabled: 1
+  m_Weight: 0.937
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 2047647394}
+    weight: 1
 --- !u!1001 &2003016888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3288,6 +3313,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b321aed21e0872743a175d8dbbe12ac8, type: 3}
+--- !u!4 &2047647394 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2356559099001348201, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2356559098478146550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2048204181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2449375624874746532, guid: d6ff9b0037f6d7e44870dfc08f56001f,
@@ -3588,7 +3619,7 @@ PrefabInstance:
     - target: {fileID: 2356559099008338349, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: cameraInclineAngle
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2356559099008338349, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
