@@ -123,6 +123,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
         public Camera cam;
+        public Transform cameraHolderTransform;
+        public float cameraInclineAngle = 15f;
+        public float cameraInclinationSmoothTime = 18f;
         public MovementSettings movementSettings = new MovementSettings();
         public MouseLook mouseLook = new MouseLook();
         public AdvancedSettings advancedSettings = new AdvancedSettings();
@@ -130,7 +133,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private Rigidbody m_RigidBody;
         private CapsuleCollider m_Capsule;
-        private float m_YRotation;
+        private float m_YRotation, m_targetCameraHolderAngle;
         private Vector3 m_GroundContactNormal, m_WallContactNormal;
         private bool m_Jump, m_WallRun, m_PreviouslyGrounded, m_Jumping, m_WallRunning, m_IsGrounded, m_PreviouslyWalled, m_IsWalled;
         private PlayerMovementState currentMovementState;
@@ -175,7 +178,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void Update()
         {
             RotateView();
-
+            UpdateCameraHolderRotation();
             if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
             {
                 m_Jump = true;
@@ -233,7 +236,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (m_Jump)
                 {
                     movementSettings.ResetCrouch();
-                    
+
                     Vector3 jumpDirection = Vector3.up;
                     if (m_WallRunning)
                     {
@@ -273,7 +276,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     }
 
                     //give the player double jump if he just started a wall run
-                    if(!m_PreviouslyWalled)
+                    if (!m_PreviouslyWalled)
                         movementSettings.RemainingJumps = movementSettings.MaxNumberOfJumps;
 
                 }
@@ -369,6 +372,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+        public void UpdateCameraHolderRotation()
+        {
+            float currentAngle = cameraHolderTransform.localEulerAngles.z;
+            if (!m_WallRunning)
+            {
+                m_targetCameraHolderAngle = 0;
+            }
+
+            if (Mathf.Abs(m_targetCameraHolderAngle - currentAngle) > 0.1f)
+            {
+                cameraHolderTransform.localRotation = Quaternion.Slerp(cameraHolderTransform.localRotation, Quaternion.Euler(0, 0, m_targetCameraHolderAngle),
+                cameraInclinationSmoothTime * Time.deltaTime);
+            }
+            else
+            {
+                cameraHolderTransform.localRotation = Quaternion.Euler(0, 0, m_targetCameraHolderAngle);
+            }
+        }
+
         /// sphere cast down just beyond the bottom of the capsule to see if the capsule is colliding round the bottom
         private void GroundCheck()
         {
@@ -403,9 +425,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             Vector3[] directions = {
                 transform.forward,
-                -transform.forward,
                 transform.right,
-                -transform.right
+                -transform.right,
+                -transform.forward
+            };
+
+            Color[] colors = {
+                Color.yellow,
+                Color.green,
+                Color.yellow,
+                Color.red
             };
 
 
@@ -413,12 +442,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             for (int i = 0; i < directions.Length; i++)
             {
                 Vector3 direction = directions[i];
-                Debug.DrawRay(transform.position, (direction) * (1 + m_Capsule.radius + advancedSettings.wallCheckDistance), Color.red, Time.fixedDeltaTime);
+                Debug.DrawRay(transform.position, (direction) * (1 + m_Capsule.radius + advancedSettings.wallCheckDistance), colors[i], Time.fixedDeltaTime);
                 if (Physics.CapsuleCast(transform.position + HeightFactor, transform.position - HeightFactor, m_Capsule.radius - advancedSettings.wallCheckRadius,
                     direction, out hitInfo, advancedSettings.wallCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
                 {
                     m_IsWalled = true;
                     m_WallContactNormal = hitInfo.normal;
+                    m_targetCameraHolderAngle = (((i + 1) % 3) - 1) * cameraInclineAngle;
                     break;
                 }
                 else
@@ -427,12 +457,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_WallContactNormal = Vector3.up;
                 }
             }
-        }
-
-        private void UpdateRotationWhileWallRunning(Transform inputTransform)
-        {
-            Vector3 newUpVector = (m_WallContactNormal + Vector3.up).normalized;
-            inputTransform.rotation = Quaternion.LookRotation(inputTransform.forward, newUpVector);
         }
     }
 }

@@ -3288,6 +3288,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b321aed21e0872743a175d8dbbe12ac8, type: 3}
+--- !u!4 &2048204181 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2449375624874746532, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2356559098478146550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2067984532
 GameObject:
   m_ObjectHideFlags: 0
@@ -3563,6 +3569,31 @@ PrefabInstance:
         type: 3}
       propertyPath: movementSettings.JumpForce
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356559099008338349, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+        type: 3}
+      propertyPath: advancedSettings.wallCheckDistance
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356559099008338349, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+        type: 3}
+      propertyPath: advancedSettings.wallCheckRadius
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356559099008338349, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+        type: 3}
+      propertyPath: cameraHolderTransform
+      value: 
+      objectReference: {fileID: 2048204181}
+    - target: {fileID: 2356559099008338349, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+        type: 3}
+      propertyPath: cameraInclineAngle
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356559099008338349, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+        type: 3}
+      propertyPath: cameraInclinationSmoothTime
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2356559099000798825, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
