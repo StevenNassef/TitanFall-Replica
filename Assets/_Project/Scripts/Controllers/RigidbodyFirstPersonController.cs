@@ -272,7 +272,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     if (!m_WallRunning && movementSettings.Running && (Mathf.Abs(input.y) > 0.1f))
                     {
                         m_WallRunning = true;
-                        movementSettings.RemainingJumps = 1;
+                        movementSettings.RemainingJumps = movementSettings.MaxNumberOfJumps;
                     }
 
                 }
