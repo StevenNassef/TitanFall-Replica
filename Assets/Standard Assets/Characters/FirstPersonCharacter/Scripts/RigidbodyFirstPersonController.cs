@@ -191,15 +191,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 if (m_Jump)
                 {
-                    // m_RigidBody.drag = 0f;
-                    m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
-
                     Vector3 jumpDirection = Vector3.up;
+                    Debug.Log(m_WallRunning);
                     if (m_WallRunning)
                     {
                         jumpDirection = (m_WallContactNormal + Vector3.up).normalized;
+                        m_WallRunning = false;
                         Debug.Log("WallJump");
                     }
+                    // m_RigidBody.drag = 0f;
+                    m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
+
                     m_RigidBody.AddForce(jumpDirection * movementSettings.JumpForce, ForceMode.Impulse);
                     m_Jumping = true;
                     downVelocity = 0;
@@ -228,10 +230,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
                         m_WallRunning = true;
                         movementSettings.RemainingJumps = 1;
                     }
-                    else
-                    {
-                        m_WallRunning = false;
-                    }
+
+                }
+                else
+                {
+                    m_WallRunning = false;
                 }
 
                 if (m_PreviouslyGrounded && !(m_Jumping || m_WallRunning))
@@ -245,7 +248,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     //Check if there is any of the wall run conditions are broken
                     if ((Mathf.Abs(input.y) < 0.1f || !movementSettings.Running))
                     {
-                        Debug.Log(input.y);
                         m_WallRunning = false;
                     }
                 }
@@ -287,9 +289,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void StickToWallHelper()
         {
-            Debug.Log("Wall Helper");
             m_RigidBody.velocity = Vector3.ProjectOnPlane(m_RigidBody.velocity, m_WallContactNormal);
-
         }
 
 
@@ -357,7 +357,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // {
             // }
 
-            Vector3 [] directions = {
+            Vector3[] directions = {
                 transform.forward,
                 -transform.forward,
                 transform.right,
