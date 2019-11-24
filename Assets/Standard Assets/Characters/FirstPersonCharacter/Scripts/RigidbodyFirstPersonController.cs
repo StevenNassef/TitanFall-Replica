@@ -15,16 +15,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public float BackwardSpeed = 4.0f;  // Speed when walking backwards
             public float StrafeSpeed = 4.0f;    // Speed when walking sideways
             public float RunMultiplier = 2.0f;   // Speed when sprinting
+            public float CrouchMultiplier = 0.5f;   // Speed when sprinting
 
             public int MaxNumberOfJumps = 2;
             public int RemainingJumps;
             public KeyCode RunKey = KeyCode.LeftShift;
+            public KeyCode CrouchKey = KeyCode.C;
             public float JumpForce = 30f;
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
             [HideInInspector] public float CurrentTargetSpeed = 8f;
 
 #if !MOBILE_INPUT
             private bool m_Running;
+            private bool m_Crouching;
+            private bool LockCrouchKey;
 #endif
 
             public void UpdateDesiredTargetSpeed(Vector2 input)
@@ -58,12 +62,40 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_Running = false;
                 }
+
+                if (Input.GetKey(CrouchKey))
+                {
+                    if (!LockCrouchKey)
+                    {
+                        m_Crouching = !m_Crouching;
+                        LockCrouchKey = true;
+                    }
+                }
+                else
+                {
+                    LockCrouchKey = false;
+                }
+
+                // Cancel Crouching if the player pressed the crouch button
+                if (m_Running)
+                {
+                    m_Crouching = false;
+                }
             }
 
 
             public bool Running
             {
                 get { return m_Running; }
+            }
+            public bool Crouching
+            {
+                get { return m_Crouching; }
+            }
+
+            public void ResetCrouch()
+            {
+                m_Crouching = false;
             }
 
         }
@@ -164,8 +196,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
             {
                 //Target Speed
-                float TargetSpeed = movementSettings.Running && m_IsGrounded ? movementSettings.RunMultiplier * movementSettings.CurrentTargetSpeed :
-                movementSettings.CurrentTargetSpeed;
+                float TargetSpeed = movementSettings.CurrentTargetSpeed;
+                if (m_IsGrounded)
+                {
+                    if (movementSettings.Running)
+                    {
+                        TargetSpeed *= movementSettings.RunMultiplier;
+                    }
+                    else if (movementSettings.Crouching)
+                    {
+                        TargetSpeed *= movementSettings.CrouchMultiplier;
+                    }
+                }
 
                 // always move along the camera forward as it is the direction that it being aimed at
                 Vector3 desiredMove = cam.transform.forward * input.y + cam.transform.right * input.x;
@@ -191,6 +233,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 if (m_Jump)
                 {
+                    movementSettings.ResetCrouch();
+                    
                     Vector3 jumpDirection = Vector3.up;
                     Debug.Log(m_WallRunning);
                     if (m_WallRunning)
