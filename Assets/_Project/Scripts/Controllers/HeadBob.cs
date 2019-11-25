@@ -15,6 +15,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
        // private CameraRefocus m_CameraRefocus;
         private bool m_PreviouslyGrounded;
+        private bool m_PreviouslyWallRunning;
         private Vector3 m_OriginalCameraPosition;
 
 
@@ -43,12 +44,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             Camera.transform.localPosition = newCameraPosition;
 
-            if (!m_PreviouslyGrounded && rigidbodyFirstPersonController.Grounded)
+            if ((!m_PreviouslyGrounded && rigidbodyFirstPersonController.Grounded) || (!m_PreviouslyWallRunning && rigidbodyFirstPersonController.WallRunning))
             {
                 StartCoroutine(jumpAndLandingBob.DoBobCycle());
             }
 
             m_PreviouslyGrounded = rigidbodyFirstPersonController.Grounded;
+            m_PreviouslyWallRunning = rigidbodyFirstPersonController.WallRunning;
           //  m_CameraRefocus.SetFocusPoint();
         }
     }

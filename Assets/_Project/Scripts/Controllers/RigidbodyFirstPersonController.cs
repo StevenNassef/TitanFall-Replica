@@ -153,6 +153,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             get { return m_Jumping; }
         }
+        public bool WallRunning
+        {
+            get { return m_WallRunning; }
+        }
 
         public bool Running
         {
