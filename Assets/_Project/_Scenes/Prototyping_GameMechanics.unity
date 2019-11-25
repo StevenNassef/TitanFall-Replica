@@ -2696,6 +2696,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1418664747}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1420015119 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1420015119, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2356559098478146550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1441919853
 GameObject:
   m_ObjectHideFlags: 0
@@ -3612,10 +3618,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1638569197913083779, guid: d6ff9b0037f6d7e44870dfc08f56001f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 1420015118, guid: d6ff9b0037f6d7e44870dfc08f56001f, type: 3}
+      propertyPath: weaponAnimator
+      value: 
+      objectReference: {fileID: 1420015119}
+    - target: {fileID: 1420015119, guid: d6ff9b0037f6d7e44870dfc08f56001f, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ff9b0037f6d7e44870dfc08f56001f, type: 3}

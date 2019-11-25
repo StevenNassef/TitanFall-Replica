@@ -1,7 +1,9 @@
 using UnityEngine;
 
+
 [System.Serializable]
-public class Weapon
+[CreateAssetMenu(fileName="Weapon", menuName="Weapons/Basic Weapon")]
+public class Weapon : ScriptableObject
 {
 
     [SerializeField] private string weaponName;
@@ -12,14 +14,23 @@ public class Weapon
     [Tooltip("The type of projectile the weapon shots, (ONLY used when shootingType is set to Projectile).")]
     [SerializeField] private WeaponProjectile weaponProjectile;
     [Tooltip("The amount of damage each bullet deals.")]
-    [SerializeField] private float damagePerBullet;
+    [SerializeField] private float damagePerBullet = 5;
     [Tooltip("How many bullets are fired per second.")]
-    [SerializeField] private float fireRate;
+    [SerializeField] private float fireRate = 1;
 
     [Tooltip("The maximum amount of bullets a magazine can hold.")]
-    [SerializeField] private int ammoCount;
+    [SerializeField] private int ammoCount = 30;
     [Tooltip("The distance the bullets is effective for, after which no damage is dealt.")]
-    [SerializeField] private float range;
+    [SerializeField] private float range = 50;
+
+    public string WeaponName => weaponName;
+    public WeaponFireMode FireMode => fireMode;
+    public WeaponShootingType ShootingType => shootingType;
+    public WeaponProjectile Projectile => weaponProjectile;
+    public float Damage => damagePerBullet;
+    public float FireRate => fireRate;
+    public int AmmoCount => ammoCount;
+    public float Range => range;
 }
 
 public abstract class WeaponProjectile : MonoBehaviour
