@@ -272,6 +272,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     {
                         m_WallRunning = true;
                         movementSettings.RemainingJumps = movementSettings.MaxNumberOfJumps;
+                        PlayLandingSFX();
                     }
                 }
                 else
