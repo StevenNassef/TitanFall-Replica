@@ -129,6 +129,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public MovementSettings movementSettings = new MovementSettings();
         public MouseLook mouseLook = new MouseLook();
         public AdvancedSettings advancedSettings = new AdvancedSettings();
+        [Header("SFX")]
+        [SerializeField] private AudioSource m_AudioSource;
+        [SerializeField] private AudioSource m_BackGroundAudioSource;
+        [Space(10)]
+        [SerializeField] private AudioClip m_jumpSFX;
+        [SerializeField] private AudioClip m_DoubleJumpSFX;
+        [SerializeField] private AudioClip m_JumpBackGroundSFX;
+        [SerializeField] private AudioClip m_LandingSFX;
+        [SerializeField] private AudioClip m_WalkingSFX;
 
 
         private Rigidbody m_RigidBody;
@@ -245,10 +254,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_RigidBody.Sleep();
                 }
+                else if(input.x > 0 || input.y > 0)
+                {
+                    PlayWalkingSound();
+                }
                 m_WallRunning = false;
             }
             else //The Player is Airborn.
             {
+
                 downVelocity = Physics.gravity.y * Time.fixedDeltaTime * advancedSettings.gravityModifier;
                 m_RigidBody.drag = 1f;
 
@@ -304,6 +318,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_Jumping = true;
                     downVelocity = 0;
                     movementSettings.RemainingJumps--;
+                    PlayJumpSound();
                 }
             }
             m_Jump = false;
@@ -421,7 +436,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Jumping = false;
                 movementSettings.RemainingJumps = movementSettings.MaxNumberOfJumps;
+                PlayLandingSFX();
             }
+            PlayBackGroundSFX();
         }
 
         private void WallCheck()
@@ -467,6 +484,52 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_WallContactNormal = Vector3.up;
                 }
             }
+        }
+
+        private void PlayJumpSound()
+        {
+            if (movementSettings.RemainingJumps == 2)
+            {
+                m_AudioSource.Stop();
+                return;
+            }
+            if (movementSettings.RemainingJumps == 0)
+            {
+                m_AudioSource.clip = m_DoubleJumpSFX;
+            }
+            else if (movementSettings.RemainingJumps == 1)
+            {
+                m_AudioSource.clip = m_jumpSFX;
+            }
+
+            m_AudioSource.Play();
+        }
+
+        private void PlayBackGroundSFX()
+        {
+            if (!m_IsGrounded && m_PreviouslyGrounded)
+            {
+                m_BackGroundAudioSource.clip = m_JumpBackGroundSFX;
+                m_BackGroundAudioSource.Play();
+            }
+            else if (m_IsGrounded)
+            {
+                m_BackGroundAudioSource.Stop();
+            }
+        }
+
+        private void PlayWalkingSound()
+        {
+            if(m_AudioSource.clip == m_WalkingSFX)
+                return;
+            m_AudioSource.clip = m_WalkingSFX;
+            m_BackGroundAudioSource.Play();
+        }
+
+        private void PlayLandingSFX()
+        {
+            m_AudioSource.clip = m_LandingSFX;
+            m_AudioSource.Play();
         }
     }
 }
