@@ -231,28 +231,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.AddForce(desiredMove * SlopeMultiplier(), ForceMode.Impulse);
                 }
             }
-            if (movementSettings.RemainingJumps > 0)
-            {
-                if (m_Jump)
-                {
-                    movementSettings.ResetCrouch();
 
-                    Vector3 jumpDirection = Vector3.up;
-                    if (m_WallRunning)
-                    {
-                        jumpDirection = (m_WallContactNormal + Vector3.up).normalized;
-                        m_WallRunning = false;
-                        Debug.Log("WallJump");
-                    }
-                    m_RigidBody.drag = 1f;
-                    m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
-
-                    m_RigidBody.AddForce(jumpDirection * movementSettings.JumpForce, ForceMode.Impulse);
-                    m_Jumping = true;
-                    downVelocity = 0;
-                    movementSettings.RemainingJumps--;
-                }
-            }
 
             if (m_IsGrounded)
             {
@@ -262,6 +241,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_RigidBody.Sleep();
                 }
+                m_WallRunning = false;
             }
             else //The Player is Airborn.
             {
@@ -273,12 +253,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     if (!m_WallRunning && movementSettings.Running && (Mathf.Abs(input.y) > 0.1f))
                     {
                         m_WallRunning = true;
-                    }
-
-                    //give the player double jump if he just started a wall run
-                    // if (!m_PreviouslyWalled)
                         movementSettings.RemainingJumps = movementSettings.MaxNumberOfJumps;
-
+                    }
                 }
                 else
                 {
@@ -302,6 +278,29 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 //Add gravity effect
                 m_RigidBody.velocity += Vector3.up * downVelocity;
+            }
+
+            if (movementSettings.RemainingJumps > 0)
+            {
+                if (m_Jump)
+                {
+                    movementSettings.ResetCrouch();
+
+                    Vector3 jumpDirection = Vector3.up;
+                    if (m_WallRunning)
+                    {
+                        jumpDirection = (m_WallContactNormal + Vector3.up).normalized;
+                        m_WallRunning = false;
+                        Debug.Log("WallJump");
+                    }
+                    m_RigidBody.drag = 1f;
+                    m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
+
+                    m_RigidBody.AddForce(jumpDirection * movementSettings.JumpForce, ForceMode.Impulse);
+                    m_Jumping = true;
+                    downVelocity = 0;
+                    movementSettings.RemainingJumps--;
+                }
             }
             m_Jump = false;
             m_WallRun = false;
