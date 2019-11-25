@@ -378,9 +378,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public void UpdateCameraHolderRotation()
         {
             float currentAngle = cameraHolderTransform.localEulerAngles.z;
+            
+            // Debug.Log(Vector3.ProjectOnPlane((new Vector3(transform.right.x, 0 , transform.right.z)), m_WallContactNormal) );
+            // Debug.Log(Vector3.Dot(transform.right, m_WallContactNormal) );
             if (!m_WallRunning)
             {
                 m_targetCameraHolderAngle = 0;
+            }
+            else
+            {
+                m_targetCameraHolderAngle = -Vector3.Dot(transform.right, m_WallContactNormal) * cameraInclineAngle;
             }
 
             if (Mathf.Abs(m_targetCameraHolderAngle - currentAngle) > 0.1f)
@@ -451,7 +458,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_IsWalled = true;
                     m_WallContactNormal = hitInfo.normal;
-                    m_targetCameraHolderAngle = (((i + 1) % 3) - 1) * cameraInclineAngle;
+                    // m_targetCameraHolderAngle = (((i + 1) % 3) - 1) * cameraInclineAngle;
                     break;
                 }
                 else
