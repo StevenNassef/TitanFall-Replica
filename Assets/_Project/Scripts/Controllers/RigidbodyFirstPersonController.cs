@@ -276,7 +276,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     }
 
                     //give the player double jump if he just started a wall run
-                    if (!m_PreviouslyWalled)
+                    // if (!m_PreviouslyWalled)
                         movementSettings.RemainingJumps = movementSettings.MaxNumberOfJumps;
 
                 }
