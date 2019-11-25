@@ -295,7 +295,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     {
                         jumpDirection = (m_WallContactNormal + Vector3.up).normalized;
                         m_WallRunning = false;
-                        Debug.Log("WallJump");
+                        // Debug.Log("WallJump");
                     }
                     m_RigidBody.drag = 1f;
                     m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
