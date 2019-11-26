@@ -108,8 +108,7 @@ public class BasicWeaponController : MonoBehaviour
 
     protected void UpdateAnimator()
     {
-
-        weaponAnimator.SetBool("Shoot", currentState == WeaponState.Shooting);
+        
 
     }
 }
