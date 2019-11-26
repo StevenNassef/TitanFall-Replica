@@ -9,9 +9,8 @@ public class BasicWeaponController : MonoBehaviour
     protected WeaponState currentState;
     protected WeaponState previousState;
     protected int currentAmmo;
-    protected bool fire;
-    protected bool fireLock;
-    protected bool fireWait;
+    protected bool fire, fireLock, fireWait, reload, reloadLock;
+    
     protected float timeBetweenBullets = 1;
     protected void Awake()
     {
@@ -28,8 +27,14 @@ public class BasicWeaponController : MonoBehaviour
         previousState = currentState;
         //TODO make this more generic
         fire = Input.GetMouseButton(0);
+        reload = Input.GetKey(KeyCode.R);
 
-        if (fire)
+        if(reload && !reloadLock && currentAmmo != weapon.AmmoCount)
+        {
+            Reload();
+        }
+
+        if (fire && currentAmmo > 0)
         {
             switch (weapon.FireMode)
             {
@@ -67,12 +72,25 @@ public class BasicWeaponController : MonoBehaviour
     protected void Shoot()
     {
         Debug.Log("Fire!");
+        reloadLock = false;
+        currentAmmo--;
         weaponAnimator.SetTrigger("Shoot");
     }
-
+    protected void Reload()
+    {
+        reloadLock = true;
+        weaponAnimator.SetTrigger("Reload");
+        currentState = WeaponState.Reloading;
+    }
+    protected void ReloadByAnimator()
+    {
+        currentState = WeaponState.Idle;
+        currentAmmo = weapon.AmmoCount;
+        reloadLock = false;
+    }
     private IEnumerator AutomaticFire()
     {
-        if (fire)
+        if (fire && currentAmmo > 0)
         {
             Shoot();
             yield return new WaitForSecondsRealtime(timeBetweenBullets);
