@@ -15,6 +15,7 @@ public class BasicWeaponController : MonoBehaviour
     protected void Awake()
     {
         timeBetweenBullets = 1 / weapon.FireRate;
+        currentAmmo = weapon.AmmoCount;
         Debug.Log(timeBetweenBullets);
     }
     void Start()
