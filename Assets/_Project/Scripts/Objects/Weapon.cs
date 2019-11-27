@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using MyBox;
 
 [System.Serializable]
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Basic Weapon")]
@@ -22,6 +22,7 @@ public class Weapon : ScriptableObject
     [Tooltip("Automatic (fires by holding)/ Single-shot(Fires on singles press).")]
     [Header("Projectile")]
     [SerializeField] private WeaponShootingType shootingType;
+    [ConditionalField(nameof(shootingType),inverse:false, WeaponShootingType.Projectile)]
     [Tooltip("The type of projectile the weapon shots, (ONLY used when shootingType is set to Projectile).")]
     [SerializeField] private WeaponProjectile weaponProjectile;
 
@@ -34,12 +35,6 @@ public class Weapon : ScriptableObject
     public float FireRate => fireRate;
     public int AmmoCount => ammoCount;
     public float Range => range;
-}
-
-public abstract class WeaponProjectile : MonoBehaviour
-{
-    // public virtual void ShotProjectile();
-
 }
 
 public enum WeaponFireMode
