@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: f874009ca57099247877caafc5b37c01, type: 2}
   weaponAnimator: {fileID: 9118402623650145337}
+  audioSource: {fileID: 1730051921077004449}
+  SFXList: []
   hitmask:
     serializedVersion: 2
     m_Bits: 0
@@ -107,6 +109,12 @@ GameObject:
 --- !u!95 &9118402623650145337 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 497448512275573494, guid: 9388444a4ca6a8c4d89af70c6fe67b8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8677407436662066895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1730051921077004449 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6948554054336620142, guid: 9388444a4ca6a8c4d89af70c6fe67b8e,
     type: 3}
   m_PrefabInstance: {fileID: 8677407436662066895}
   m_PrefabAsset: {fileID: 0}

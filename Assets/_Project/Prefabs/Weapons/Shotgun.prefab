@@ -80,10 +80,30 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 8433365378756067129, guid: 414051f8a2a45fd4ea15245a8a691c2f,
         type: 3}
+      propertyPath: SFXList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433365378756067129, guid: 414051f8a2a45fd4ea15245a8a691c2f,
+        type: 3}
       propertyPath: weapon
       value: 
       objectReference: {fileID: 11400000, guid: 2c724f784f5294b4587b2f11430a0066,
         type: 2}
+    - target: {fileID: 8433365378756067129, guid: 414051f8a2a45fd4ea15245a8a691c2f,
+        type: 3}
+      propertyPath: SFXList.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9cd80c23e5abc6e4c8a6bea66668ea7b, type: 3}
+    - target: {fileID: 8433365378756067129, guid: 414051f8a2a45fd4ea15245a8a691c2f,
+        type: 3}
+      propertyPath: SFXList.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 38ce20f69a98ee94688cc39a71775ed2, type: 3}
+    - target: {fileID: 8433365378756067129, guid: 414051f8a2a45fd4ea15245a8a691c2f,
+        type: 3}
+      propertyPath: SFXList.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e68a1d457700b84999f4e7de5ee891f, type: 3}
     - target: {fileID: 6840537981744276257, guid: 414051f8a2a45fd4ea15245a8a691c2f,
         type: 3}
       propertyPath: m_LocalPosition.x

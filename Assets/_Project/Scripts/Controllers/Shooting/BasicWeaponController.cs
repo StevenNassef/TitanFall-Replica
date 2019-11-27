@@ -6,11 +6,14 @@ public class BasicWeaponController : MonoBehaviour
 {
     [SerializeField] protected Weapon weapon;
     [SerializeField] protected Animator weaponAnimator;
+    [Header("SFX")]
+    [SerializeField] protected AudioSource audioSource;
+    [SerializeField] protected List<AudioClip> SFXList;
     protected WeaponState currentState;
     protected WeaponState previousState;
     protected int currentAmmo;
     protected bool fire, fireLock, fireWait, reload, reloadLock;
-    
+
     protected float timeBetweenBullets = 1;
     protected Vector3 screenCenter;
     protected void Awake()
@@ -31,7 +34,7 @@ public class BasicWeaponController : MonoBehaviour
         fire = Input.GetMouseButton(0);
         reload = Input.GetKey(KeyCode.R);
 
-        if(reload && !reloadLock && currentAmmo != weapon.AmmoCount)
+        if (reload && !reloadLock && currentAmmo != weapon.AmmoCount)
         {
             Reload();
         }
@@ -81,8 +84,8 @@ public class BasicWeaponController : MonoBehaviour
     protected virtual void Reload()
     {
         reloadLock = true;
-        weaponAnimator.SetTrigger("Reload");
         currentState = WeaponState.Reloading;
+        weaponAnimator.SetTrigger("Reload");
     }
     protected virtual void ReloadByAnimator()
     {
@@ -109,12 +112,29 @@ public class BasicWeaponController : MonoBehaviour
 
     protected void UpdateAnimator()
     {
-        
 
+    }
+
+    protected void PlaySFX()
+    {
+        if (SFXList.Count > (int)currentState)
+        {
+            audioSource.clip = SFXList[(int)currentState];
+            audioSource.Play();
+        }
+    }
+
+    protected void PlayStateSFX(WeaponState state)
+    {
+        if (SFXList.Count > (int)state)
+        {
+            audioSource.clip = SFXList[(int)state];
+            audioSource.Play();
+        }
     }
 }
 
 public enum WeaponState
 {
-    Idle, Shooting, Reloading, Cocking
+    Cocking, Shooting, Reloading, Idle
 }

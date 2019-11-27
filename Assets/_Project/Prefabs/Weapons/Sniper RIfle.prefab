@@ -96,6 +96,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sniper RIfle
       objectReference: {fileID: 0}
+    - target: {fileID: 9118402623650145338, guid: 414051f8a2a45fd4ea15245a8a691c2f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9118402623650145339, guid: 414051f8a2a45fd4ea15245a8a691c2f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -159,10 +164,30 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 8433365378756067129, guid: 414051f8a2a45fd4ea15245a8a691c2f,
         type: 3}
+      propertyPath: SFXList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433365378756067129, guid: 414051f8a2a45fd4ea15245a8a691c2f,
+        type: 3}
       propertyPath: weapon
       value: 
       objectReference: {fileID: 11400000, guid: 1c304e0a2f546624ab71eb62857073f2,
         type: 2}
+    - target: {fileID: 8433365378756067129, guid: 414051f8a2a45fd4ea15245a8a691c2f,
+        type: 3}
+      propertyPath: SFXList.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a7b9480c1ea75d4989b12c75d399e03, type: 3}
+    - target: {fileID: 8433365378756067129, guid: 414051f8a2a45fd4ea15245a8a691c2f,
+        type: 3}
+      propertyPath: SFXList.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: dc853687a83672341bf39691cb4261fc, type: 3}
+    - target: {fileID: 8433365378756067129, guid: 414051f8a2a45fd4ea15245a8a691c2f,
+        type: 3}
+      propertyPath: SFXList.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ebb3f1248f2812a49ab63303170b1cb2, type: 3}
     - target: {fileID: 6840537981744276257, guid: 414051f8a2a45fd4ea15245a8a691c2f,
         type: 3}
       propertyPath: m_LocalPosition.x

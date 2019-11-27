@@ -3727,11 +3727,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sniper RIfle
       objectReference: {fileID: 0}
-    - target: {fileID: 3664291521542023001, guid: 48b9d142aeddd714989b528147acbb99,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3664291521542023000, guid: 48b9d142aeddd714989b528147acbb99,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3856,6 +3851,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7305287448155517696, guid: 804417b7267e89c4286a7ff9957a017c,
+        type: 3}
+      propertyPath: SFXList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305287448155517696, guid: 804417b7267e89c4286a7ff9957a017c,
+        type: 3}
+      propertyPath: SFXList.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c9f038c3a7aeb9247b72cb5c828192bc, type: 3}
+    - target: {fileID: 7305287448155517696, guid: 804417b7267e89c4286a7ff9957a017c,
+        type: 3}
+      propertyPath: SFXList.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 578fb0f1ff53c5a45a82505baef09354, type: 3}
+    - target: {fileID: 7305287448155517696, guid: 804417b7267e89c4286a7ff9957a017c,
+        type: 3}
+      propertyPath: SFXList.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ca3fa8feaf6a0a45b7ad6a9d9edccfd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 804417b7267e89c4286a7ff9957a017c, type: 3}
 --- !u!1001 &9217966549371781417
