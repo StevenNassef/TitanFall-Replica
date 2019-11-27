@@ -179,7 +179,27 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+        private static RigidbodyFirstPersonController _instance;
 
+        public static RigidbodyFirstPersonController instance { get { return _instance; } }
+        void Awake()
+        {
+            //Check if instance already exists
+            if (_instance == null)
+
+                //if not, set instance to this
+                _instance = this;
+
+            //If instance already exists and it's not this:
+            else if (_instance != this)
+
+                //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+                Destroy(gameObject);
+
+            //Sets this to not be destroyed when reloading scene
+            // DontDestroyOnLoad(gameObject);
+            // GameAnalytics.Initialize(); 
+        }
         private void Start()
         {
             m_RigidBody = GetComponent<Rigidbody>();
@@ -254,7 +274,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_RigidBody.Sleep();
                 }
-                else if(input.x > 0 || input.y > 0)
+                else if (input.x > 0 || input.y > 0)
                 {
                     PlayWalkingSound();
                 }
@@ -394,7 +414,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public void UpdateCameraHolderRotation()
         {
             float currentAngle = cameraHolderTransform.localEulerAngles.z;
-            
+
             // Debug.Log(Vector3.ProjectOnPlane((new Vector3(transform.right.x, 0 , transform.right.z)), m_WallContactNormal) );
             // Debug.Log(Vector3.Dot(transform.right, m_WallContactNormal) );
             if (!m_WallRunning)
@@ -521,7 +541,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayWalkingSound()
         {
-            if(m_AudioSource.clip == m_WalkingSFX)
+            if (m_AudioSource.clip == m_WalkingSFX)
                 return;
             m_AudioSource.clip = m_WalkingSFX;
             m_BackGroundAudioSource.Play();

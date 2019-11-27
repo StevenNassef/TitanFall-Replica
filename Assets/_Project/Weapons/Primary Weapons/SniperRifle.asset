@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72a2de0e36708f345aa5a267d5d75ca6, type: 3}
-  m_Name: Shotgun
+  m_Name: SniperRifle
   m_EditorClassIdentifier: 
-  weaponName: Shotgun
-  damagePerBullet: 70
+  weaponName: Sniper Rifle
+  damagePerBullet: 85
   fireMode: 1
-  fireRate: 3
-  ammoCount: 12
-  range: 4
+  fireRate: 1
+  ammoCount: 6
+  range: 100
   shootingType: 1
   weaponProjectile: {fileID: 0}

@@ -12,18 +12,19 @@ public class BasicWeaponController : MonoBehaviour
     protected bool fire, fireLock, fireWait, reload, reloadLock;
     
     protected float timeBetweenBullets = 1;
+    protected Vector3 screenCenter;
     protected void Awake()
     {
         timeBetweenBullets = 1 / weapon.FireRate;
         currentAmmo = weapon.AmmoCount;
-        Debug.Log(timeBetweenBullets);
+        screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
     }
-    void Start()
+    protected virtual void Start()
     {
 
     }
 
-    void FixedUpdate()
+    protected void FixedUpdate()
     {
         previousState = currentState;
         //TODO make this more generic
@@ -70,20 +71,20 @@ public class BasicWeaponController : MonoBehaviour
         // UpdateAnimator();
     }
 
-    protected void Shoot()
+    protected virtual void Shoot()
     {
         Debug.Log("Fire!");
         reloadLock = false;
         currentAmmo--;
         weaponAnimator.SetTrigger("Shoot");
     }
-    protected void Reload()
+    protected virtual void Reload()
     {
         reloadLock = true;
         weaponAnimator.SetTrigger("Reload");
         currentState = WeaponState.Reloading;
     }
-    protected void ReloadByAnimator()
+    protected virtual void ReloadByAnimator()
     {
         currentState = WeaponState.Idle;
         currentAmmo = weapon.AmmoCount;
