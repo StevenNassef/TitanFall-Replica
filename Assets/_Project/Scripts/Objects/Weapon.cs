@@ -24,13 +24,13 @@ public class Weapon : ScriptableObject
     [SerializeField] private WeaponShootingType shootingType = WeaponShootingType.Hit_Scan;
     [ConditionalField(nameof(shootingType),inverse:false, WeaponShootingType.Projectile)]
     [Tooltip("The type of projectile the weapon shots, (ONLY used when shootingType is set to Projectile).")]
-    [SerializeField] private WeaponProjectile weaponProjectile;
+    [SerializeField] private GameObject weaponProjectile;
 
 
     public string WeaponName => weaponName;
     public WeaponFireMode FireMode => fireMode;
     public WeaponShootingType ShootingType => shootingType;
-    public WeaponProjectile Projectile => weaponProjectile;
+    public GameObject Projectile => weaponProjectile;
     public float Damage => damagePerBullet;
     public float FireRate => fireRate;
     public int AmmoCount => ammoCount;

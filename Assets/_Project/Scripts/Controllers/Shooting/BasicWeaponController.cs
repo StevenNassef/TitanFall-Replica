@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Animator))]
 public class BasicWeaponController : MonoBehaviour
 {
     [SerializeField] protected Weapon weapon;
-    [SerializeField] protected Animator weaponAnimator;
+    protected Animator weaponAnimator;
     [Header("SFX")]
-    [SerializeField] protected AudioSource audioSource;
+    protected AudioSource audioSource;
     [SerializeField] protected List<AudioClip> SFXList;
     protected WeaponState currentState;
     protected WeaponState previousState;
@@ -22,6 +23,8 @@ public class BasicWeaponController : MonoBehaviour
         timeBetweenBullets = 1 / weapon.FireRate;
         currentAmmo = weapon.AmmoCount;
         screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
+        audioSource = GetComponent<AudioSource>();
+        weaponAnimator = GetComponent<Animator>();
     }
     protected virtual void Start()
     {

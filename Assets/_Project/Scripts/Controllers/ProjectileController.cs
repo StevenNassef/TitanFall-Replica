@@ -57,7 +57,7 @@ public class ProjectileController : MonoBehaviour
     {
         Fire(transform.forward);
     }
-    protected void Fire(Vector3 direction)
+    public void Fire(Vector3 direction)
     {
         if (fired)
             return;
