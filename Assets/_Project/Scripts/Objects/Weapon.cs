@@ -7,11 +7,11 @@ public class Weapon : ScriptableObject
 {
 
     [Header("Weapon Stats")]
-    [SerializeField] private string weaponName;
+    [SerializeField] private string weaponName = "weapon";
     [Tooltip("The amount of damage each bullet deals.")]
-    [SerializeField] private float damagePerBullet = 5;
+    [SerializeField] private float damagePerBullet = 4;
     [Tooltip("How many bullets are fired per second.")]
-    [SerializeField] private WeaponFireMode fireMode;
+    [SerializeField] private WeaponFireMode fireMode = WeaponFireMode.Automatic;
     [Tooltip("Whether this weapon shots Projectiles or Just uses RayCast, If Projectile type was choosen the weaponProjectile field must be set.")]
     [SerializeField] private float fireRate = 1;
 
@@ -21,7 +21,7 @@ public class Weapon : ScriptableObject
     [SerializeField] private float range = 50;
     [Tooltip("Automatic (fires by holding)/ Single-shot(Fires on singles press).")]
     [Header("Projectile")]
-    [SerializeField] private WeaponShootingType shootingType;
+    [SerializeField] private WeaponShootingType shootingType = WeaponShootingType.Hit_Scan;
     [ConditionalField(nameof(shootingType),inverse:false, WeaponShootingType.Projectile)]
     [Tooltip("The type of projectile the weapon shots, (ONLY used when shootingType is set to Projectile).")]
     [SerializeField] private WeaponProjectile weaponProjectile;

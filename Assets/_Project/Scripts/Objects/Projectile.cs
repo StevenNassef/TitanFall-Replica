@@ -4,16 +4,16 @@ using MyBox;
 [System.Serializable]
 public class WeaponProjectile : ScriptableObject
 {
-    [SerializeField] private ProjectileType projectileType;
+    [SerializeField] private ProjectileType projectileType = ProjectileType.Straight;
 
     [Header("Flying Settings")]
-    [SerializeField] private float flyingSpeed;
+    [SerializeField] private float flyingSpeed = 11;
 
     [Header("Damage Settings")]
-    [SerializeField] private float damge;
-    [SerializeField] private float damangeRange;
-    [SerializeField] private float explosiveForce;
-    [SerializeField] private LayerMask hitMask;
+    [SerializeField] private float damge = 10;
+    [SerializeField] private float damangeRange = 4;
+    [SerializeField] private float explosiveForce = 10;
+    [SerializeField] private LayerMask hitMask = new LayerMask();
     [Header("Graphics and VFX")]
     [SerializeField] private GameObject _GFXPrefab;
     [SerializeField] private GameObject _ExplosionVFXPrefab;
