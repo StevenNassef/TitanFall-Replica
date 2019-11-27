@@ -16,6 +16,7 @@ public class BasicWeaponController : MonoBehaviour
 
     protected float timeBetweenBullets = 1;
     protected Vector3 screenCenter;
+    protected float lastDisableTime;
     protected void Awake()
     {
         timeBetweenBullets = 1 / weapon.FireRate;
@@ -110,9 +111,39 @@ public class BasicWeaponController : MonoBehaviour
         fireWait = false;
     }
 
+    private IEnumerator EnableFiringAfterSeconds(float timeToWait)
+    {
+        yield return new WaitForSecondsRealtime(timeToWait);
+        fireWait = false;
+    }
+
     protected void UpdateAnimator()
     {
 
+    }
+
+    protected void OnEnable()
+    {
+        if (fireWait)
+        {
+            float delta = Time.timeSinceLevelLoad - lastDisableTime;
+            if (delta > timeBetweenBullets)
+            {
+                fireWait = false;
+            }
+            else
+            {
+                StartCoroutine(EnableFiringAfterSeconds(timeBetweenBullets - delta));
+            }
+        }
+    }
+
+    protected void OnDisable()
+    {
+        if (fireWait)
+        {
+            lastDisableTime = Time.timeSinceLevelLoad;
+        }
     }
 
     protected void PlaySFX()
