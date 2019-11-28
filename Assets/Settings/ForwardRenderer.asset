@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
     passTag: FPSObject Trasnparent
-    Event: 500
+    Event: 300
     filterSettings:
       RenderQueueType: 1
       LayerMask:
@@ -34,10 +34,10 @@ MonoBehaviour:
       failOperation: 0
       zFailOperation: 0
     cameraSettings:
-      overrideCamera: 0
+      overrideCamera: 1
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
-      cameraFieldOfView: 60
+      cameraFieldOfView: 45
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +108,6 @@ MonoBehaviour:
       zFailOperation: 0
     cameraSettings:
       overrideCamera: 1
-      restoreCamera: 0
+      restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 1}
-      cameraFieldOfView: 40
+      cameraFieldOfView: 45
