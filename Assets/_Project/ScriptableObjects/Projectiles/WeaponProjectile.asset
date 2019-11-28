@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: WeaponProjectile
   m_EditorClassIdentifier: Assembly-CSharp::WeaponProjectile
   projectileType: 0
-  flyingSpeed: 10
+  flyingSpeed: 20
   damge: 10
   damangeRange: 20
   explosiveForce: 5
   hitMask:
     serializedVersion: 2
     m_Bits: 3584
+  _GFXPrefab: {fileID: 0}
+  _ExplosionVFXPrefab: {fileID: 0}
+  _FlyingVFXPrefab: {fileID: 0}

@@ -96,11 +96,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sniper RIfle
       objectReference: {fileID: 0}
-    - target: {fileID: 9118402623650145338, guid: 414051f8a2a45fd4ea15245a8a691c2f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9118402623650145339, guid: 414051f8a2a45fd4ea15245a8a691c2f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -191,12 +186,12 @@ PrefabInstance:
     - target: {fileID: 6840537981744276257, guid: 414051f8a2a45fd4ea15245a8a691c2f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.106
       objectReference: {fileID: 0}
     - target: {fileID: 6840537981744276257, guid: 414051f8a2a45fd4ea15245a8a691c2f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.03
+      value: -0.278
       objectReference: {fileID: 0}
     - target: {fileID: 6840537981744276257, guid: 414051f8a2a45fd4ea15245a8a691c2f,
         type: 3}
