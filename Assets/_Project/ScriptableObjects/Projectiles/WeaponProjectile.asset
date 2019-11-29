@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeaponProjectile
   m_EditorClassIdentifier: Assembly-CSharp::WeaponProjectile
   projectileType: 0
-  flyingSpeed: 20
+  flyingSpeed: 2
   damge: 10
   damangeRange: 20
   explosiveForce: 5

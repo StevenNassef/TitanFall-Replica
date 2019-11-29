@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
     passTag: FPSObject Trasnparent
-    Event: 300
+    Event: 450
     filterSettings:
       RenderQueueType: 1
       LayerMask:
