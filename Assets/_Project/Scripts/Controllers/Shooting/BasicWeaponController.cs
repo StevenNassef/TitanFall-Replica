@@ -9,7 +9,6 @@ public class BasicWeaponController : MonoBehaviour
     protected Animator weaponAnimator;
     [Header("SFX")]
     protected AudioSource audioSource;
-    [SerializeField] protected List<AudioClip> SFXList;
     protected WeaponState currentState;
     protected WeaponState previousState;
     protected int currentAmmo;
@@ -151,20 +150,48 @@ public class BasicWeaponController : MonoBehaviour
 
     protected void PlaySFX()
     {
-        if (SFXList.Count > (int)currentState)
+        switch (currentState)
         {
-            audioSource.clip = SFXList[(int)currentState];
-            audioSource.Play();
+            case WeaponState.Cocking:
+                audioSource.clip = weapon.SFXList.Cocking;
+                break;
+            case WeaponState.Idle:
+                audioSource.clip = weapon.SFXList.Idle;
+                break;
+            case WeaponState.Reloading:
+                audioSource.clip = weapon.SFXList.Reloading;
+                break;
+            case WeaponState.Shooting:
+                audioSource.clip = weapon.SFXList.Shooting;
+                break;
+            default:
+                break;
         }
+        audioSource.Play();
+
+
     }
 
     protected void PlayStateSFX(WeaponState state)
     {
-        if (SFXList.Count > (int)state)
+        switch (state)
         {
-            audioSource.clip = SFXList[(int)state];
-            audioSource.Play();
+            case WeaponState.Cocking:
+                audioSource.clip = weapon.SFXList.Cocking;
+                break;
+            case WeaponState.Idle:
+                audioSource.clip = weapon.SFXList.Idle;
+                break;
+            case WeaponState.Reloading:
+                audioSource.clip = weapon.SFXList.Reloading;
+                break;
+            case WeaponState.Shooting:
+                audioSource.clip = weapon.SFXList.Shooting;
+                break;
+            default:
+                break;
         }
+        audioSource.Play();
     }
 }
 

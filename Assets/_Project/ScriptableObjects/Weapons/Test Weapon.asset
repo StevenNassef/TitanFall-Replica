@@ -18,5 +18,6 @@ MonoBehaviour:
   fireRate: 10
   ammoCount: 30
   range: 50
+  SFXList: []
   shootingType: 1
   weaponProjectile: {fileID: 0}

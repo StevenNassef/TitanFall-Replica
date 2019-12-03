@@ -18,6 +18,11 @@ MonoBehaviour:
   fireRate: 1
   ammoCount: 6
   range: 50
+  _SFXList:
+    cocking: {fileID: 0}
+    shooting: {fileID: 8300000, guid: 8264d2bcacdf79d44afbed1410591308, type: 3}
+    reloading: {fileID: 8300000, guid: 3dd5508b7df6e2d4c985f6b1ff4bb9a8, type: 3}
+    idle: {fileID: 0}
   shootingType: 0
   weaponProjectile: {fileID: 5062945625042595080, guid: f9a3f33985e05d848a8e0c587f883811,
     type: 3}
