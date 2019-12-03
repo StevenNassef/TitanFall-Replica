@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: c4f499b7dc1d9224daf8b8418dd33663
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      74: -8472659312790035393
+    second: Shotgun|Action.001
+  - first:
+      74: -4743332526481214476
+    second: Shotgun|CameraAction
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftUpperLeg' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.025
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: shotgun(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: shotgun.001
+      parentName: shotgun(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Shotgun
+      parentName: shotgun(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: root
+      parentName: Shotgun
+      position: {x: 0.0017075998, y: -0.0016415984, z: 0.012044205}
+      rotation: {x: 0.7071068, y: -3.066587e-16, z: 3.0665854e-16, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
+    - name: trigger
+      parentName: root
+      position: {x: 5.3290706e-18, y: 0.000762003, z: 0.00042964102}
+      rotation: {x: 0.22069612, y: -0.000000042633552, z: -0.000000009646605, w: 0.97534263}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: trigger_end
+      parentName: trigger
+      position: {x: -0, y: 0.00024985193, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: magazine
+      parentName: root
+      position: {x: -1.7881394e-10, y: 0.0007901287, z: 0.0019665062}
+      rotation: {x: 0.79600203, y: -0.605294, z: -0.000004798174, w: -0.0000060498714}
+      scale: {x: 1.0000001, y: 0.9999998, z: 1.0000001}
+    - name: magazine_end
+      parentName: magazine
+      position: {x: -0, y: 0.0013491113, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: shoot_slider
+      parentName: root
+      position: {x: 5.77316e-18, y: 0.0012417203, z: 0.0010540935}
+      rotation: {x: 0.70710933, y: -0.0000037604239, z: -0.0000037192385, w: 0.7071042}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999964}
+    - name: shoot_slider_end
+      parentName: shoot_slider
+      position: {x: -0, y: 0.00039586957, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: reload_slider
+      parentName: root
+      position: {x: 5.9604655e-11, y: 0.00084901624, z: 0.003201936}
+      rotation: {x: 0.70710933, y: -0.000005921136, z: -0.000005879937, w: 0.7071042}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999964}
+    - name: reload_slider_end
+      parentName: reload_slider
+      position: {x: -0, y: 0.0017698208, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.025
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
