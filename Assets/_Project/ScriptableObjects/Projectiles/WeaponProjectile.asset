@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeaponProjectile
   m_EditorClassIdentifier: Assembly-CSharp::WeaponProjectile
   projectileType: 0
-  flyingSpeed: 2
+  flyingSpeed: 10
   damge: 10
   damangeRange: 20
   explosiveForce: 5
@@ -23,3 +23,5 @@ MonoBehaviour:
   _GFXPrefab: {fileID: 0}
   _ExplosionVFXPrefab: {fileID: 0}
   _FlyingVFXPrefab: {fileID: 0}
+  _FlyingSFX: {fileID: 8300000, guid: 04b45b9b49c370742946aee57e4481de, type: 3}
+  _ExplosionSFX: {fileID: 8300000, guid: 928e49879a92e1345a363a3cc1a7f81e, type: 3}

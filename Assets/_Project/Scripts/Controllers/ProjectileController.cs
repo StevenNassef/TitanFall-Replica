@@ -62,9 +62,11 @@ public class ProjectileController : MonoBehaviour
         if (fired)
             return;
 
-        //TODO : make flying effect
+        // make flying effect
         flyEffect.SetActive(true);
-        //TODO : make flying sound
+
+        //make flying sound
+        PlayFlyingSFX();
 
         if (projectile.ProjectileType == ProjectileType.Curve)
             body.useGravity = true;
@@ -81,6 +83,9 @@ public class ProjectileController : MonoBehaviour
 
         //Play the explosion effect
         explisionEffect.SetActive(true);
+
+        //Play explosion Sound Effect
+        PlayHitSFX();
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, projectile.DamangeRange, projectile.HitMask);
 
@@ -105,6 +110,21 @@ public class ProjectileController : MonoBehaviour
 
             }
         }
+    }
+
+    protected void PlayFlyingSFX()
+    {
+        audioSource.clip = projectile.FlyingSFX;
+        audioSource.loop = true;
+        audioSource.Play();
+    }
+
+    protected void PlayHitSFX()
+    {
+        audioSource.Stop();
+        audioSource.loop = false;
+        audioSource.clip = projectile.ExplosionSFX;
+        audioSource.Play();
     }
 
     private void OnCollisionEnter(Collision other)

@@ -19,12 +19,17 @@ public class WeaponProjectile : ScriptableObject
     [SerializeField] private GameObject _ExplosionVFXPrefab;
     [SerializeField] private GameObject _FlyingVFXPrefab;
 
+    [Header("Sound Effects")]
+    [SerializeField] private AudioClip _FlyingSFX;
+    [SerializeField] private AudioClip _ExplosionSFX;
     public ProjectileType ProjectileType => projectileType;
     public float FlyingSpeed => flyingSpeed;
     public float Damage => damge;
     public float DamangeRange => damangeRange;
     public float ExplosiveForce => explosiveForce;
     public LayerMask HitMask => hitMask;
+    public AudioClip ExplosionSFX => _ExplosionSFX;
+    public AudioClip FlyingSFX => _FlyingSFX;
 }
 
 
