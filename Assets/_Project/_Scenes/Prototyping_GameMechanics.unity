@@ -1428,11 +1428,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 198919609}
     m_Modifications:
-    - target: {fileID: 5768555761240390926, guid: dcf31b63b23e36d478b47f6889e7d335,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5768555761863429118, guid: dcf31b63b23e36d478b47f6889e7d335,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1492,26 +1487,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rocket Launcher Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 5768555761863429119, guid: dcf31b63b23e36d478b47f6889e7d335,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100688425719450852, guid: dcf31b63b23e36d478b47f6889e7d335,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100688425719450852, guid: dcf31b63b23e36d478b47f6889e7d335,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100688425719450852, guid: dcf31b63b23e36d478b47f6889e7d335,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcf31b63b23e36d478b47f6889e7d335, type: 3}
