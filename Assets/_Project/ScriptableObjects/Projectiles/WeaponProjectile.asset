@@ -19,7 +19,7 @@ MonoBehaviour:
   explosiveForce: 5
   hitMask:
     serializedVersion: 2
-    m_Bits: 3584
+    m_Bits: 15360
   _GFXPrefab: {fileID: 0}
   _ExplosionVFXPrefab: {fileID: 0}
   _FlyingVFXPrefab: {fileID: 0}

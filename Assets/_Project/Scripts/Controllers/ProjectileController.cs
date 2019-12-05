@@ -98,7 +98,13 @@ public class ProjectileController : MonoBehaviour
                 DamageHandler damageHandler = collider.gameObject.GetComponent<DamageHandler>();
                 if (damageHandler != null)
                 {
-                    damageHandler.TakeDamage(projectile.Damage);
+                    ObjectType type;
+                    //if the object the projectile damaged was killed or destroyed, TakeDamage will return true
+                    if(damageHandler.TakeDamage(projectile.Damage, out type))
+                    {
+                        //Call RewardHandler
+                        KillRewardHandler(type);
+                    }
                 }
 
                 //Add an explosive force to the objects if they had a rigidbody Component
@@ -110,6 +116,12 @@ public class ProjectileController : MonoBehaviour
 
             }
         }
+    }
+
+    protected void KillRewardHandler(ObjectType type)
+    {
+        //TODO Finish this
+        Debug.Log(type);
     }
 
     protected void PlayFlyingSFX()
