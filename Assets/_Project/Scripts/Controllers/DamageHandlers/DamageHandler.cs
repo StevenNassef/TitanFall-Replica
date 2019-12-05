@@ -2,26 +2,33 @@
 using MyBox;
 public class DamageHandler : MonoBehaviour
 {
-    [ReadOnly] [SerializeField] private float currentHealthPoints;
+    [ReadOnly] [SerializeField] protected float currentHealthPoints;
     [SerializeField] protected ObjectType type;
     [SerializeField] protected float maxHealthPoints;
 
     public delegate void OnDamageHandlerEventWithArgs(float damage, ObjectType type);
-    public event OnDamageHandlerEventWithArgs OnDamageTaken;
+    public event OnDamageHandlerEventWithArgs OnDamageTakenArgs;
 
     public delegate void OnDamageHandlerEvent();
 
     public event OnDamageHandlerEvent OnObjectDestroyed;
+    public event OnDamageHandlerEvent OnDamageTaken;
+
 
 
     void Start()
     {
-        currentHealthPoints = maxHealthPoints;
+        InitializeHandler();
     }
 
     void Update()
     {
 
+    }
+
+    protected virtual void InitializeHandler()
+    {
+        currentHealthPoints = maxHealthPoints;
     }
 
     public bool TakeDamage(float damage, out ObjectType type)
@@ -31,11 +38,18 @@ public class DamageHandler : MonoBehaviour
 
         //Subtract the final damage from the currentHealthPoints
         currentHealthPoints -= finalDamage;
-        
+        if(currentHealthPoints < 0)
+            currentHealthPoints = 0;
+
         //Call the OnDamageTaken Event
-        if(OnDamageTaken != null)
+        if (OnDamageTakenArgs != null)
         {
-            OnDamageTaken.Invoke(finalDamage, type);
+            OnDamageTakenArgs.Invoke(finalDamage, type);
+        }
+        if (OnDamageTaken != null)
+        {
+            Debug.Log("Damage Taken Invoked");
+            OnDamageTaken.Invoke();
         }
         HitEffect(finalDamage);
         if (currentHealthPoints <= 0)
@@ -43,7 +57,7 @@ public class DamageHandler : MonoBehaviour
             //TODO : try to find a better way of handling this
 
             //Call the OnObjectDestroyed Event
-            if(OnObjectDestroyed != null)
+            if (OnObjectDestroyed != null)
             {
                 OnObjectDestroyed.Invoke();
             }
@@ -52,7 +66,22 @@ public class DamageHandler : MonoBehaviour
         }
         return false;
     }
-
+    [ButtonMethod]
+    protected void SimulateDamage()
+    {
+        ObjectType type;
+        TakeDamage(10, out type);
+    }
+    [ButtonMethod]
+    protected void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+    [ButtonMethod]
+    protected void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
     protected virtual float CalculateDamage(float damage, ObjectType type)
     {
         return damage;
