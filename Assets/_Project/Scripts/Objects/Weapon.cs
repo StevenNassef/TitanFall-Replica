@@ -23,7 +23,7 @@ public class Weapon : ScriptableObject
     [SerializeField] private WeaponSFXList _SFXList;
     [Header("Projectile")]
     [Tooltip("Whether this weapon shots Projectiles or Just uses RayCast, If Projectile type was choosen the weaponProjectile field must be set.")]
-    [SerializeField] private WeaponShootingType shootingType = WeaponShootingType.Hit_Scan;
+    [SerializeField] private WeaponShootingType shootingType = WeaponShootingType.RayCast;
     [ConditionalField(nameof(shootingType), inverse: false, WeaponShootingType.Projectile)]
     [Tooltip("The type of projectile the weapon shots, (ONLY used when shootingType is set to Projectile).")]
     [SerializeField] private GameObject weaponProjectile;
@@ -47,7 +47,7 @@ public enum WeaponFireMode
 
 public enum WeaponShootingType
 {
-    Projectile, Hit_Scan
+    Projectile, RayCast
 }
 [System.Serializable]
 public struct WeaponSFXList
