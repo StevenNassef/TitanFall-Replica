@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MyBox;
 
-public class SoundSource : MonoBehaviour
+public class TitanSounds : MonoBehaviour
 {
 
     public string titanName;
