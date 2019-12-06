@@ -6,7 +6,8 @@ using MyBox;
 public class TitanSounds : MonoBehaviour
 {
 
-    public string titanName;
+    public enum titan { Ion, Legion } public titan titanName = titan.Ion;
+
     public GameObject background;
     public GameObject talk;
     public GameObject effect;
