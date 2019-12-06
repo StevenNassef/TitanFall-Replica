@@ -18,6 +18,7 @@ public class PrimaryWeaponController : BasicWeaponController
         base.Shoot();
         Ray ray = fpsCamera.ScreenPointToRay(screenCenter);
         RaycastHit hitInfo;
+        Debug.DrawRay(ray.origin, ray.direction * weapon.Range, Color.red, 0.1f);
         if (Physics.Raycast(ray, out hitInfo, weapon.Range, hitmask))
         {
             DamageHandler handler = hitInfo.collider.GetComponent<DamageHandler>();
@@ -25,8 +26,20 @@ public class PrimaryWeaponController : BasicWeaponController
             if(handler)
             {
                 //TODO add a parameter to deal damage to certain objects only
-                handler.TakeDamage(weapon.Damage);
+                ObjectType type;
+                if(handler.TakeDamage(weapon.Damage, out type))
+                {
+                    KillRewardHandler(type);
+                }
             }
+
+            //TODO : Apply Force on objects with rigidbody component
         }
+    }
+
+    protected void KillRewardHandler(ObjectType type)
+    {
+        //TODO Make this in the CharacterStats Script
+        Debug.Log(type);
     }
 }
