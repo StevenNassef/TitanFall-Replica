@@ -17,13 +17,14 @@ public class TitanSounds : MonoBehaviour
     public GameObject talk;
     public GameObject effect;
 
+
     private List<AudioClip> welcome;
     private List<AudioClip> coreReady;
     private List<AudioClip> coreFire;
     private List<AudioClip> eject;
     private List<AudioClip> defence;
     private List<AudioClip> criticalDamage;
-
+    private AudioClip walking;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class TitanSounds : MonoBehaviour
         eject = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/Eject"));
         defence = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/Defence"));
         criticalDamage = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/CriticalDamage"));
+        walking = Resources.Load<AudioClip>(titanFolder + "miscsounds_Legion Walking Loop");
     }
 
     [ButtonMethod]
@@ -71,6 +73,12 @@ public class TitanSounds : MonoBehaviour
     void playCoreFire() {
         talk.GetComponent<AudioSource>().clip = coreFire.GetRandom();
         talk.GetComponent<AudioSource>().Play();
+    }
+
+    [ButtonMethod]
+    void playWalking() {
+        background.GetComponent<AudioSource>().clip = walking;
+        background.GetComponent<AudioSource>().Play();
     }
 
 }
