@@ -36,7 +36,7 @@ public class TitanSounds : MonoBehaviour
         eject = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/Eject"));
         defence = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/Defence"));
         criticalDamage = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/CriticalDamage"));
-        walking = Resources.Load<AudioClip>(titanFolder + titanName + "miscsounds_Legion Walking Loop");
+        walking = Resources.Load<AudioClip>(titanFolder + "miscsounds_Legion Walking Loop");
     }
 
     [ButtonMethod]
