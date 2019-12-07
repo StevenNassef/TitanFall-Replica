@@ -4333,12 +4333,12 @@ PrefabInstance:
     - target: {fileID: 2356559099001781327, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: m_Name
-      value: RigidBodyFPSController
+      value: Player_Pilot
       objectReference: {fileID: 0}
     - target: {fileID: 2356559099001781327, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2356559099008338351, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
@@ -4475,7 +4475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2712418716607526884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4547,7 +4547,7 @@ MonoBehaviour:
     stickToWallHelperDistance: 0.5
     slowDownRate: 20
     airControl: 0
-    shellOffset: 0
+    shellOffset: 0.2
     gravityModifier: 4
   m_AudioSource: {fileID: 364893207814352789}
   m_BackGroundAudioSource: {fileID: 364893206927089571}

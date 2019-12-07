@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using MyBox;
 
+public enum Titan { 
+    Ion,
+    Legion 
+}
+
 public class TitanSounds : MonoBehaviour
 {
 
-    public enum titan { Ion, Legion } public titan titanName = titan.Ion;
+    public Titan titanName = Titan.Ion;
 
     public GameObject background;
     public GameObject talk;
     public GameObject effect;
+
 
     private List<AudioClip> welcome;
     private List<AudioClip> coreReady;
@@ -18,7 +24,7 @@ public class TitanSounds : MonoBehaviour
     private List<AudioClip> eject;
     private List<AudioClip> defence;
     private List<AudioClip> criticalDamage;
-
+    private AudioClip walking;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +36,7 @@ public class TitanSounds : MonoBehaviour
         eject = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/Eject"));
         defence = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/Defence"));
         criticalDamage = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/CriticalDamage"));
+        walking = Resources.Load<AudioClip>(titanFolder + "miscsounds_Legion Walking Loop");
     }
 
     [ButtonMethod]
@@ -66,6 +73,12 @@ public class TitanSounds : MonoBehaviour
     void playCoreFire() {
         talk.GetComponent<AudioSource>().clip = coreFire.GetRandom();
         talk.GetComponent<AudioSource>().Play();
+    }
+
+    [ButtonMethod]
+    void playWalking() {
+        background.GetComponent<AudioSource>().clip = walking;
+        background.GetComponent<AudioSource>().Play();
     }
 
 }
