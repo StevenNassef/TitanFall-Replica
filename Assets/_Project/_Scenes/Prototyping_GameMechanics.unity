@@ -1474,6 +1474,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 198919609}
     m_Modifications:
+    - target: {fileID: 5768555761240390926, guid: dcf31b63b23e36d478b47f6889e7d335,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5768555761863429118, guid: dcf31b63b23e36d478b47f6889e7d335,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1533,6 +1538,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rocket Launcher Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768555761863429119, guid: dcf31b63b23e36d478b47f6889e7d335,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcf31b63b23e36d478b47f6889e7d335, type: 3}
@@ -4328,7 +4338,7 @@ PrefabInstance:
     - target: {fileID: 2356559099001781327, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2356559099008338351, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
@@ -4465,7 +4475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2712418716607526884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4887,6 +4897,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sniper RIfle
       objectReference: {fileID: 0}
+    - target: {fileID: 3664291521542023001, guid: 48b9d142aeddd714989b528147acbb99,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48b9d142aeddd714989b528147acbb99, type: 3}
 --- !u!1 &6366248937012811678
@@ -4978,6 +4993,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7990476197634236146, guid: 804417b7267e89c4286a7ff9957a017c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 804417b7267e89c4286a7ff9957a017c, type: 3}
 --- !u!1001 &9217966549371781417
@@ -4991,6 +5011,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069768994313458526, guid: deae2e88524fc3b44bd56d6080f7ae97,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8069768994313458527, guid: deae2e88524fc3b44bd56d6080f7ae97,
         type: 3}

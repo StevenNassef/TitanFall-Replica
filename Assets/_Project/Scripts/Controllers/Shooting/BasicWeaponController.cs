@@ -12,7 +12,7 @@ public class BasicWeaponController : MonoBehaviour
     protected WeaponState currentState;
     protected WeaponState previousState;
     protected int currentAmmo;
-    protected bool fire, fireLock, fireWait, reload, reloadLock;
+    protected bool fire, fireLock, fireWait, reload, reloadLock, currentlyAiming, previouslyAiming;
 
     protected float timeBetweenBullets = 1;
     protected Vector3 screenCenter;
@@ -33,12 +33,15 @@ public class BasicWeaponController : MonoBehaviour
     protected void FixedUpdate()
     {
         previousState = currentState;
+        previouslyAiming = currentlyAiming;
         //TODO make this more generic
         fire = Input.GetMouseButton(0);
+        currentlyAiming = Input.GetMouseButton(1);
         reload = Input.GetKey(KeyCode.R);
 
         if (reload && !reloadLock && currentAmmo != weapon.AmmoCount)
         {
+            currentlyAiming = false;
             Reload();
         }
 
@@ -70,6 +73,11 @@ public class BasicWeaponController : MonoBehaviour
             fireLock = false;
             currentState = WeaponState.Idle;
             StartCoroutine(AutomaticFire());
+        }
+
+        if(currentlyAiming != previouslyAiming)
+        {
+            weaponAnimator.SetBool("Aim", currentlyAiming);
         }
     }
     void Update()
