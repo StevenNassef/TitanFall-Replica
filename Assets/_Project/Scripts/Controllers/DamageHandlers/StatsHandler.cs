@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using MyBox;
-public class DamageHandler : MonoBehaviour
+public class StatsHandler : MonoBehaviour
 {
     [ReadOnly] [SerializeField] protected float currentHealthPoints;
     [SerializeField] protected ObjectType type;
     [SerializeField] protected float maxHealthPoints;
 
-    public delegate void OnDamageHandlerEventWithArgs(float damage, ObjectType type);
-    public event OnDamageHandlerEventWithArgs OnDamageTakenArgs;
+    public delegate void OnStatsHandlerEventWithArgs(float damage, ObjectType type);
+    public event OnStatsHandlerEventWithArgs OnDamageTakenArgs;
 
-    public delegate void OnDamageHandlerEvent();
+    public delegate void OnStatsHandlerEvent();
 
-    public event OnDamageHandlerEvent OnObjectDestroyed;
-    public event OnDamageHandlerEvent OnDamageTaken;
+    public event OnStatsHandlerEvent OnObjectDestroyed;
+    public event OnStatsHandlerEvent OnDamageTaken;
 
 
 

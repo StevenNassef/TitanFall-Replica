@@ -95,12 +95,12 @@ public class ProjectileController : MonoBehaviour
             foreach (Collider collider in colliders)
             {
                 //Deal damage to the object if it has a damage handler component
-                DamageHandler damageHandler = collider.gameObject.GetComponent<DamageHandler>();
-                if (damageHandler != null)
+                StatsHandler statsHandler = collider.gameObject.GetComponent<StatsHandler>();
+                if (statsHandler != null)
                 {
                     ObjectType type;
                     //if the object the projectile damaged was killed or destroyed, TakeDamage will return true
-                    if(damageHandler.TakeDamage(projectile.Damage, out type))
+                    if(statsHandler.TakeDamage(projectile.Damage, out type))
                     {
                         //Call RewardHandler
                         KillRewardHandler(type);

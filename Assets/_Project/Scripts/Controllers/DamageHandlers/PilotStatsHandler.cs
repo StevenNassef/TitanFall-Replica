@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MyBox;
-public class PilotDamageHandler : DamageHandler
+public class PilotStatsHandler : StatsHandler
 {
-    public event OnDamageHandlerEvent OnHealing;
+    public event OnStatsHandlerEvent OnHealing;
 
     //the to wait after the last taken damage to start regenrating health.
     private float timeToRegenHealth = 3;

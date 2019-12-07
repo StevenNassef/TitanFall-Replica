@@ -21,7 +21,7 @@ public class PrimaryWeaponController : BasicWeaponController
         Debug.DrawRay(ray.origin, ray.direction * weapon.Range, Color.red, 0.1f);
         if (Physics.Raycast(ray, out hitInfo, weapon.Range, hitmask))
         {
-            DamageHandler handler = hitInfo.collider.GetComponent<DamageHandler>();
+            StatsHandler handler = hitInfo.collider.GetComponent<StatsHandler>();
 
             if(handler)
             {
