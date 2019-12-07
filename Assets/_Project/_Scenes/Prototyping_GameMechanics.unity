@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: ca37bc1c5f9b1e44a83255b5f969ed18,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -390,11 +390,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 74619369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee26e8dbc0f3f004db9361d4e0507660, type: 3}
+  m_Script: {fileID: 11500000, guid: cdeed5ae155b395479a10a28c267e929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealthPoints: 0
-  type: 0
+  type: 2
   maxHealthPoints: 100
 --- !u!65 &74619372
 BoxCollider:
@@ -3888,6 +3888,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Titan
       objectReference: {fileID: 0}
+    - target: {fileID: 4365674382448382418, guid: 0bcf19178b0491243b547566956aff38,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4365674382448414198, guid: 0bcf19178b0491243b547566956aff38,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4015,7 +4020,7 @@ PrefabInstance:
     - target: {fileID: 2356559099001781327, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8122849843188559594, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}

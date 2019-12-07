@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MyBox;
-public class PilotStatsHandler : StatsHandler
+public class PilotStatsHandler : CharacterStatsHandler
 {
     public event OnStatsHandlerEvent OnHealing;
 
@@ -22,9 +22,9 @@ public class PilotStatsHandler : StatsHandler
         type = ObjectType.Pilot;
     }
 
-    void Update()
+    protected override void Update()
     {
-
+        base.Update();
     }
     private void OnEnable()
     {

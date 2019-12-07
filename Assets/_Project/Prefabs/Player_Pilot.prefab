@@ -355,6 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2356559099001348203}
   - component: {fileID: 2356559099008338349}
+  - component: {fileID: 8491465418516217492}
   - component: {fileID: 2356559099004772137}
   - component: {fileID: 2356559099014496233}
   - component: {fileID: 17703993}
@@ -365,7 +366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2356559099001348203
 Transform:
   m_ObjectHideFlags: 0
@@ -471,6 +472,26 @@ MonoBehaviour:
   m_JumpBackGroundSFX: {fileID: 8300000, guid: 954261ed98859814fb77e57ec9d4bb4c, type: 3}
   m_LandingSFX: {fileID: 8300000, guid: 4d5e2b29b683ee4478602f626f5bfed2, type: 3}
   m_WalkingSFX: {fileID: 8300000, guid: 3d18e24091b038b448d020d10913e4bf, type: 3}
+--- !u!114 &8491465418516217492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356559099001781327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60ea8ac307dde84e99eb82a48bbf4ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealthPoints: 0
+  type: 0
+  maxHealthPoints: 100
+  currentCorePoints: 0
+  maxCorePoints: 100
+  pointsForPilotKill: 10
+  pointForTitanKill: 50
+  coreAbilityKey: 118
 --- !u!54 &2356559099004772137
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -498,7 +519,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1.6
+  m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &17703993

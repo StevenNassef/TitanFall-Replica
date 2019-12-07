@@ -21,7 +21,7 @@ public class StatsHandler : MonoBehaviour
         InitializeHandler();
     }
 
-    void Update()
+    protected virtual void Update()
     {
 
     }
