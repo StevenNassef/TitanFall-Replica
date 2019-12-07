@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: ca37bc1c5f9b1e44a83255b5f969ed18,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4185,6 +4185,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Pilot
       objectReference: {fileID: 0}
+    - target: {fileID: 2356559099001781327, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122849843188559594, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ff9b0037f6d7e44870dfc08f56001f, type: 3}
 --- !u!4 &2660979042577869064
@@ -4316,6 +4326,11 @@ MonoBehaviour:
     StrafeSpeed: 20
     RunMultiplier: 2
     RunKey: 304
+    maxNumberOfDashes: 3
+    currentNumberOfDashes: 3
+    TimeToRefillDash: 5
+    DashForce: 1000
+    DashKey: 32
     SlopeCurveModifier:
       serializedVersion: 2
       m_Curve:
