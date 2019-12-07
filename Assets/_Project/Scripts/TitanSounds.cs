@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using MyBox;
 
+public enum Titan { 
+    Ion,
+    Legion 
+}
+
 public class TitanSounds : MonoBehaviour
 {
 
-    public enum titan { Ion, Legion } public titan titanName = titan.Ion;
+    public Titan titanName = Titan.Ion;
 
     public GameObject background;
     public GameObject talk;
