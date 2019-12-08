@@ -70,7 +70,7 @@ public class HealthBarCircle : MonoBehaviour {
     void UpdateValue(float val)
     {
        
-        bar.fillAmount = -(val / 100) + 1f;
+        bar.fillAmount = (-(val / 100) + 1f)*0.75f;
 
         txtTitle.text = Title + " " + val + "%";
 
@@ -112,4 +112,8 @@ public class HealthBarCircle : MonoBehaviour {
         }
     }
 
+    private float CalcValue(float value)
+    {
+        return ((value/100)*75);
+    }
 }
