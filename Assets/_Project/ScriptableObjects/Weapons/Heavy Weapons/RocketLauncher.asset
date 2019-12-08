@@ -15,8 +15,8 @@ MonoBehaviour:
   weaponName: Archer
   damagePerBullet: 4
   fireMode: 1
-  fireRate: 10
-  ammoCount: 20
+  fireRate: 0.5
+  ammoCount: 1
   range: 50
   _SFXList:
     cocking: {fileID: 0}
