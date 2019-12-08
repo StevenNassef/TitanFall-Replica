@@ -9,11 +9,15 @@ public class PilotSounds : MonoBehaviour
     
     private AudioClip walking;
     private AudioClip kill;
+    private List<AudioClip> hit;
+
     void Start()
     {
         var pilotFolder = "Pilots/";
+
         kill = Resources.Load<AudioClip>(pilotFolder + "PlayerPilot/miscsounds_pilot kill");
         walking = Resources.Load<AudioClip>(pilotFolder + "PilotFullWalk");
+        hit = new List<AudioClip>(Resources.LoadAll<AudioClip>(pilotFolder + "Hit"));
     }
 
     [ButtonMethod]
@@ -25,6 +29,19 @@ public class PilotSounds : MonoBehaviour
     [ButtonMethod]
     void playWalking(){
         backGround.GetComponent<AudioSource>().clip = walking;
+        backGround.GetComponent<AudioSource>().loop = true;
         backGround.GetComponent<AudioSource>().Play();
+    }
+
+    [ButtonMethod]
+    void playHit(){
+        effect.GetComponent<AudioSource>().clip = hit.GetRandom();
+        effect.GetComponent<AudioSource>().Play();
+    }
+
+    [ButtonMethod]
+    void stopBackground(){
+        backGround.GetComponent<AudioSource>().loop = false;
+        backGround.GetComponent<AudioSource>().Stop();
     }
 }
