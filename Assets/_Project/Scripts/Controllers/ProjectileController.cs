@@ -28,7 +28,7 @@ public class ProjectileController : MonoBehaviour
     {
 
     }
-    
+
     void Update()
     {
         UpdateRotation();
@@ -50,15 +50,16 @@ public class ProjectileController : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(body.velocity.normalized);
         }
+        //TODO : add a distance or time limit to destroy the object
     }
 
     [ButtonMethod]
     //This method is for testing porpses only NEVER USE IT in the actual Implementation!
     private void Fire()
     {
-        Fire(transform.forward,null);
+        Fire(transform.forward, null, this.projectile);
     }
-    public void Fire(Vector3 direction, WeaponHolderController weaponHolder)
+    public void Fire(Vector3 direction, WeaponHolderController weaponHolder, WeaponProjectile projectile)
     {
         if (fired)
             return;
@@ -66,7 +67,7 @@ public class ProjectileController : MonoBehaviour
         //Set the current weaponHolder to the weaponHolder of the Weapon
         //This to able to notify the characterstatshandler when an enemy is killed
         this.weaponHolder = weaponHolder;
-
+        this.projectile = projectile;
         // make flying effect
         flyEffect.SetActive(true);
 
@@ -105,7 +106,7 @@ public class ProjectileController : MonoBehaviour
                 {
                     ObjectType type;
                     //if the object the projectile damaged was killed or destroyed, TakeDamage will return true
-                    if(statsHandler.TakeDamage(projectile.Damage, out type))
+                    if (statsHandler.TakeDamage(projectile.Damage, out type))
                     {
                         //Call RewardHandler
                         KillRewardHandler(type);
@@ -127,7 +128,7 @@ public class ProjectileController : MonoBehaviour
     {
         // TODO: this is the same as the one in BasicWeaponController , Find a solution
         Debug.Log(type);
-        if(weaponHolder != null)
+        if (weaponHolder != null)
         {
             weaponHolder.EnemyKilled(type);
         }

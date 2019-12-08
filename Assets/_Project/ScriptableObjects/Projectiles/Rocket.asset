@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e28126066355844a392993df78e1f4, type: 3}
+  m_Name: Rocket
+  m_EditorClassIdentifier: 
+  projectileType: 0
+  flyingSpeed: 11
+  damage: 125
+  damangeRange: 4
+  explosiveForce: 20
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _GFXPrefab: {fileID: 0}
+  _ExplosionVFXPrefab: {fileID: 0}
+  _FlyingVFXPrefab: {fileID: 0}
+  _FlyingSFX: {fileID: 8300000, guid: 9572219d09071c842985deda53cb858f, type: 3}
+  _ExplosionSFX: {fileID: 8300000, guid: c9d0e793c7994df4e8a84eb208938919, type: 3}

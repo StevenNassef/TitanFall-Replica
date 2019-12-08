@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5062945625042595085}
   - component: {fileID: 5062945625042595086}
   - component: {fileID: 5062945625042595084}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f5dc0c57df4a949b86cc80674f9bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 11400000, guid: 1ffd8b7f9fcf3de41a2db4d54c857444, type: 2}
+  projectile:
+    projectileType: 0
+    flyingSpeed: 11
+    maxFlyingDistance: 50
+    damage: 125
+    damangeRange: 4
+    explosiveForce: 20
+    hitMask:
+      serializedVersion: 2
+      m_Bits: 15671
+    _GFXPrefab: {fileID: 0}
+    _ExplosionVFXPrefab: {fileID: 0}
+    _FlyingVFXPrefab: {fileID: 0}
+    _FlyingSFX: {fileID: 0}
+    _ExplosionSFX: {fileID: 0}
   projectileGFX: {fileID: 5062945625313831496}
   explisionEffect: {fileID: 4903534534644805594}
   flyEffect: {fileID: 6279260662799694659}
@@ -173,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5062945625313831503}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ProjectileGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +221,7 @@ GameObject:
   - component: {fileID: 5062945625575405713}
   - component: {fileID: 5062945625575405714}
   - component: {fileID: 5062945625575405715}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,6 +320,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7430527863088186336, guid: 66b581a7b703b9441a8ddb9350750a1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430527863088186340, guid: 66b581a7b703b9441a8ddb9350750a1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 7430527863088226240, guid: 66b581a7b703b9441a8ddb9350750a1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -391,6 +415,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414613112280161473, guid: f2c2904a5d0e63c4cb1d499453c3fcc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414613112280161475, guid: f2c2904a5d0e63c4cb1d499453c3fcc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414613112280161479, guid: f2c2904a5d0e63c4cb1d499453c3fcc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414613112280161481, guid: f2c2904a5d0e63c4cb1d499453c3fcc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414613112280161483, guid: f2c2904a5d0e63c4cb1d499453c3fcc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414613112280161485, guid: f2c2904a5d0e63c4cb1d499453c3fcc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414613112280161487, guid: f2c2904a5d0e63c4cb1d499453c3fcc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414613112280161497, guid: f2c2904a5d0e63c4cb1d499453c3fcc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414613112280161499, guid: f2c2904a5d0e63c4cb1d499453c3fcc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414613112280161503, guid: f2c2904a5d0e63c4cb1d499453c3fcc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3414613112280449249, guid: f2c2904a5d0e63c4cb1d499453c3fcc9,
         type: 3}
