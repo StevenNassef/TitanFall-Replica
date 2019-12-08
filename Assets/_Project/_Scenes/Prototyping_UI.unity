@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &231567734
 RectTransform:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &500584134
 RectTransform:
   m_ObjectHideFlags: 0
@@ -988,7 +988,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 14.09, y: -7.43, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -307.59998, y: 2.407}
+  m_AnchoredPosition: {x: -307.59998, y: 2.407013}
   m_SizeDelta: {x: -615.3, y: 13.997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1558962753
@@ -1498,11 +1498,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1075461482}
     m_Modifications:
-    - target: {fileID: 915789776348897413, guid: 055e5617059a26847993a9b6401d57ef,
-        type: 3}
-      propertyPath: m_FillAmount
-      value: 0.49
-      objectReference: {fileID: 0}
     - target: {fileID: 947096649352036769, guid: 055e5617059a26847993a9b6401d57ef,
         type: 3}
       propertyPath: m_Name
@@ -2144,21 +2139,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AmmoPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627214071990492040, guid: f54006a674c9ff5459afa69cf0b7e4e6,
-        type: 3}
-      propertyPath: m_isRightToLeft
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627214071990492040, guid: f54006a674c9ff5459afa69cf0b7e4e6,
-        type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627214071990492040, guid: f54006a674c9ff5459afa69cf0b7e4e6,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f54006a674c9ff5459afa69cf0b7e4e6, type: 3}
