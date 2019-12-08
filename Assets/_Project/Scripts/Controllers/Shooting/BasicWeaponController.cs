@@ -13,7 +13,7 @@ public class BasicWeaponController : MonoBehaviour
     protected WeaponState previousState;
     protected int currentAmmo;
     protected bool fire, fireLock, fireWait, reload, reloadLock, currentlyAiming, previouslyAiming;
-
+    protected WeaponHolderController weaponHolder;
     protected float timeBetweenBullets = 1;
     protected Vector3 screenCenter;
     protected float lastDisableTime;
@@ -24,6 +24,7 @@ public class BasicWeaponController : MonoBehaviour
         screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
         audioSource = GetComponent<AudioSource>();
         weaponAnimator = GetComponent<Animator>();
+        weaponHolder = GetComponentInParent<WeaponHolderController>();
     }
     protected virtual void Start()
     {
@@ -75,7 +76,7 @@ public class BasicWeaponController : MonoBehaviour
             StartCoroutine(AutomaticFire());
         }
 
-        if(currentlyAiming != previouslyAiming)
+        if (currentlyAiming != previouslyAiming)
         {
             weaponAnimator.SetBool("Aim", currentlyAiming);
         }
@@ -83,6 +84,18 @@ public class BasicWeaponController : MonoBehaviour
     void Update()
     {
         // UpdateAnimator();
+    }
+    protected void KillRewardHandler(ObjectType type)
+    {
+        Debug.Log(type);
+        if (weaponHolder != null)
+        {
+            weaponHolder.EnemyKilled(type);
+        }
+        else
+        {
+            Debug.LogError("NO WeaponHolder Found!");
+        }
     }
 
     protected virtual void Shoot()

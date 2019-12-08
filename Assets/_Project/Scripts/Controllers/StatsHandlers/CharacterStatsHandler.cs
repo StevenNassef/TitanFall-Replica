@@ -12,6 +12,7 @@ public class CharacterStatsHandler : StatsHandler
     [SerializeField] protected KeyCode coreAbilityKey =  KeyCode.V;
     protected bool coreActivated;
 
+    protected WeaponHolderController weaponHolder;
     public event OnStatsHandlerEvent OnCoreAvailable;
     public event OnStatsHandlerEvent OnCoreActivated;
     public event OnStatsHandlerEvent OnCoreDeactivated;
@@ -20,6 +21,12 @@ public class CharacterStatsHandler : StatsHandler
     {
         base.InitializeHandler();
         currentCorePoints = 0;
+        weaponHolder = GetComponentInChildren<WeaponHolderController>();
+        
+        if(weaponHolder != null)
+        {
+            weaponHolder.OnKillingEnemy += UpdateCore;
+        }
     }
 
     protected override void Update()

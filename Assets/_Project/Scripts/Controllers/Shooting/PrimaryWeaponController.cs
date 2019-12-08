@@ -37,9 +37,4 @@ public class PrimaryWeaponController : BasicWeaponController
         }
     }
 
-    protected void KillRewardHandler(ObjectType type)
-    {
-        //TODO Make this in the CharacterStats Script
-        Debug.Log(type);
-    }
 }

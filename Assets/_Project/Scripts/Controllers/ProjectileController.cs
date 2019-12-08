@@ -9,6 +9,7 @@ public class ProjectileController : MonoBehaviour
 {
     private AudioSource audioSource;
     private Rigidbody body;
+    private WeaponHolderController weaponHolder;
     [SerializeField] private WeaponProjectile projectile;
     [SerializeField] private GameObject projectileGFX;
     [SerializeField] private GameObject explisionEffect;
@@ -27,8 +28,7 @@ public class ProjectileController : MonoBehaviour
     {
 
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         UpdateRotation();
@@ -53,14 +53,19 @@ public class ProjectileController : MonoBehaviour
     }
 
     [ButtonMethod]
+    //This method is for testing porpses only NEVER USE IT in the actual Implementation!
     private void Fire()
     {
-        Fire(transform.forward);
+        Fire(transform.forward,null);
     }
-    public void Fire(Vector3 direction)
+    public void Fire(Vector3 direction, WeaponHolderController weaponHolder)
     {
         if (fired)
             return;
+
+        //Set the current weaponHolder to the weaponHolder of the Weapon
+        //This to able to notify the characterstatshandler when an enemy is killed
+        this.weaponHolder = weaponHolder;
 
         // make flying effect
         flyEffect.SetActive(true);
@@ -120,8 +125,16 @@ public class ProjectileController : MonoBehaviour
 
     protected void KillRewardHandler(ObjectType type)
     {
-        //TODO Finish this
+        // TODO: this is the same as the one in BasicWeaponController , Find a solution
         Debug.Log(type);
+        if(weaponHolder != null)
+        {
+            weaponHolder.EnemyKilled(type);
+        }
+        else
+        {
+            Debug.LogError("No WeaponHolder Found");
+        }
     }
 
     protected void PlayFlyingSFX()

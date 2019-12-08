@@ -19,7 +19,7 @@ public class HeavyWeaponController : BasicWeaponController
         base.Shoot();
         Ray ray = fpsCamera.ScreenPointToRay(screenCenter);        
         GameObject proj = Instantiate(weapon.Projectile, barrelOpening.position, Quaternion.LookRotation(ray.direction));
-        proj.GetComponent<ProjectileController>().Fire(ray.direction);
+        proj.GetComponent<ProjectileController>().Fire(ray.direction, weaponHolder);
         
     }
 }
