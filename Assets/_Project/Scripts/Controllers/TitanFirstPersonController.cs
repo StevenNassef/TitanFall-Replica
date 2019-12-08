@@ -9,17 +9,29 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class TitanFirstPersonController : MonoBehaviour
     {
         [Serializable]
-        public class MovementSettings
+        public class TitanMovementSettings
         {
+            [Header("Running and Walking")]
             public float ForwardSpeed = 8.0f;   // Speed when walking forward
             public float BackwardSpeed = 4.0f;  // Speed when walking backwards
             public float StrafeSpeed = 4.0f;    // Speed when walking sideways
             public float RunMultiplier = 2.0f;   // Speed when sprinting
             public KeyCode RunKey = KeyCode.LeftShift;
+
+            [Header("Dash")]
+            public float maxNumberOfDashes = 3;
+            public float currentNumberOfDashes = 3;
+            public float TimeToRefillDash = 5;
+            public float DashDuration = 1;
+            public float DashForce = 20;
+            public KeyCode DashKey = KeyCode.Space;
+            private bool m_DashKeyLock;
+            public bool m_Dash;
+            public float m_DashTimer;
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
             [HideInInspector] public float CurrentTargetSpeed = 8f;
             private bool m_Running;
-
+            public bool m_Dashing;
             public void UpdateDesiredTargetSpeed(Vector2 input)
             {
                 if (input == Vector2.zero) return;
@@ -51,6 +63,29 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_Running = false;
                 }
+
+                if (Input.GetKey(DashKey))
+                {
+                    if (!m_DashKeyLock && !m_Dash)
+                    {
+                        m_Dash = true;
+                        m_DashKeyLock = true;
+                    }
+                }
+                else
+                {
+                    m_DashKeyLock = false;
+                }
+
+                //Update Dash Counter
+                if (currentNumberOfDashes < maxNumberOfDashes)
+                {
+                    currentNumberOfDashes += Time.deltaTime / TimeToRefillDash;
+                    if (currentNumberOfDashes >= maxNumberOfDashes)
+                    {
+                        currentNumberOfDashes = maxNumberOfDashes;
+                    }
+                }
             }
 
 
@@ -78,7 +113,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public Camera cam;
         public Transform cameraHolderTransform;
-        public MovementSettings movementSettings = new MovementSettings();
+        public TitanMovementSettings movementSettings = new TitanMovementSettings();
         public MouseLook mouseLook = new MouseLook();
         public AdvancedSettings advancedSettings = new AdvancedSettings();
         [Header("SFX")]
@@ -105,6 +140,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             get { return m_IsGrounded; }
         }
+
+        public bool Dashing
+        {
+            get { return movementSettings.m_Dashing; }
+        }
         public bool Running
         {
             get
@@ -127,6 +167,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void Update()
         {
             RotateView();
+
             movementSettings.UpdateInput();
         }
 
@@ -136,6 +177,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             GroundCheck();
             Vector2 input = GetInput();
             float downVelocity = 0;
+
+
 
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
             {
@@ -153,6 +196,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 Vector3 desiredMove = cam.transform.forward * input.y + cam.transform.right * input.x;
                 desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
 
+                if (movementSettings.currentNumberOfDashes > 1 && movementSettings.m_Dash)
+                {
+                    m_RigidBody.AddForce(desiredMove * movementSettings.DashForce, ForceMode.Impulse);
+                    movementSettings.currentNumberOfDashes--;
+                    movementSettings.m_Dash = false;
+                    movementSettings.m_Dashing = true;
+                    movementSettings.m_DashTimer += movementSettings.DashDuration;
+                }
+
 
                 desiredMove = desiredMove * TargetSpeed;
 
@@ -162,6 +214,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.AddForce(desiredMove * SlopeMultiplier(), ForceMode.Impulse);
                 }
             }
+
+
+            //Update DashTimer 
+            if (movementSettings.m_DashTimer > 0)
+            {
+                movementSettings.m_DashTimer -= Time.fixedDeltaTime;
+            }
+            else
+            {
+                movementSettings.m_DashTimer = 0;
+                movementSettings.m_Dashing = false;
+            }
+
 
 
             if (m_IsGrounded)
@@ -190,6 +255,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 //Add gravity effect
                 m_RigidBody.velocity += Vector3.up * downVelocity;
             }
+            // reset the dash flag 
+            movementSettings.m_Dash = false;
         }
 
         private float SlopeMultiplier()
