@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72a2de0e36708f345aa5a267d5d75ca6, type: 3}
-  m_Name: Default Heavy Weapon
+  m_Name: RocketLauncher
   m_EditorClassIdentifier: 
-  weaponName: weapon
+  weaponName: Archer
   damagePerBullet: 4
   fireMode: 1
-  fireRate: 1
-  ammoCount: 6
+  fireRate: 0.5
+  ammoCount: 1
   range: 50
   _SFXList:
     cocking: {fileID: 0}
@@ -24,5 +24,20 @@ MonoBehaviour:
     reloading: {fileID: 8300000, guid: 3dd5508b7df6e2d4c985f6b1ff4bb9a8, type: 3}
     idle: {fileID: 0}
   shootingType: 0
-  weaponProjectile: {fileID: 5062945625042595080, guid: f9a3f33985e05d848a8e0c587f883811,
+  weaponProjectilePrefab: {fileID: 2155128074898281050, guid: c03c41a42c684c1469808162fe4bffa2,
     type: 3}
+  projectile:
+    projectileType: 0
+    flyingSpeed: 11
+    maxFlyingDistance: 50
+    damage: 150
+    damangeRange: 4
+    explosiveForce: 20
+    hitMask:
+      serializedVersion: 2
+      m_Bits: 15360
+    _GFXPrefab: {fileID: 0}
+    _ExplosionVFXPrefab: {fileID: 0}
+    _FlyingVFXPrefab: {fileID: 0}
+    _FlyingSFX: {fileID: 8300000, guid: 9572219d09071c842985deda53cb858f, type: 3}
+    _ExplosionSFX: {fileID: 8300000, guid: c9d0e793c7994df4e8a84eb208938919, type: 3}

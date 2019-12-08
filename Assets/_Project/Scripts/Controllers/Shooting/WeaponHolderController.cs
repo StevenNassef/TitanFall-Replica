@@ -8,9 +8,13 @@ public class WeaponHolderController : MonoBehaviour
     private bool switchButtonLock = false;
     private List<GameObject> currentWeapons;
     int currentWeaponIndex = 0;
+    private CharacterStatsHandler statsHandler;
+    public delegate void OnWeaponHolderEventArgs(ObjectType type);
+    public event OnWeaponHolderEventArgs OnKillingEnemy;
 
     void Start()
     {
+        statsHandler = GetComponentInParent<CharacterStatsHandler>();
         InitializeWeapons();
     }
     void Update()
@@ -26,6 +30,14 @@ public class WeaponHolderController : MonoBehaviour
         else
         {
             switchButtonLock = false;
+        }
+    }
+
+    public void EnemyKilled(ObjectType type)
+    {
+        if(OnKillingEnemy != null)
+        {
+            OnKillingEnemy.Invoke(type);
         }
     }
 

@@ -9,6 +9,7 @@ public class ProjectileController : MonoBehaviour
 {
     private AudioSource audioSource;
     private Rigidbody body;
+    private WeaponHolderController weaponHolder;
     [SerializeField] private WeaponProjectile projectile;
     [SerializeField] private GameObject projectileGFX;
     [SerializeField] private GameObject explisionEffect;
@@ -28,7 +29,6 @@ public class ProjectileController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         UpdateRotation();
@@ -50,18 +50,24 @@ public class ProjectileController : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(body.velocity.normalized);
         }
+        //TODO : add a distance or time limit to destroy the object
     }
 
     [ButtonMethod]
+    //This method is for testing porpses only NEVER USE IT in the actual Implementation!
     private void Fire()
     {
-        Fire(transform.forward);
+        Fire(transform.forward, null, this.projectile);
     }
-    public void Fire(Vector3 direction)
+    public void Fire(Vector3 direction, WeaponHolderController weaponHolder, WeaponProjectile projectile)
     {
         if (fired)
             return;
 
+        //Set the current weaponHolder to the weaponHolder of the Weapon
+        //This to able to notify the characterstatshandler when an enemy is killed
+        this.weaponHolder = weaponHolder;
+        this.projectile = projectile;
         // make flying effect
         flyEffect.SetActive(true);
 
@@ -95,12 +101,12 @@ public class ProjectileController : MonoBehaviour
             foreach (Collider collider in colliders)
             {
                 //Deal damage to the object if it has a damage handler component
-                DamageHandler damageHandler = collider.gameObject.GetComponent<DamageHandler>();
-                if (damageHandler != null)
+                StatsHandler statsHandler = collider.gameObject.GetComponent<StatsHandler>();
+                if (statsHandler != null)
                 {
                     ObjectType type;
                     //if the object the projectile damaged was killed or destroyed, TakeDamage will return true
-                    if(damageHandler.TakeDamage(projectile.Damage, out type))
+                    if (statsHandler.TakeDamage(projectile.Damage, out type))
                     {
                         //Call RewardHandler
                         KillRewardHandler(type);
@@ -120,8 +126,16 @@ public class ProjectileController : MonoBehaviour
 
     protected void KillRewardHandler(ObjectType type)
     {
-        //TODO Finish this
+        // TODO: this is the same as the one in BasicWeaponController , Find a solution
         Debug.Log(type);
+        if (weaponHolder != null)
+        {
+            weaponHolder.EnemyKilled(type);
+        }
+        else
+        {
+            Debug.LogError("No WeaponHolder Found");
+        }
     }
 
     protected void PlayFlyingSFX()

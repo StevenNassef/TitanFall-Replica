@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 862519094977729439}
   - component: {fileID: 577392533465642837}
   - component: {fileID: 6932328790920428265}
+  - component: {fileID: 7598946845041007082}
   m_Layer: 0
   m_Name: fr_dstr_building_4
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7598946845041007082
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785973967253193582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3568542861350878822, guid: 121e8dab66f515045a8980571ae94080, type: 3}

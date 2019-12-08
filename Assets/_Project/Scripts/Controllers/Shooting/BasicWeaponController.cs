@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Animator))]
 public class BasicWeaponController : MonoBehaviour
 {
     [SerializeField] protected Weapon weapon;
+    [SerializeField] private LayerMask hitmask;
+    [SerializeField] private Transform barrelOpening;
     protected Animator weaponAnimator;
     [Header("SFX")]
     protected AudioSource audioSource;
@@ -13,10 +16,11 @@ public class BasicWeaponController : MonoBehaviour
     protected WeaponState previousState;
     protected int currentAmmo;
     protected bool fire, fireLock, fireWait, reload, reloadLock, currentlyAiming, previouslyAiming;
-
+    protected WeaponHolderController weaponHolder;
     protected float timeBetweenBullets = 1;
     protected Vector3 screenCenter;
     protected float lastDisableTime;
+    private Camera fpsCamera;
     protected void Awake()
     {
         timeBetweenBullets = 1 / weapon.FireRate;
@@ -24,10 +28,12 @@ public class BasicWeaponController : MonoBehaviour
         screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
         audioSource = GetComponent<AudioSource>();
         weaponAnimator = GetComponent<Animator>();
+        weaponHolder = GetComponentInParent<WeaponHolderController>();
     }
     protected virtual void Start()
     {
-
+        //TODO make this access the player controller instead.
+        fpsCamera = RigidbodyFirstPersonController.instance.cam;
     }
 
     protected void FixedUpdate()
@@ -75,7 +81,7 @@ public class BasicWeaponController : MonoBehaviour
             StartCoroutine(AutomaticFire());
         }
 
-        if(currentlyAiming != previouslyAiming)
+        if (currentlyAiming != previouslyAiming)
         {
             weaponAnimator.SetBool("Aim", currentlyAiming);
         }
@@ -84,13 +90,66 @@ public class BasicWeaponController : MonoBehaviour
     {
         // UpdateAnimator();
     }
+    protected void KillRewardHandler(ObjectType type)
+    {
+        Debug.Log(type);
+        if (weaponHolder != null)
+        {
+            weaponHolder.EnemyKilled(type);
+        }
+        else
+        {
+            Debug.LogError("NO WeaponHolder Found!");
+        }
+    }
 
     protected virtual void Shoot()
     {
-        Debug.Log("Fire!");
+        // Debug.Log("Fire!");
         reloadLock = false;
         currentAmmo--;
         weaponAnimator.SetTrigger("Shoot");
+        switch (weapon.ShootingType)
+        {
+            case WeaponShootingType.Projectile:
+                ShootProjectile();
+                break;
+            case WeaponShootingType.RayCast:
+                ShootRayCast();
+                break;
+            default:
+                break;
+        }
+    }
+    protected virtual void ShootProjectile()
+    {
+        Ray ray = fpsCamera.ScreenPointToRay(screenCenter);
+        // Debug.Log(ray.direction);
+        GameObject proj = Instantiate(weapon.ProjectilePrefab, barrelOpening.position, Quaternion.LookRotation(ray.direction));
+        proj.GetComponent<ProjectileController>().Fire(ray.direction, weaponHolder, weapon.Projectile);
+
+    }
+    protected virtual void ShootRayCast()
+    {
+        Ray ray = fpsCamera.ScreenPointToRay(screenCenter);
+        RaycastHit hitInfo;
+        Debug.DrawRay(ray.origin, ray.direction * weapon.Range, Color.red, 0.1f);
+        if (Physics.Raycast(ray, out hitInfo, weapon.Range, hitmask))
+        {
+            StatsHandler handler = hitInfo.collider.GetComponent<StatsHandler>();
+
+            if (handler)
+            {
+                //TODO add a parameter to deal damage to certain objects only
+                ObjectType type;
+                if (handler.TakeDamage(weapon.Damage, out type))
+                {
+                    KillRewardHandler(type);
+                }
+            }
+
+            //TODO : Apply Force on objects with rigidbody component
+        }
     }
     protected virtual void Reload()
     {
