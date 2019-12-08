@@ -22,6 +22,7 @@ public class PilotSounds : MonoBehaviour
         effect.GetComponent<AudioSource>().Play();
     }
 
+    [ButtonMethod]
     void playWalking(){
         backGround.GetComponent<AudioSource>().clip = walking;
         backGround.GetComponent<AudioSource>().Play();
