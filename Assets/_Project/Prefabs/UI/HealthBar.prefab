@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01727dd432139bb49b9d906c6bdb0d3c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0eaec6eb8897f549af664a6683debd3, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947030469623087927}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -209,11 +209,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Title: 
-  TitleColor: {r: 0, g: 0, b: 0, a: 1}
+  TitleColor: {r: 1, g: 1, b: 1, a: 1}
   TitleFont: {fileID: 12800000, guid: c9f6d0e7bc8541498c9a4799ba184ede, type: 3}
   BarColor: {r: 0, g: 0.6862745, b: 1, a: 1}
   BarBackGroundColor: {r: 0, g: 0, b: 0, a: 1}
-  BarBackGroundSprite: {fileID: 21300000, guid: 01727dd432139bb49b9d906c6bdb0d3c,
+  BarBackGroundSprite: {fileID: 21300000, guid: d0eaec6eb8897f549af664a6683debd3,
     type: 3}
   Alert: 20
   BarAlertColor: {r: 0, g: 0, b: 0, a: 0}
@@ -342,7 +342,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947492074643396341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -759.55304}
+  m_LocalPosition: {x: 0, y: 0, z: -475.6599}
   m_LocalScale: {x: 16.397299, y: 16.397287, z: 16.397287}
   m_Children: []
   m_Father: {fileID: 1026626759468899327}
@@ -350,7 +350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38.81095, y: -1250.5585}
+  m_AnchoredPosition: {x: -16.908484, y: -819.6892}
   m_SizeDelta: {x: 2021, y: 482}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1023983752827581935
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01727dd432139bb49b9d906c6bdb0d3c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0eaec6eb8897f549af664a6683debd3, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
