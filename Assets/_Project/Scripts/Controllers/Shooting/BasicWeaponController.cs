@@ -9,6 +9,7 @@ public class BasicWeaponController : MonoBehaviour
     [SerializeField] protected Weapon weapon;
     [SerializeField] private LayerMask hitmask;
     [SerializeField] private Transform barrelOpening;
+    [SerializeField] private GameObject mazzleFlash;
     protected Animator weaponAnimator;
     [Header("SFX")]
     protected AudioSource audioSource;
@@ -109,6 +110,11 @@ public class BasicWeaponController : MonoBehaviour
         reloadLock = false;
         currentAmmo--;
         weaponAnimator.SetTrigger("Shoot");
+
+        //Play The MazzleFlash
+        mazzleFlash.SetActive(false);
+        mazzleFlash.SetActive(true);
+
         switch (weapon.ShootingType)
         {
             case WeaponShootingType.Projectile:
