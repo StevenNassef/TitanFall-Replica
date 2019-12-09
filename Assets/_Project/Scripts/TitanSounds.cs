@@ -26,6 +26,12 @@ public class TitanSounds : MonoBehaviour
     private List<AudioClip> walking;
     private List<AudioClip> dash;
 
+    private AudioClip firePlay;
+    private AudioClip fireEnd;
+    private AudioClip fire;
+    private AudioClip reload;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +45,11 @@ public class TitanSounds : MonoBehaviour
         criticalDamage = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/CriticalDamage"));
         walking = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + "Walk"));
         dash = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + "Dash"));
+
+        fire = Resources.Load<AudioClip>(titanFolder + titanName + "/fire");
+        firePlay = Resources.Load<AudioClip>(titanFolder + titanName + "/firePlay");
+        fireEnd = Resources.Load<AudioClip>(titanFolder + titanName + "/fireEnd");
+        reload = Resources.Load<AudioClip>(titanFolder + titanName + "/reload");
     }
 
     [ButtonMethod]
@@ -80,13 +91,59 @@ public class TitanSounds : MonoBehaviour
     [ButtonMethod]
     void playWalking() {
         background.GetComponent<AudioSource>().clip = walking.GetRandom();
+        background.GetComponent<AudioSource>().loop = true;
         background.GetComponent<AudioSource>().Play();
     }
 
     [ButtonMethod]
     void playDash() {
+        background.GetComponent<AudioSource>().loop = false;
         background.GetComponent<AudioSource>().clip = dash.GetRandom();
         background.GetComponent<AudioSource>().Play();
+    }
+
+    [ButtonMethod]
+    void playFire() {
+        StartCoroutine(fireCoroutine());
+    }
+
+    IEnumerator fireCoroutine()
+    {
+        effect.GetComponent<AudioSource>().loop = false;
+        effect.GetComponent<AudioSource>().clip = firePlay;
+        effect.GetComponent<AudioSource>().Play();
+
+        yield return new WaitForSeconds(firePlay.length);
+        
+        effect.GetComponent<AudioSource>().clip = fire;
+        effect.GetComponent<AudioSource>().loop = true;
+        effect.GetComponent<AudioSource>().Play();
+    }
+
+    [ButtonMethod]
+    void playReload() {
+        effect.GetComponent<AudioSource>().loop = false;
+        effect.GetComponent<AudioSource>().clip = reload;
+        effect.GetComponent<AudioSource>().Play();
+    }
+
+    [ButtonMethod]
+    void stopFire(){
+        effect.GetComponent<AudioSource>().clip = fireEnd;
+        effect.GetComponent<AudioSource>().loop = false;
+        effect.GetComponent<AudioSource>().Play();
+    }
+
+    [ButtonMethod]
+    void stopBackground(){
+        background.GetComponent<AudioSource>().loop = false;
+        background.GetComponent<AudioSource>().Stop();
+    }
+
+    [ButtonMethod]
+    void stopEffect(){
+        effect.GetComponent<AudioSource>().loop = false;
+        effect.GetComponent<AudioSource>().Stop();
     }
 
 }

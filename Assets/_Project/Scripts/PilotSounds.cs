@@ -4,7 +4,7 @@ using UnityEngine;
 using MyBox;
 public class PilotSounds : MonoBehaviour
 {
-    public GameObject backGround;
+    public GameObject background;
     public GameObject effect;
     
     private AudioClip walking;
@@ -28,9 +28,9 @@ public class PilotSounds : MonoBehaviour
 
     [ButtonMethod]
     void playWalking(){
-        backGround.GetComponent<AudioSource>().clip = walking;
-        backGround.GetComponent<AudioSource>().loop = true;
-        backGround.GetComponent<AudioSource>().Play();
+        background.GetComponent<AudioSource>().clip = walking;
+        background.GetComponent<AudioSource>().loop = true;
+        background.GetComponent<AudioSource>().Play();
     }
 
     [ButtonMethod]
@@ -41,7 +41,7 @@ public class PilotSounds : MonoBehaviour
 
     [ButtonMethod]
     void stopBackground(){
-        backGround.GetComponent<AudioSource>().loop = false;
-        backGround.GetComponent<AudioSource>().Stop();
+        background.GetComponent<AudioSource>().loop = false;
+        background.GetComponent<AudioSource>().Stop();
     }
 }
