@@ -30,7 +30,7 @@ public class TitanSounds : MonoBehaviour
     private AudioClip fireEnd;
     private AudioClip fire;
     private AudioClip reload;
-
+    private AudioClip sprint;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +43,7 @@ public class TitanSounds : MonoBehaviour
         eject = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/Eject"));
         defence = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/Defence"));
         criticalDamage = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + titanName + "/CriticalDamage"));
+
         walking = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + "Walk"));
         dash = new List<AudioClip>(Resources.LoadAll<AudioClip>(titanFolder + "Dash"));
 
@@ -50,6 +51,8 @@ public class TitanSounds : MonoBehaviour
         firePlay = Resources.Load<AudioClip>(titanFolder + titanName + "/firePlay");
         fireEnd = Resources.Load<AudioClip>(titanFolder + titanName + "/fireEnd");
         reload = Resources.Load<AudioClip>(titanFolder + titanName + "/reload");
+        
+        sprint = Resources.Load<AudioClip>(titanFolder + "sprint");
     }
 
     [ButtonMethod]
@@ -91,6 +94,13 @@ public class TitanSounds : MonoBehaviour
     [ButtonMethod]
     void playWalking() {
         background.GetComponent<AudioSource>().clip = walking.GetRandom();
+        background.GetComponent<AudioSource>().loop = true;
+        background.GetComponent<AudioSource>().Play();
+    }
+
+    [ButtonMethod]
+    void playSprint() {
+        background.GetComponent<AudioSource>().clip = sprint;
         background.GetComponent<AudioSource>().loop = true;
         background.GetComponent<AudioSource>().Play();
     }
