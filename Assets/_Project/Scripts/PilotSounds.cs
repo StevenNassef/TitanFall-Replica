@@ -4,11 +4,12 @@ using UnityEngine;
 using MyBox;
 public class PilotSounds : MonoBehaviour
 {
-    public GameObject backGround;
+    public GameObject background;
     public GameObject effect;
     
     private AudioClip walking;
     private AudioClip kill;
+    private AudioClip airBorn;
     private List<AudioClip> hit;
 
     void Start()
@@ -17,6 +18,7 @@ public class PilotSounds : MonoBehaviour
 
         kill = Resources.Load<AudioClip>(pilotFolder + "PlayerPilot/miscsounds_pilot kill");
         walking = Resources.Load<AudioClip>(pilotFolder + "PilotFullWalk");
+        airBorn = Resources.Load<AudioClip>(pilotFolder + "airBorn");
         hit = new List<AudioClip>(Resources.LoadAll<AudioClip>(pilotFolder + "Hit"));
     }
 
@@ -28,9 +30,16 @@ public class PilotSounds : MonoBehaviour
 
     [ButtonMethod]
     void playWalking(){
-        backGround.GetComponent<AudioSource>().clip = walking;
-        backGround.GetComponent<AudioSource>().loop = true;
-        backGround.GetComponent<AudioSource>().Play();
+        background.GetComponent<AudioSource>().clip = walking;
+        background.GetComponent<AudioSource>().loop = true;
+        background.GetComponent<AudioSource>().Play();
+    }
+
+    [ButtonMethod]
+    void playAirBorn(){
+        background.GetComponent<AudioSource>().clip = airBorn;
+        background.GetComponent<AudioSource>().loop = true;
+        background.GetComponent<AudioSource>().Play();
     }
 
     [ButtonMethod]
@@ -41,7 +50,7 @@ public class PilotSounds : MonoBehaviour
 
     [ButtonMethod]
     void stopBackground(){
-        backGround.GetComponent<AudioSource>().loop = false;
-        backGround.GetComponent<AudioSource>().Stop();
+        background.GetComponent<AudioSource>().loop = false;
+        background.GetComponent<AudioSource>().Stop();
     }
 }

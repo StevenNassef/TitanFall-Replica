@@ -299,5 +299,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688154c467c272441912753f27c94246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backGround: {fileID: 281911435633754189}
+  background: {fileID: 0}
   effect: {fileID: 281911436664211721}
