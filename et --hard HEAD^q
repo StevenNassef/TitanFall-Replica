@@ -1,0 +1,1131 @@
+[33mcommit b2a8f6ce6d324bdd8636be2a582286830dda11ce[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Tue Dec 10 00:48:01 2019 +0200
+
+    Create gameover scene
+
+[33mcommit 171567d40fe8dd7975bc153285c19c0a367f0045[m
+Merge: 141abf8 1abd406
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Tue Dec 10 00:16:43 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 141abf8d3f97dab8609c4df5f86a03d16a5e3e5b[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Tue Dec 10 00:07:42 2019 +0200
+
+    Loadout added in mainmenu -- to be enhanced later + add icon field in weapon scriptable object
+
+[33mcommit 1abd406b3610bd75d52e0fce6cbbc8c614a7b59e[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Dec 9 22:32:14 2019 +0200
+
+    1- TextMeshPro
+
+[33mcommit 2e240c266b95a5b49cce5cf83a57c5fc60a1e268[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Dec 9 22:01:29 2019 +0200
+
+    1- merging
+
+[33mcommit 6e0c194c1b7a77241f1c88cbeed6831792297e83[m
+Merge: ad92e28 73d378e
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Dec 9 22:01:18 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 73d378efea71c0db73f765b87c77a85240556f51[m
+Merge: a2f3c30 f3b3a31
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Mon Dec 9 21:35:49 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit a2f3c30e25cd9b81d3fa1f7276b3c7136833c923[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Mon Dec 9 21:35:12 2019 +0200
+
+    Fixing bugs in the main scene
+
+[33mcommit f3b3a318a27dc30929ee42d3f5c36334e65afee0[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 21:22:13 2019 +0200
+
+    staging unstaged XR unknown to me
+
+[33mcommit 9ab0f70ff5fc850d79185497215a6d3b0748d462[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 20:08:56 2019 +0200
+
+    Continue merge
+
+[33mcommit ad92e2845eea37ed98ba06d35294e85a9f548b08[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Dec 9 21:09:23 2019 +0200
+
+    1- Small Weapon fixes
+
+[33mcommit 7f4f68e7f6a2d0ce3f62f149d2ddbc422941bafc[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Dec 9 20:09:12 2019 +0200
+
+    1- Initial Projectile Trail
+
+[33mcommit 91ab1d4ad1db2cffbb690c5f9faaeadc902d8968[m
+Merge: 2a0d28a 7f8ec39
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 20:08:02 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 2a0d28ae44eb5184b0e25d6036b0984c22459675[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 20:05:54 2019 +0200
+
+    commit meta audio resources
+
+[33mcommit 2e8de6ca6fa045b34bbcb80e303e0fe34469af4f[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 20:04:39 2019 +0200
+
+    Creating Mainmenu scene with its controller
+
+[33mcommit 89af79d8095b53bfc7b0c0de58db944dd70ade3b[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Dec 9 18:15:27 2019 +0200
+
+    1- Added Particla Pack
+
+[33mcommit 7f8ec3927aea6dc6664d64409f1822f49c00479a[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Mon Dec 9 15:20:22 2019 +0200
+
+    Adding farm house to the scene
+
+[33mcommit b4a72b2fd48c0cedabb783c006de7e69d2b5c250[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Mon Dec 9 15:01:56 2019 +0200
+
+    Adding some fences and editing in the terrain
+
+[33mcommit 5ee312e1cdcc41be24c417ebe42348a86a13ed6d[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Mon Dec 9 14:42:34 2019 +0200
+
+    Adding grass layer to the terrains
+
+[33mcommit bb856db3f70767d01d3542f9dfcec2d6563d1646[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Mon Dec 9 14:28:37 2019 +0200
+
+    Adding the two need terrains to the mainScene
+
+[33mcommit a700ba7d812a6883b0ebdcc5c7a1759a673b20e2[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Dec 9 12:42:30 2019 +0200
+
+    1- Added Prototyping_VFX Scene
+
+[33mcommit 4a2049374e3bda6f9f2355d88e617b513c9de1a4[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Dec 9 12:39:52 2019 +0200
+
+    1- Merging
+
+[33mcommit f311a1f2d20d1ad269409234d63ce2c7b3f69987[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Mon Dec 9 05:25:29 2019 +0200
+
+    Add titan sprint sound
+
+[33mcommit 948a9c7ecd07c3a0513222a1f7933f61d954ca81[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Mon Dec 9 04:50:18 2019 +0200
+
+    Modify soundScene
+
+[33mcommit ce19a9ea2ae237c1d05d7136dd42d7bd6b554fb8[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Mon Dec 9 04:49:30 2019 +0200
+
+    Add legion coreFire Sounds
+
+[33mcommit afdcbe4fb388e99fb8414d6139796c7f9565734a[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Mon Dec 9 04:27:05 2019 +0200
+
+    Add sound of airborn
+
+[33mcommit 5da774b730db69f68358a90f17718b21cbd4b30d[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Mon Dec 9 03:54:17 2019 +0200
+
+    Add some extra sounds
+
+[33mcommit c3ed37a0ddb04ae78df14eb65f72dc0ecbae4f56[m
+Merge: 141655e 55b7cd7
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 01:29:33 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 141655e7fed3df05a4d75d9df4021652a7df523a[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 01:29:16 2019 +0200
+
+    miscsounds_legin added somehow; could not be discarded!
+
+[33mcommit 2cfb44621819b2b10703946c5301b864df5f20af[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 01:28:06 2019 +0200
+
+    deleting building.meta
+
+[33mcommit ee711ab12a74c8cfaed21833d3d122c060f8b21f[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 01:18:28 2019 +0200
+
+    Remove building assets not used and big sized
+
+[33mcommit 767815dfce363f79cc21148906bb992149034f70[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 01:15:15 2019 +0200
+
+    Updating hp ui controller + progressing in Titan UI
+
+[33mcommit 3c40636561572f9c19100744382ae1952572ad99[m
+Merge: b1f497b de8b8df
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 00:24:25 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit b1f497b71e27be6ef98d10caeb0d85d7b746a7d1[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 00:24:17 2019 +0200
+
+    add .gitattributes for git-lfs
+
+[33mcommit 55b7cd7058674b60e764ac88892317a6fc693225[m
+Merge: 5f9a1c6 de8b8df
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Mon Dec 9 00:23:11 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 5f9a1c6b0394ac187f9e3bdb2ff186228d3d0514[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Mon Dec 9 00:22:15 2019 +0200
+
+    Add extra sounds
+
+[33mcommit 90921c813b8be4f9c7f421ecd4db2879ea543c6f[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Mon Dec 9 00:19:21 2019 +0200
+
+    Updating hp ui controller + progressing in Titan UI
+
+[33mcommit de8b8dfefb53f0b88d4cac0fba273556818b694a[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Mon Dec 9 00:16:14 2019 +0200
+
+    Adding fence arroud the area
+
+[33mcommit 4d739a29f81ee42d25c6ec1639ed3a454706250b[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Mon Dec 9 00:02:15 2019 +0200
+
+    Adding some hungers in the mainScene
+
+[33mcommit 3799771d8e25afc6d36828917f750e5b9be0daf2[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Sun Dec 8 23:43:19 2019 +0200
+
+    Adding a wall to the mainScene to seperate the two areas
+
+[33mcommit 60ec54352f743869ff84e4d127c2d08df75d9b8e[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Sun Dec 8 23:31:45 2019 +0200
+
+    Update HP bar + TitanUI init
+
+[33mcommit 6b8c9260e8fa231cf8b76bbfedb869d586ea3cf9[m
+Merge: e479519 d6e12d8
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Sun Dec 8 23:08:45 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit e4795194fca1f87ead2c50ceef0c2edd481b4584[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Sun Dec 8 23:07:47 2019 +0200
+
+    PilotUI with controllers init implemented
+
+[33mcommit 408535741c47e340e3c3fa4f7de6f954dcb0cafe[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Sun Dec 8 23:04:48 2019 +0200
+
+    Adding some a street with pavement
+
+[33mcommit d6e12d8662e348ecf32873a4330b28c0d2ca6f4d[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sun Dec 8 20:47:50 2019 +0200
+
+    Start adding elements of the seaport
+
+[33mcommit 14aea85222e0a9cae6902b3c4f9efe5825313cf0[m
+Merge: 61a64ce f5a3014
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sun Dec 8 19:58:38 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 61a64ce0f61c1e35e28efb165494f39a7cef194c[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sun Dec 8 19:58:11 2019 +0200
+
+    Modify MainScene
+
+[33mcommit f5a301442d87ddeb29672e61c43d9d53416093df[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Dec 8 19:26:18 2019 +0200
+
+    1- Revert the RocketLauncher Values
+
+[33mcommit 8d2d171bc32e1d677415f990fe88698467750234[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Dec 8 19:18:32 2019 +0200
+
+    1- Created a Sheild for the Titans
+
+[33mcommit 58070f4662c3d40032b650f615db8df725e0e842[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Dec 8 17:46:55 2019 +0200
+
+    1- Added Simple Water
+
+[33mcommit a7670ac8475341f82336a762400d1614da4c4495[m
+Merge: 108fd58 c0cf414
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Dec 8 16:15:32 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 108fd58360ab4fa01b3aa3ed4b4559c809b3ce51[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Dec 8 16:15:26 2019 +0200
+
+    1- Updated Weapon System
+
+[33mcommit c0cf414413632a5c00e01464e312ac3dc6a558e9[m
+Merge: 66ef35e 5fc6367
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Sun Dec 8 13:27:11 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 37f290d039911f9f33ef4d74c4dae9f4ac76bdca[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Dec 8 13:11:35 2019 +0200
+
+    1- Initial Core Update Logic
+
+[33mcommit 66ef35ed13c587e61eb2f726748ad4bc105b07ea[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Sun Dec 8 12:08:42 2019 +0200
+
+    Adding pilot sound object as a prefab
+
+[33mcommit 5fc6367f6deb4db04080cbe59841c00e0792c72e[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sun Dec 8 00:28:05 2019 +0200
+
+    Modify MainScene
+
+[33mcommit 8a0fe6e3d0f7e58a62bdcfcbee3ab4b209a74ec3[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sun Dec 8 00:13:06 2019 +0200
+
+    Modify scale of MainScene
+
+[33mcommit 573439b020e8cfdeed21474a3352fc0cea7c8ad2[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 23:47:07 2019 +0200
+
+    1- Updated Player Prefab
+    2- Updated Project Files
+
+[33mcommit d7deaa60f6d8a8b79dca41a3abb1d913ff7a9657[m
+Merge: 2f6c209 f025cc6
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 23:32:40 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 2f6c209cd012b8c531d28f9e2e28d577253c5260[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 23:32:23 2019 +0200
+
+    Modify main scene
+
+[33mcommit 6c1b909f6c1393876f1a62a135825433be6ce7af[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 22:45:41 2019 +0200
+
+    1- Changed Folder name
+
+[33mcommit 341471ec13922a4c152ce76a3b60cbaa92b43e75[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 22:39:26 2019 +0200
+
+    1- Changed the name of DamageHandler to StatsHandler
+
+[33mcommit f025cc6cb68ad6d93a2a48578a550e9d61bf4022[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 22:10:40 2019 +0200
+
+    1- Updated Dash Force Value
+    2- Created Initial Player_titan prefab
+
+[33mcommit b6506a0970669060ef6c4add2283f0e884541525[m
+Merge: 9a43f81 3a82f51
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 22:02:44 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 9a43f81ea814658fa5c12c1595c2f9b4c108fe7c[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 22:02:26 2019 +0200
+
+    1- Implemented Dashing for Titans
+
+[33mcommit 3a82f510de988e00b26328ac4f928a8129aec51d[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 21:56:31 2019 +0200
+
+    Modify main scene
+
+[33mcommit 65d9593fb5683737a00867018cba78dfa6bb0cf1[m
+Merge: e21ee94 ef96139
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Sat Dec 7 19:31:18 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit e21ee94d9ce9d29039737c7c477a7580a76beb53[m
+Merge: 9daabcc 7466093
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Sat Dec 7 19:29:45 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit ef96139bea28a7cb71d17bc270ccbef59bb5fb2d[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 19:24:53 2019 +0200
+
+    1- Updated Player Prefab
+    2- Incresed the height of the player a bit
+    3- Created UI Prototyping Scene
+
+[33mcommit 9daabccb33869b23241ef53a29eb5e1ee2f32755[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Sat Dec 7 19:11:32 2019 +0200
+
+    adding walking and kill sounds to pilot script
+
+[33mcommit 7466093e73a8fe3ec45199fabeddf9aeca354e15[m
+Merge: c01eb0b fa4577c
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 18:57:14 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit c01eb0b2e35fc3abd83b9ff48ce117eff7517f04[m
+Merge: af13c10 993aeb1
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 18:42:33 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit af13c108279a97cf4ec93fe94234be60de30eee3[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 18:42:06 2019 +0200
+
+    Edit the main scene
+
+[33mcommit fa4577cb8765287fdb16f002e3657dfcbc175223[m
+Merge: de66910 993aeb1
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Sat Dec 7 18:06:29 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit de6691083d597da70c59b56e3ac590789e0dd704[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Sat Dec 7 17:53:26 2019 +0200
+
+    Prototyping parkour basics done
+    
+    Setting a track to go through, however a lot of enhacements can be done
+
+[33mcommit 993aeb18e457a734359a89814cad280b11cf99e7[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Sat Dec 7 17:40:35 2019 +0200
+
+    moving the walking sounds to the titans folder
+
+[33mcommit ca271d338deccb5538dd113a9ded7f045ac6de11[m
+Merge: 17baa31 c605d15
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Sat Dec 7 17:38:47 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 17baa316aa8090b092116081db05040525148026[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Sat Dec 7 17:36:45 2019 +0200
+
+    Adding walking sound to the titans
+
+[33mcommit c605d15448e234e4b256bc4fc5991508a3c7e43b[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 16:10:04 2019 +0200
+
+    1- Added More Prefabs
+
+[33mcommit 4695f32c6c35dd71d69666e05af9c950df23097e[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 15:06:47 2019 +0200
+
+    1- Updated Prefabs
+
+[33mcommit cf56084dfe23215c63912bc153545afba2e29ae4[m
+Merge: 3267fd8 a79014d
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 14:28:31 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 3267fd8632da2eb581790b064880d4f945496c3a[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 14:28:25 2019 +0200
+
+    1- Added Church
+
+[33mcommit 3b53ad5ae90acc4d0c8275190528c75485bcca0e[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 14:14:51 2019 +0200
+
+    1- Added Houses Models
+
+[33mcommit a79014dcd37ec714ff4a17e31814d8e6edb54f5c[m
+Merge: 5c6221b 732fa34
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 13:28:37 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 5c6221bb5656cbd3dd633fe3d30ffe85b1fa5d85[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 13:28:00 2019 +0200
+
+    Move enum definition outside TitanSounds class so it could be accessible to other scripts
+
+[33mcommit 732fa3451cc549ecdf15b875d264c2f4eefbd122[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Sat Dec 7 11:37:40 2019 +0200
+
+    Extending the mainScene design
+
+[33mcommit 7550073c9bf930a5eea60863692908a744414f21[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 01:31:14 2019 +0200
+
+    Merging
+
+[33mcommit 1de263a31cac4cbcaa7a38c17432c20c0f8c9fd5[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 01:28:01 2019 +0200
+
+    Merging
+
+[33mcommit 4d5c214fd96d3deebe2e26f8bb93aacb0b85a02c[m
+Merge: 92ac90a b580a3d
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 01:27:14 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit b580a3d570601218c39cd709caa08de9a89e6313[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 01:19:49 2019 +0200
+
+    Change titanName to enum
+
+[33mcommit 92ac90a583ca0a6ea67ef0fb21ccbe2e6085a7ea[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 01:07:29 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit ad4e541204a3274db2c0e33c24089d2020cd4d02[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 00:43:48 2019 +0200
+
+    1- Fixing Some Materials
+
+[33mcommit f3c3bef0dc8b75f93ec0e7a9156b1d75f987e8d5[m
+Merge: b0b9320 2374dba
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 00:35:39 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 742901203be15605d9983278353394e1585281da[m
+Merge: 8e84c10 2374dba
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 00:35:23 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 2374dba458a0f2ad340dcd21f4616eec8b020364[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Sat Dec 7 00:31:32 2019 +0200
+
+    semi_init Prototyping_parkour
+
+[33mcommit 8e84c10b9c49c4247c758ce80f7dbfb2926533e8[m
+Merge: a9b1682 308c108
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Dec 7 00:30:49 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit b0b932032891400d744c6f487bc2cb5d2b09a7c0[m
+Merge: 8a985a9 308c108
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 00:29:29 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 308c10881efaf4847ff8ce3b9b5456837c9054ab[m
+Merge: 013d7c2 a955135
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Sat Dec 7 00:25:41 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 8a985a94ea3a870987585cd52a691ecf1f128892[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 00:22:37 2019 +0200
+
+    Add some folders metas to overcome the past conflict
+
+[33mcommit 013d7c2b054cf94a2d3f851f571aac02e6e3c7e4[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Sat Dec 7 00:22:06 2019 +0200
+
+    Init Prototyping_parkour scene
+
+[33mcommit 2d2508a9bb0d40cc0bbcb9a4b8f4eed6ad627464[m
+Merge: 8fc9319 a955135
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 00:18:22 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 8fc931936e6b1f85db0de104358d8aba712208ac[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Sat Dec 7 00:03:25 2019 +0200
+
+    Change name of titanSounds script
+
+[33mcommit a9fc98721b1c009652621445ee8561bb80b0ae45[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Fri Dec 6 23:58:26 2019 +0200
+
+    Add sounds into resources and add script and prefab for titanSounds
+
+[33mcommit a9b16820355d4243da9098671e6068d548be30dc[m
+Merge: e0a4ab1 a955135
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Fri Dec 6 23:49:48 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit a95513547b3bafc77cbc25da41af3ba3f737f9ce[m
+Merge: 5131ed4 1db8b7f
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Fri Dec 6 23:31:21 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 5131ed4559875aeac66c9c430efa2ba5a84fbc22[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Fri Dec 6 23:27:45 2019 +0200
+
+    Adding initial design of main level
+
+[33mcommit 1db8b7f048b85d2a4a3a336793ee45cf87759341[m
+Merge: da59ee2 b2ac298
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Fri Dec 6 23:05:10 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit da59ee21e30380c09505b0362111c1f0654ed3ef[m
+Author: Basem Rizk <basem.rizk@outlook.com>
+Date:   Fri Dec 6 22:58:55 2019 +0200
+
+    Init Prototyping_Parkour level
+    
+    Seems to be problem with external assets material
+
+[33mcommit e0a4ab17a3916ea17385b2087abe185bc153360f[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Fri Dec 6 21:48:20 2019 +0200
+
+    1- Basic Aiming Logic
+
+[33mcommit 4224361392f7e9059f7fc146a55b95ac70746dfc[m
+Author: mike13k <mikegeorge2012@gmail.com>
+Date:   Fri Dec 6 21:00:10 2019 +0200
+
+    Add some sound files for pilots, weapons, titans
+
+[33mcommit bf1e1967f09a5e0b6f68460c839072ebd1d92733[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Fri Dec 6 17:45:45 2019 +0200
+
+    1- Installed Cinemachine
+
+[33mcommit b2ac298cdbeafd01faf14074203327ee86952bc0[m
+Merge: 21ad14b 8140e37
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Fri Dec 6 17:34:54 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit 21ad14b956ac233e9405ea59cb1b6d67e3935b67[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Fri Dec 6 17:34:47 2019 +0200
+
+    1- Initial Titan Implementation
+
+[33mcommit 8140e377298348a6cf4910b920ebbe93101d0c26[m
+Merge: fbaa3ab 904df98
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Fri Dec 6 17:17:56 2019 +0200
+
+    Merge branch 'master' of https://github.com/StevenNassef/TitanFall-Replica
+
+[33mcommit fbaa3abd3e9bb6f243206a396f101aa44554a335[m
+Author: unknown <ibram.medhat2@gmail.com>
+Date:   Fri Dec 6 17:17:13 2019 +0200
+
+    merging
+
+[33mcommit 904df987a0aa15e74526b4a0aadd58662da05544[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Thu Dec 5 20:02:40 2019 +0200
+
+    1- Added PilotDamageHandler
+    with regen Health
+
+[33mcommit 28f8d290124b89798da4f37fce7bd92ba8baf987[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Thu Dec 5 14:16:44 2019 +0200
+
+    1- Updated DamageHandler with Events
+
+[33mcommit 5fbf8fd75d5a655115c100bd5877094e94be27c1[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Dec 4 14:45:54 2019 +0200
+
+    1- Minor Change in weapons
+
+[33mcommit 1ca7afa2c9234190bb7dd018c71b15663db71bb6[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Dec 3 22:07:02 2019 +0200
+
+    1- Now Weapons SFX are on the Scriptable Object itself
+
+[33mcommit b0eeaab19a1d6e9adb6d9c537df97980f2666a79[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Dec 3 19:46:00 2019 +0200
+
+    Added Rest of Projectile Sounds
+
+[33mcommit 833145077050c1e959be22e780ade44ae95c92fc[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Dec 3 19:14:07 2019 +0200
+
+    1- Added Rocket Laucncher Sounds
+
+[33mcommit 0ead11dd8571d60e21c6147f58adc36d6ac6f3fa[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Dec 3 18:59:18 2019 +0200
+
+    Package Update
+
+[33mcommit 67c0635bad35f4aac9f8c6ecefeece6cb5c628da[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Dec 3 18:31:12 2019 +0200
+
+    Updated Packages and Installed Github plugin
+
+[33mcommit 9adc98129542871f71aa7464a74a3e06a095403e[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Dec 3 17:02:37 2019 +0200
+
+    1- Testing Player Animations
+
+[33mcommit 094ae491cb2df8bf67b2df8c0795f1e18f6a16ea[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Nov 30 21:14:15 2019 +0200
+
+    1- Testing the new Pilot
+
+[33mcommit 30bb2b5a1c2a25cbfa88b57bae54285ae6a15e38[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Nov 30 01:56:16 2019 +0200
+
+    1- Minor
+
+[33mcommit 4c5eb0379951ec6c9742d3d6d7a543d7899c2a42[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Thu Nov 28 02:48:26 2019 +0200
+
+    changes to the forward rendrer
+
+[33mcommit 739dd2c33ae9a6a2b9f85aaf1931f7a725f8f154[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Thu Nov 28 02:48:17 2019 +0200
+
+    1- Now weapon holder properly follows the camera
+
+[33mcommit 999d33430d6df0ce93259be14b79b7ea2dff55c9[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Thu Nov 28 00:24:14 2019 +0200
+
+    1- Fixed the Forward Rendrer to show transparent parts of the guns
+
+[33mcommit 06d004c7ea8a6e27bfcb1ed43572048dd6428e71[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Thu Nov 28 00:19:11 2019 +0200
+
+    1- Added Rocket Launcher
+
+[33mcommit 47af905d66e65b775a247b8f21ac6990277424b8[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 23:53:24 2019 +0200
+
+    1- Minor
+
+[33mcommit 82e2b6785e4a432222daae1bb02899b6a5d7d39c[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 23:49:35 2019 +0200
+
+    1- Removing Some Warnings
+    2- Added Blend File
+
+[33mcommit 28c64d627068c76fc95ce4c9b3cfbc477c71d4ae[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 22:43:49 2019 +0200
+
+    1- Minor Scene Changes
+
+[33mcommit cf072d5bf1c6dea944ebae8d867da040756d63c6[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 22:41:24 2019 +0200
+
+    1- Added Rocket Launcher Model
+
+[33mcommit 7f960deba801d4e9c6564361c11e3c9f1ef4aeed[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 22:13:26 2019 +0200
+
+    1- Basic Projectile
+
+[33mcommit f57ac025f48e8327ba5f0ebfba0ef23c38cb35db[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 17:57:32 2019 +0200
+
+    1- Added MyBox Package
+    2- Added Initial Projectile Class
+
+[33mcommit bd1a06517b82b234c719c68be0965cd83f090d66[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 16:09:43 2019 +0200
+
+    1- [FIX] if you were to switch your weapon before its fire waiting time was finished, when you switch back to this weapon , it wouldn't fire (as the firewait bool was still set) , not this issue is fixed , by checking the time between the last time you used the weapon and the current time.
+
+[33mcommit e569b4e85c231f04e71bb9ce8dcfc7416cca0da8[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 15:57:52 2019 +0200
+
+    1- Added SFX to all Primary Weapons
+
+[33mcommit 6c7f03e3d957e6529154a65e24a6e2368d3d6a21[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 15:14:09 2019 +0200
+
+    1- imported Shotgun and Assault rifle SFX
+
+[33mcommit 37078d2bb250904579606a746a909f320bce098f[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 14:40:01 2019 +0200
+
+    1- Fixed Primary Weapons Animations
+
+[33mcommit 479c3ec2118994ad54a7e05798fa01f956405d4e[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 13:47:50 2019 +0200
+
+    1- Changed the model of the shotGUN
+
+[33mcommit 41d02c0bef7e4152d043c7847f97ff8e0fb2eb1e[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 13:22:10 2019 +0200
+
+    1- Added Snipper Riffle
+
+[33mcommit 554209af5121ae15cee71cf14b6ccd79495e6ac8[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 13:09:34 2019 +0200
+
+    1- Added Shotgun
+
+[33mcommit 9023afdc3f68eb7aedda3e95178f6557ba68bb9d[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 13:04:14 2019 +0200
+
+    1- Finished the Assault Riffle
+
+[33mcommit 969742f1f09e5681dac7245dcd49e1582f3f8484[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Wed Nov 27 12:45:04 2019 +0200
+
+    1- Created Primary Weapon Prefab
+
+[33mcommit 0de0abe349c2ee5069c968d9975c6f978dc39ecc[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Nov 26 23:19:31 2019 +0200
+
+    1- Created Primary Weapons Scriptable objects
+
+[33mcommit 1daa131194fbd4489ccee587f0ea3d206f25fb54[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Nov 26 22:07:11 2019 +0200
+
+    1- Basic Weapon Switch
+
+[33mcommit 73679aa5fefa579f353f7c510e6727020944d848[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Nov 26 13:54:39 2019 +0200
+
+    1- Added Weapon picking up animation
+
+[33mcommit 4e2c170acea74b938a47ac40b6aa90a0648020ea[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Nov 26 13:49:51 2019 +0200
+
+    made the weapon start with full Ammo
+
+[33mcommit a8b84aefec2945f83da835ba1cedda33682e88a7[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Nov 26 03:21:24 2019 +0200
+
+    Created Basic Weapon Prefab
+
+[33mcommit a15a5dd23b9a1f3558d302fbb51854e5b68d2789[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Nov 26 03:19:55 2019 +0200
+
+    1- Added Reload Functionality and reload Animation
+
+[33mcommit e6ff90dbe4e8652bd3e88905a770595e294ecdd6[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Nov 26 02:32:45 2019 +0200
+
+    1- Added CrossHair
+
+[33mcommit 48ed1432187b812bafffcc28df13c79a56058472[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Tue Nov 26 01:52:40 2019 +0200
+
+    1- Basic Weapon Mechanics
+
+[33mcommit 998b7c0521f3810e23b5dec2b31d231efd6af8af[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Nov 25 18:58:12 2019 +0200
+
+    1- Added LandSound when landing on Wall
+
+[33mcommit 1812085eca8a0c78482b326e6503161aa8ea54eb[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Nov 25 18:52:04 2019 +0200
+
+    1- Added Pilot Model
+
+[33mcommit 15f1545a34309c44ad108ecc298eee0834014ef4[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Nov 25 17:46:18 2019 +0200
+
+    Updated Rendrer
+
+[33mcommit 1322b9264fdef0e98ea1f6ad82b9e50d053f3ab1[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Nov 25 16:52:08 2019 +0200
+
+    1- Added Sounds
+
+[33mcommit 803e4764439e336a3e3988cb978cfd797cfa217c[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Nov 25 15:23:48 2019 +0200
+
+    1- Updated Camera's Clipping Plane
+
+[33mcommit 728043d3486e8e5ea1ee4a206462209787ae98f2[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Nov 25 15:22:01 2019 +0200
+
+    1- Added Smoothness for wall inclined angle
+
+[33mcommit 26a20c7210d4750fc88ebfbe137c637f646af66a[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Nov 25 14:25:02 2019 +0200
+
+    1- Fixed Weapon CLipping Problem
+    2- Added Headbob when landing on a wall
+
+[33mcommit 405e65c96e7aa2473534b27a4b3ab79c8c221edd[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Nov 25 11:19:23 2019 +0200
+
+    1-Fixed a problem with number of jumps while wall running
+    2- Fixed a problem when the player touches the ground while wall running
+
+[33mcommit efb0ae1e37696de0a68a1428e3d321476ec23d34[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Nov 25 08:28:59 2019 +0200
+
+    1- Now Double Jump is always returned while wallRunning
+
+[33mcommit 19bebca56431865debc06e9711c33a5254d7bdd0[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Nov 25 01:44:35 2019 +0200
+
+    1- Imported Weapons
+
+[33mcommit 7567ed41aba80a5fac13e3909d91c142d59f5968[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Mon Nov 25 01:14:26 2019 +0200
+
+    1- Added Some SFX from the actuall Game
+
+[33mcommit 4859b9b63177d4089e368ef55cd9b2c6e2eec86a[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 23:00:37 2019 +0200
+
+    1- First Build
+
+[33mcommit 857e14631931943f6f1aa4bb94b57d0a433cb9d4[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 22:52:50 2019 +0200
+
+    1- Added Camera Inclination while Wall Running
+
+[33mcommit 961b8d156561ddb43414d523ecfdd3f23af46c21[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 18:43:02 2019 +0200
+
+    1- Updated Drag Values
+    2- Now Wall Running Gives Corrent number of jumps
+    3- Updated Gravity Modifier
+
+[33mcommit 51fde9953719f08262b3a9b19c6849d9d845cb1c[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 17:19:12 2019 +0200
+
+    1- Updated the near Clipping plan
+    2- Now Wall Running Gives you Double Jump
+
+[33mcommit d651e9e054982949dff1901e99b0a27a3e689fdd[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 17:15:11 2019 +0200
+
+    1- Added New Objects in prototype Scene
+
+[33mcommit 962716c640ff8b6d0012475a4ae38b84f1fc9dba[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 17:03:12 2019 +0200
+
+    1- Organizing the Project
+
+[33mcommit 7ad6407931bc987659e1010f2c2dfcb258f0052b[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 15:33:59 2019 +0200
+
+    1-[Needs Work] Added Crouching Logic
+
+[33mcommit b20e0093fd46e12c928db041299737c221b71ef4[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 14:31:08 2019 +0200
+
+    Updated Prefab
+
+[33mcommit 2c7ff0b440c40d210c2ece0a071f62e26616824f[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 14:30:37 2019 +0200
+
+    1- Updated Wall Run
+
+[33mcommit 5f2bffd251cf729d77f0c3b057c6d719c41fdcb2[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 14:15:55 2019 +0200
+
+    1- Updated WallCheck Casting
+
+[33mcommit 4427f153dae957c99f93572c223904b7118ea680[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 04:44:55 2019 +0200
+
+    1- Updated GroundChecks
+    2- Updated Wall Run
+    3- [Need Work] Updated Shift Problem
+
+[33mcommit 9ab6f40492181670d3e71b6a68ae04e66bd1fc29[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 02:52:21 2019 +0200
+
+    1- Rough Wall Run
+
+[33mcommit 66bb7833181fc8321e22d893e497902c9a8541e2[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sun Nov 24 01:07:16 2019 +0200
+
+    Fixed CheckWall
+
+[33mcommit 84677b0499e39dbf9ce9631a0c94facf1a031631[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Nov 23 20:15:34 2019 +0200
+
+    1- Added Some Wall Checks
+    2- Added Double Jump
+
+[33mcommit 99ca0166422df382161ed77a96939ebb0c0cdb0b[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Nov 23 19:45:28 2019 +0200
+
+    1- Added States withour using
+
+[33mcommit b41f8d49d8ac5b8b1fbd48c529cb27525492b761[m
+Author: Steven Henry <stevennassef97@gmail.com>
+Date:   Sat Nov 23 19:19:40 2019 +0200
+
+    Initial Commit

@@ -6,33 +6,33 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
-    // public Canvas settingsCanvas;
+	public Image primaryWeaponSelectionImage;
+	public Image heavyWeaponSelectionImage;
+	public Image titanSelectionImage;
 
+	public Weapon [] primaryWeaponData;
+	public Weapon [] heavyWeaponData;
+	// public ScriptableObject [] titanData;
 
-	public Animator settingsAnimator;
+	private int primaryWeaponPointer = 0;
+	private int heavyWeaponPointer = 0;
+	private int titanPointer = 0;
 
-	public Animator audioAnimator;
-	public Animator gameplayAnimator;
-	public Animator creditsAnimator;
-
-
+	
     private int m_OpenParameterId;
-
-
 	private Animator m_Open;
-
     private GameObject m_PreviouslySelected;
 
 
     const string k_OpenTransitionName = "Open";
 	const string k_ClosedStateName = "Closed";
 
-    public void OnClickStart() {
-        // TODO
+    public void OnClickToWar() {
+        // TODO 
     }
 
     public void OnClickQuit() {
-		// TODO
+		Application.Quit();
     }
 
 	public void onMasterVolumeChanged() {
@@ -45,6 +45,40 @@ public class MenuController : MonoBehaviour
 
 	public void onMusicVolumeChanged() {
 		// TODO
+	}
+
+	public void GetNextPrimaryWeapon(bool forward) {
+		int step = -1;
+		if(forward) {
+			step = 1;
+		}
+		primaryWeaponPointer = modulus(primaryWeaponPointer + step, primaryWeaponData.Length);
+		primaryWeaponSelectionImage.sprite = primaryWeaponData[primaryWeaponPointer].WeaponIcon;
+		EventSystem.current.SetSelectedGameObject(null);
+	}
+
+	public void GetNextHeavyWeapon(bool forward) {
+		int step = -1;
+		if(forward) {
+			step = 1;
+		}
+		heavyWeaponPointer = modulus(heavyWeaponPointer + step, heavyWeaponData.Length);
+		heavyWeaponSelectionImage.sprite = heavyWeaponData[heavyWeaponPointer].WeaponIcon;
+		EventSystem.current.SetSelectedGameObject(null);
+	}
+
+	private static int modulus(int x, int m) {
+		return (x%m + m)%m;
+	}
+
+	public void GetNextTitan(bool forward) {
+		// int step = -1;
+		// if(forward) {
+		// 	step = 1;
+		// }
+		// titanPointer = modulus(titanPointer + step, titanData.Length);
+		// titanSelectionImage.sprite = titanData[titanPointer].titanIcon;
+		EventSystem.current.SetSelectedGameObject(null);
 	}
 
     public void OpenPanel (Animator anim)

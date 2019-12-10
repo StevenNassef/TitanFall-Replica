@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using MyBox;
 
 [System.Serializable]
@@ -7,6 +8,7 @@ public class Weapon : ScriptableObject
 {
 
     [Header("Weapon Stats")]
+    [SerializeField] private Sprite weaponIcon;
     [SerializeField] private string weaponName = "weapon";
     [Tooltip("The amount of damage each bullet deals.")]
     [ConditionalField(nameof(shootingType), inverse: true, WeaponShootingType.Projectile)]
@@ -32,6 +34,7 @@ public class Weapon : ScriptableObject
     [SerializeField] private WeaponProjectile projectile;
 
 
+    public Sprite WeaponIcon => weaponIcon;
     public string WeaponName => weaponName;
     public WeaponFireMode FireMode => fireMode;
     public WeaponShootingType ShootingType => shootingType;

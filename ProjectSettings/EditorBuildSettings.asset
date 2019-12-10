@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/_Scenes/Prototyping_GameMechanics.unity
     guid: 511b95b1ae2abe94db25bd0dce16fae9
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3998f32f31d6f6647a9ba081bb8bd218,
+      type: 2}

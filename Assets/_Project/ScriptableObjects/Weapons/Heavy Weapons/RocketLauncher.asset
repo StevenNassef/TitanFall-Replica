@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a2de0e36708f345aa5a267d5d75ca6, type: 3}
   m_Name: RocketLauncher
   m_EditorClassIdentifier: 
+  weaponIcon: {fileID: 21300000, guid: f9bdd60f37fa9d54399ff05a24dfedba, type: 3}
   weaponName: Archer
   damagePerBullet: 4
   fireMode: 1
