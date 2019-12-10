@@ -6,18 +6,18 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shotgun
+  m_Name: RocketLauncher
   m_Controller: {fileID: 9100000, guid: 4f4cd937a4c22e545826d770a8b61e9d, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 5bb341405222b244c8c0c575c2182f6a, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 76ff2f15004b70549ac1064d4c58689a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5bb341405222b244c8c0c575c2182f6a, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 1f2a1a6aef689df4bbcdd5b36ecc1eae, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: b917af3efca24cd408d4631e2e5f0bc4, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 7d3e5d21f7381d24a8f26c2c101fc6dc, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: f3f544b84ade6ce4bac718f67c74307d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1f2a1a6aef689df4bbcdd5b36ecc1eae, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 6b7a46af288e058498158edbcfba9c29, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 6b7a46af288e058498158edbcfba9c29, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: f3f682e08389c52458f189baaaf46a51, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 3c3ab158b2487e844b9450aab55a360f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7d3e5d21f7381d24a8f26c2c101fc6dc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7d3e5d21f7381d24a8f26c2c101fc6dc, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 6e1e48fed072bad4cadb162585bb9c0e, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 6e1e48fed072bad4cadb162585bb9c0e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f3f682e08389c52458f189baaaf46a51, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 27b3fe2bd62743449850cce3c46687be, type: 2}
