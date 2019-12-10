@@ -10,6 +10,7 @@ public class BasicWeaponController : MonoBehaviour
     [SerializeField] private LayerMask hitmask;
     [SerializeField] private Transform barrelOpening;
     [SerializeField] private GameObject mazzleFlash;
+    [SerializeField] private GameObject scope;
     protected Animator weaponAnimator;
     [Header("SFX")]
     protected AudioSource audioSource;
@@ -169,6 +170,18 @@ public class BasicWeaponController : MonoBehaviour
         currentAmmo = weapon.AmmoCount;
         reloadLock = false;
     }
+
+    protected void OpenScope()
+    {
+        if(scope != null)
+            scope.SetActive(true);
+    }
+
+    protected void CloseScope()
+    {
+        if(scope != null)
+            scope.SetActive(false);
+    }
     private IEnumerator AutomaticFire()
     {
         if (fire && currentAmmo > 0)
@@ -199,6 +212,7 @@ public class BasicWeaponController : MonoBehaviour
 
     protected void OnEnable()
     {
+        CloseScope();
         if (fireWait)
         {
             float delta = Time.timeSinceLevelLoad - lastDisableTime;
@@ -215,6 +229,7 @@ public class BasicWeaponController : MonoBehaviour
 
     protected void OnDisable()
     {
+        CloseScope();
         if (fireWait)
         {
             lastDisableTime = Time.timeSinceLevelLoad;
