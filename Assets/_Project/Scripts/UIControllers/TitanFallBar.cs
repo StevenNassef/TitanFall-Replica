@@ -12,7 +12,7 @@ public class TitanFallBar : MonoBehaviour
     public Color BarColor;   
     public Color BarBackGroundColor;
     public Sprite BarBackGroundSprite;
-    [Range(1f, 100f)]
+    [Range(1f, 70f)]
     public int Alert = 20;
     public Color BarAlertColor;
 
@@ -25,17 +25,16 @@ public class TitanFallBar : MonoBehaviour
     private float nextPlay;
     private AudioSource audiosource;
     private Text txtTitle;
-    private float barValue;
+    private float barValue = 50f;
     public float BarValue
     {
         get { return barValue; }
 
         set
         {
-            value = Mathf.Clamp(value, 0, 100);
+            value = Mathf.Clamp(value, 0, 70);
             barValue = value;
             UpdateValue(barValue);
-
         }
     }
 
