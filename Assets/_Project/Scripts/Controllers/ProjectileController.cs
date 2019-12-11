@@ -41,7 +41,8 @@ public class ProjectileController : MonoBehaviour
         exploded = false;
         projectileGFX.SetActive(true);
         body.WakeUp();
-        flyEffect.SetActive(false);
+        if(flyEffect != null)
+            flyEffect.SetActive(false);
     }
 
     protected void UpdateRotation()
@@ -69,7 +70,8 @@ public class ProjectileController : MonoBehaviour
         this.weaponHolder = weaponHolder;
         this.projectile = projectile;
         // make flying effect
-        flyEffect.SetActive(true);
+        if(flyEffect != null)
+            flyEffect.SetActive(true);
 
         //make flying sound
         PlayFlyingSFX();
@@ -85,7 +87,8 @@ public class ProjectileController : MonoBehaviour
         //Disabling mesh colliders and rigidbody compoenet of the projectile
         projectileGFX.SetActive(false);
         body.Sleep();
-        flyEffect.SetActive(false);
+        if(flyEffect != null)
+            flyEffect.SetActive(false);
 
         //Play the explosion effect
         explisionEffect.SetActive(true);

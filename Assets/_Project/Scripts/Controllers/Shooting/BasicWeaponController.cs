@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using MyBox;
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Animator))]
 public class BasicWeaponController : MonoBehaviour
@@ -10,13 +11,14 @@ public class BasicWeaponController : MonoBehaviour
     [SerializeField] private LayerMask hitmask;
     [SerializeField] private Transform barrelOpening;
     [SerializeField] private GameObject mazzleFlash;
+    [SerializeField] private GameObject scope;
     protected Animator weaponAnimator;
     [Header("SFX")]
     protected AudioSource audioSource;
     protected WeaponState currentState;
     protected WeaponState previousState;
     protected int currentAmmo;
-    protected bool fire, fireLock, fireWait, reload, reloadLock, currentlyAiming, previouslyAiming;
+    protected bool fire, fireLock, fireWait, reload, reloadLock, currentlyAiming, previouslyAiming, aimLock;
     protected WeaponHolderController weaponHolder;
     protected float timeBetweenBullets = 1;
     protected Vector3 screenCenter;
@@ -81,11 +83,16 @@ public class BasicWeaponController : MonoBehaviour
             currentState = WeaponState.Idle;
             StartCoroutine(AutomaticFire());
         }
+        if (aimLock)
+        {
+            currentlyAiming = false;
+        }
 
         if (currentlyAiming != previouslyAiming)
         {
             weaponAnimator.SetBool("Aim", currentlyAiming);
         }
+
     }
     void Update()
     {
@@ -108,6 +115,7 @@ public class BasicWeaponController : MonoBehaviour
     {
         // Debug.Log("Fire!");
         reloadLock = false;
+        aimLock = false;
         currentAmmo--;
         weaponAnimator.SetTrigger("Shoot");
 
@@ -160,6 +168,7 @@ public class BasicWeaponController : MonoBehaviour
     protected virtual void Reload()
     {
         reloadLock = true;
+        aimLock = true;
         currentState = WeaponState.Reloading;
         weaponAnimator.SetTrigger("Reload");
     }
@@ -168,6 +177,19 @@ public class BasicWeaponController : MonoBehaviour
         currentState = WeaponState.Idle;
         currentAmmo = weapon.AmmoCount;
         reloadLock = false;
+        aimLock = false;
+    }
+
+    protected void OpenScope()
+    {
+        if (scope != null)
+            scope.SetActive(true);
+    }
+
+    protected void CloseScope()
+    {
+        if (scope != null)
+            scope.SetActive(false);
     }
     private IEnumerator AutomaticFire()
     {
@@ -199,6 +221,8 @@ public class BasicWeaponController : MonoBehaviour
 
     protected void OnEnable()
     {
+        CloseScope();
+        aimLock = false;
         if (fireWait)
         {
             float delta = Time.timeSinceLevelLoad - lastDisableTime;
@@ -212,9 +236,19 @@ public class BasicWeaponController : MonoBehaviour
             }
         }
     }
-
+    
+    public void UnequipWeapon()
+    {
+        if(weaponAnimator != null)
+            weaponAnimator.SetTrigger("Unequip");
+    }
+    protected void DisableWeapon()
+    {
+        gameObject.SetActive(false);
+    }
     protected void OnDisable()
     {
+        CloseScope();
         if (fireWait)
         {
             lastDisableTime = Time.timeSinceLevelLoad;

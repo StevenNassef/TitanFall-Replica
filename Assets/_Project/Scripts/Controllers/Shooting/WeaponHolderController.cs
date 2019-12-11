@@ -59,9 +59,10 @@ public class WeaponHolderController : MonoBehaviour
 
     private void LoadWeapon(int index)
     {
+
         foreach (GameObject weapon in currentWeapons)
         {
-            weapon.SetActive(false);
+            weapon.GetComponent<BasicWeaponController>().UnequipWeapon();
         }
         currentWeaponIndex = index;
         currentWeapons[currentWeaponIndex].SetActive(true);

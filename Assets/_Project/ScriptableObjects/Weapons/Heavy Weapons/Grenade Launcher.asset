@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72a2de0e36708f345aa5a267d5d75ca6, type: 3}
+  m_Name: Grenade Launcher
+  m_EditorClassIdentifier: 
+  weaponIcon: {fileID: 21300000, guid: 24e4153e7dabbc14aa7d7e815bafc4f4, type: 3}
+  weaponName: MGL Mag Launcher
+  damagePerBullet: 4
+  fireMode: 1
+  fireRate: 1
+  ammoCount: 6
+  range: 50
+  _SFXList:
+    cocking: {fileID: 0}
+    shooting: {fileID: 8300000, guid: 315168bb6c67d3c44af67cb2a897a00c, type: 3}
+    reloading: {fileID: 8300000, guid: dc7fe2d407f3c304a9f7f448875fbef6, type: 3}
+    idle: {fileID: 0}
+  shootingType: 0
+  weaponProjectilePrefab: {fileID: 1096900097819920006, guid: 8fa26beaa5ae573459eb5a02fb9a47e2,
+    type: 3}
+  projectile:
+    projectileType: 1
+    flyingSpeed: 11
+    maxFlyingDistance: 50
+    damage: 125
+    damangeRange: 4
+    explosiveForce: 20
+    hitMask:
+      serializedVersion: 2
+      m_Bits: 15360
+    _GFXPrefab: {fileID: 0}
+    _ExplosionVFXPrefab: {fileID: 0}
+    _FlyingVFXPrefab: {fileID: 0}
+    _FlyingSFX: {fileID: 0}
+    _ExplosionSFX: {fileID: 8300000, guid: c9d0e793c7994df4e8a84eb208938919, type: 3}

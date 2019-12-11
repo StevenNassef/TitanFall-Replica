@@ -52,7 +52,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -102,7 +102,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5555556
+      value: 0.85
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a78f008c4c8134481c81c4aa83f138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titanName: Legion
+  titanName: 1
   background: {fileID: 2304545923479386889}
   talk: {fileID: 2304545924707315451}
   effect: {fileID: 2304545924434307974}
@@ -229,7 +229,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -279,7 +279,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5555556
+      value: 0.94166666
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -356,7 +356,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -406,7 +406,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5555556
+      value: 0.88055557
       inSlope: 0
       outSlope: 0
       tangentMode: 0
