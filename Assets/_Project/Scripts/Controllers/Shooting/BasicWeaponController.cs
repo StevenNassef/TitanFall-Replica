@@ -23,11 +23,13 @@ public class BasicWeaponController : MonoBehaviour
     protected float timeBetweenBullets = 1;
     protected Vector3 screenCenter;
     protected float lastDisableTime;
+    private RayCastDamage castDamage;
     private Camera fpsCamera;
     protected void Awake()
     {
         timeBetweenBullets = 1 / weapon.FireRate;
         currentAmmo = weapon.AmmoCount;
+        castDamage = new RayCastDamage(weapon.Damage, weapon.Range);
         screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
         audioSource = GetComponent<AudioSource>();
         weaponAnimator = GetComponent<Animator>();
@@ -156,7 +158,7 @@ public class BasicWeaponController : MonoBehaviour
             {
                 //TODO add a parameter to deal damage to certain objects only
                 ObjectType type;
-                if (handler.TakeDamage(weapon.Damage, out type))
+                if (handler.TakeDamage(castDamage, out type))
                 {
                     KillRewardHandler(type);
                 }

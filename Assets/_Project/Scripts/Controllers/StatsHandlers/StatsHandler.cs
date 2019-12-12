@@ -30,10 +30,19 @@ public class StatsHandler : MonoBehaviour
     {
         currentHealthPoints = maxHealthPoints;
     }
-
-    public bool TakeDamage(float damage, out ObjectType type)
-    {
+    public virtual bool TakeDamage(float damage, out ObjectType type)
+    {   
         type = this.type;
+        return TakeDamage(damage);
+    }
+    public virtual bool TakeDamage(RayCastDamage castDamage, out ObjectType type)
+    {
+        return TakeDamage(castDamage.Damage, out type);
+    }
+
+    public virtual bool TakeDamage(float damage)
+    {
+        
         float finalDamage = CalculateDamage(damage, type);
 
         //Subtract the final damage from the currentHealthPoints
@@ -98,5 +107,19 @@ public class StatsHandler : MonoBehaviour
 }
 public enum ObjectType
 {
-    Pilot, Titan, Env
+    Pilot, Titan, Env, Sheild
+}
+
+public struct RayCastDamage
+{
+    public RayCastDamage(float damage, float range)
+    {
+        this.damage = damage;
+        this.range = range;
+    }
+    float damage;
+    float range;
+
+    public float Damage => damage;
+    public float Range => range;
 }

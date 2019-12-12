@@ -17,6 +17,8 @@ public class ProjectileController : MonoBehaviour
 
     [ReadOnly] private bool fired;
     [ReadOnly] private bool exploded;
+
+    public bool Fired => fired;
     protected void Awake()
     {
         body = GetComponent<Rigidbody>();
@@ -40,11 +42,13 @@ public class ProjectileController : MonoBehaviour
         fired = false;
         exploded = false;
         projectileGFX.SetActive(true);
-        body.WakeUp();
+        explisionEffect.SetActive(false);
+        body.isKinematic = true;
+        body.Sleep();
         if (flyEffect != null)
             flyEffect.SetActive(false);
     }
-
+    
     protected void UpdateRotation()
     {
         if (body.velocity.sqrMagnitude > 0.2f)
@@ -59,6 +63,10 @@ public class ProjectileController : MonoBehaviour
     private void Fire()
     {
         Fire(transform.forward, null, this.projectile);
+    }
+    public void Fire(Vector3 direction, WeaponHolderController weaponHolder)
+    {
+        Fire(direction, weaponHolder, this.projectile);
     }
     public void Fire(Vector3 direction, WeaponHolderController weaponHolder, WeaponProjectile projectile)
     {
@@ -76,12 +84,18 @@ public class ProjectileController : MonoBehaviour
         //make flying sound
         PlayFlyingSFX();
 
+        body.isKinematic = false;
         if (projectile.ProjectileType == ProjectileType.Curve)
             body.useGravity = true;
         body.AddForce(direction.normalized * projectile.FlyingSpeed, ForceMode.Impulse);
         fired = true;
     }
 
+    public void DisableProjectile()
+    {
+        //TODO stop timers and reset distance counter
+        InitializeProjectile();
+    }
     protected void Hit(Collider other)
     {
         StatsHandler statsHandler = other.gameObject.GetComponent<StatsHandler>();
