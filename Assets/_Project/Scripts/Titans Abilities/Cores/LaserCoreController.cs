@@ -40,7 +40,6 @@ public class LaserCoreController : MonoBehaviour
             currentDistance = Mathf.Abs((transform.position - hit.point).magnitude);
             hitPoint = hit.point;
             hitObjectName = hit.collider.gameObject.name;
-            Debug.Log(hit.collider.gameObject.name);
 
             StatsHandler handler = hit.collider.gameObject.GetComponent<StatsHandler>();
             if (handler != null)
