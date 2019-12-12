@@ -148,7 +148,7 @@ public class BasicWeaponController : MonoBehaviour
         Ray ray = fpsCamera.ScreenPointToRay(screenCenter);
         RaycastHit hitInfo;
         Debug.DrawRay(ray.origin, ray.direction * weapon.Range, Color.red, 0.1f);
-        if (Physics.Raycast(ray, out hitInfo, weapon.Range, hitmask))
+        if (Physics.Raycast(ray, out hitInfo, weapon.Range, hitmask, QueryTriggerInteraction.Collide))
         {
             StatsHandler handler = hitInfo.collider.GetComponent<StatsHandler>();
 

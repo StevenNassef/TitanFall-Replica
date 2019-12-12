@@ -84,6 +84,7 @@ public class StatsHandler : MonoBehaviour
     }
     protected virtual float CalculateDamage(float damage, ObjectType type)
     {
+        Debug.Log(damage);
         return damage;
     }
     protected virtual void HitEffect(float damage)

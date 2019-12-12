@@ -41,7 +41,7 @@ public class ProjectileController : MonoBehaviour
         exploded = false;
         projectileGFX.SetActive(true);
         body.WakeUp();
-        if(flyEffect != null)
+        if (flyEffect != null)
             flyEffect.SetActive(false);
     }
 
@@ -70,7 +70,7 @@ public class ProjectileController : MonoBehaviour
         this.weaponHolder = weaponHolder;
         this.projectile = projectile;
         // make flying effect
-        if(flyEffect != null)
+        if (flyEffect != null)
             flyEffect.SetActive(true);
 
         //make flying sound
@@ -82,12 +82,26 @@ public class ProjectileController : MonoBehaviour
         fired = true;
     }
 
+    protected void Hit(Collider other)
+    {
+        StatsHandler statsHandler = other.gameObject.GetComponent<StatsHandler>();
+        if (statsHandler != null)
+        {
+            ObjectType type;
+            //if the object the projectile damaged was killed or destroyed, TakeDamage will return true
+            if (statsHandler.TakeDamage(projectile.Damage, out type))
+            {
+                //Call RewardHandler
+                KillRewardHandler(type);
+            }
+        }
+    }
     protected void Explode()
     {
         //Disabling mesh colliders and rigidbody compoenet of the projectile
         projectileGFX.SetActive(false);
         body.Sleep();
-        if(flyEffect != null)
+        if (flyEffect != null)
             flyEffect.SetActive(false);
 
         //Play the explosion effect
