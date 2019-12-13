@@ -7,6 +7,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 [RequireComponent(typeof(CapsuleCollider))]
 public class TitanFirstPersonController : BasicFirstPersonController
 {
+    public TitanHudController titanHudController;
+
     [Serializable]
     public class TitanMovementSettings
     {
@@ -168,6 +170,10 @@ public class TitanFirstPersonController : BasicFirstPersonController
         RotateView();
 
         movementSettings.UpdateInput();
+
+        InformHudDashBarStatus(
+            (int) movementSettings.currentNumberOfDashes,
+            (int) (movementSettings.m_DashTimer/movementSettings.maxNumberOfDashes));
     }
 
 
@@ -358,5 +364,11 @@ public class TitanFirstPersonController : BasicFirstPersonController
     //     m_AudioSource.clip = m_LandingSFX;
     //     m_AudioSource.Play();
     // }
+
+    
+    protected void InformHudDashBarStatus(int numOfCurrentAvailableDashes, int coolDownTimer) {
+        titanHudController.DashMeterValue = numOfCurrentAvailableDashes;
+        titanHudController.DashMeterTime = coolDownTimer;
+    }
 }
 

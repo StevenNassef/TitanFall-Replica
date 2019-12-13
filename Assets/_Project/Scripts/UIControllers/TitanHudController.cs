@@ -51,11 +51,11 @@ public class TitanHudController : MonoBehaviour
     private int dashMeterTime;
     public int DashMeterTime
     {
-        get {return dashMeterValue;}
+        get {return dashMeterTime;}
 
         set
         {
-            dashMeterTime = dashMeterValue;
+            dashMeterTime = value;
             dashMeterTimeTxt.text = dashMeterTime.ToString();
         }
     }
