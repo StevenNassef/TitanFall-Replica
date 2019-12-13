@@ -7,7 +7,9 @@ using MyBox;
 [RequireComponent(typeof(Animator))]
 public class BasicWeaponController : MonoBehaviour
 {
-    public PilotHudController pilotHudController;
+    [MustBeAssigned]
+    [SerializeField]
+    protected PilotHudController pilotHudController;
     [SerializeField] protected Weapon weapon;
     [SerializeField] private LayerMask hitmask;
     [SerializeField] private Transform barrelOpening;
@@ -35,7 +37,7 @@ public class BasicWeaponController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         weaponAnimator = GetComponent<Animator>();
         weaponHolder = GetComponentInParent<WeaponHolderController>();
-        pilotHudController = GetComponent<PilotHudController>();
+        // pilotHudController = GetComponent<PilotHudController>();
     }
     protected virtual void Start()
     {
@@ -225,6 +227,7 @@ public class BasicWeaponController : MonoBehaviour
 
     protected void OnEnable()
     {
+        // pilotHudController = GetComponent<PilotHudController>();
         InformHudWeaponSelection();
         CloseScope();
         aimLock = false;
@@ -311,6 +314,11 @@ public class BasicWeaponController : MonoBehaviour
     }
 
     protected void InformHudWeaponSelection() {
+        // if (pilotHudController != null) {
+        //     Debug.Log("HERE");
+        // } else {
+        //     Debug.Log("IT IS NULL");
+        // }
         pilotHudController.ChangeWeapon(weapon.WeaponIcon,
                                             weapon.WeaponName,
                                              weapon.AmmoCount,

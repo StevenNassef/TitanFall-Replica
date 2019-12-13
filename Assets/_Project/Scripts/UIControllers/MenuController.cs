@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
 	public Image primaryWeaponSelectionImage;
@@ -201,6 +201,10 @@ public class MenuController : MonoBehaviour
 		// GameObject go = FindFirstEnabledSelectable(anim.gameObject);
 
 		// SetSelected(go);
+	}
+
+	public void LoadCredits() {
+		SceneManager.LoadScene("Credits_Scene");
 	}
 
 	static GameObject FindFirstEnabledSelectable (GameObject gameObject)

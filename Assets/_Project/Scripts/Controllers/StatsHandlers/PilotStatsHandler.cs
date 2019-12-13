@@ -123,6 +123,7 @@ public class PilotStatsHandler : CharacterStatsHandler
 
     protected void InformHudTitanSelection() {
         base.titanHudController.enabled = true;
+        base.titanHudController.ResetValues();
         base.titanHudController.SetCoreAbilityIcon(GameInitializations.Titan.TitanIcon);
         base.pilotHudController.enabled = false;
     }
