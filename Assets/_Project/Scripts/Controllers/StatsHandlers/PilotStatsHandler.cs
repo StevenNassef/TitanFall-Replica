@@ -129,6 +129,7 @@ public class PilotStatsHandler : CharacterStatsHandler
     }
 
     protected override void InformHudCoreAbility() {
+        // Debug.Log("TITAN VALUE SHOULD GET UPDATED");
         base.pilotHudController.TitanfallValue =
                     (currentCorePoints/maxCorePoints)*100.0f;
     }

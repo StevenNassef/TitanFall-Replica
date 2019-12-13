@@ -97,9 +97,6 @@ public class CharacterStatsHandler : StatsHandler
         if (currentCorePoints >= maxCorePoints)
         {
             currentCorePoints = maxCorePoints;
-            InformHudCoreAbility();
-            
-            playCoreReadySounds();
 
             //Invoke the OnCoreAvailable to notify listeners
             if (OnCoreAvailable != null)
@@ -107,6 +104,10 @@ public class CharacterStatsHandler : StatsHandler
                 OnCoreAvailable.Invoke();
             }
         }
+
+        // Debug.Log("ABOUT TO INFORM");
+        InformHudCoreAbility();
+        playCoreReadySounds();
     }
 
     protected virtual void CoreAbilityLogic()
