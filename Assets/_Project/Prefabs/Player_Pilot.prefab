@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c81407209f85e4c87c0cda8b32868e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 2356559099000798825}
+  fpsCamera: {fileID: 2356559099000798825}
   motionBob:
     HorizontalBobRange: 0.01
     VerticalBobRange: 0.03
@@ -258,8 +258,8 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 0.5
         value: 1
@@ -267,8 +267,8 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 1
         value: 0
@@ -276,8 +276,8 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 1.5
         value: -1
@@ -285,8 +285,8 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 2
         value: 0
@@ -294,8 +294,8 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -305,7 +305,7 @@ MonoBehaviour:
     BobAmount: 0.2
   rigidbodyFirstPersonController: {fileID: 2356559099008338349}
   StrideInterval: 4
-  RunningStrideLengthen: 0.722
+  RunningStrideLengthen: 0.7
 --- !u!124 &2356559099007329313
 Behaviour:
   m_ObjectHideFlags: 0
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 17703994}
   m_Layer: 0
   m_Name: Player_Pilot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -399,8 +399,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2356559099000798825}
   cameraHolderTransform: {fileID: 2449375624874746532}
-  cameraInclineAngle: 20
-  cameraInclinationSmoothTime: 12
+  cameraInclineAngle: 15
+  cameraInclinationSmoothTime: 18
   movementSettings:
     ForwardSpeed: 8
     BackwardSpeed: 4
@@ -411,7 +411,7 @@ MonoBehaviour:
     RemainingJumps: 0
     RunKey: 304
     CrouchKey: 99
-    JumpForce: 100
+    JumpForce: 30
     SlopeCurveModifier:
       serializedVersion: 2
       m_Curve:
@@ -422,8 +422,8 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 0
         value: 1
@@ -431,8 +431,8 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 90
         value: 0
@@ -440,8 +440,8 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -450,28 +450,28 @@ MonoBehaviour:
     XSensitivity: 2
     YSensitivity: 2
     clampVerticalRotation: 1
-    MinimumX: -45
+    MinimumX: -90
     MaximumX: 90
-    smooth: 1
-    smoothTime: 18
+    smooth: 0
+    smoothTime: 5
     lockCursor: 1
   advancedSettings:
     groundCheckDistance: 0.01
-    wallCheckDistance: 0.2
-    wallCheckRadius: 0.1
-    stickToGroundHelperDistance: 0.6
+    wallCheckDistance: 0.05
+    wallCheckRadius: 0.05
+    stickToGroundHelperDistance: 0.5
     stickToWallHelperDistance: 0.5
     slowDownRate: 20
-    airControl: 1
-    shellOffset: 0.2
+    airControl: 0
+    shellOffset: 0.1
     gravityModifier: 2
-  m_AudioSource: {fileID: 17703993}
-  m_BackGroundAudioSource: {fileID: 1248039951}
-  m_jumpSFX: {fileID: 8300000, guid: 694faa1141a6928429404dee6f94a733, type: 3}
-  m_DoubleJumpSFX: {fileID: 8300000, guid: 851e5648a7b882b43b76bb564739bdf7, type: 3}
-  m_JumpBackGroundSFX: {fileID: 8300000, guid: 954261ed98859814fb77e57ec9d4bb4c, type: 3}
-  m_LandingSFX: {fileID: 8300000, guid: 4d5e2b29b683ee4478602f626f5bfed2, type: 3}
-  m_WalkingSFX: {fileID: 8300000, guid: 3d18e24091b038b448d020d10913e4bf, type: 3}
+  m_AudioSource: {fileID: 0}
+  m_BackGroundAudioSource: {fileID: 0}
+  m_jumpSFX: {fileID: 0}
+  m_DoubleJumpSFX: {fileID: 0}
+  m_JumpBackGroundSFX: {fileID: 0}
+  m_LandingSFX: {fileID: 0}
+  m_WalkingSFX: {fileID: 0}
 --- !u!114 &8491465418516217492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,11 +487,17 @@ MonoBehaviour:
   currentHealthPoints: 0
   type: 0
   maxHealthPoints: 100
+  weaponHolder: {fileID: 8690443268720148969}
+  fpsController: {fileID: 2356559099008338349}
+  fpsCamera: {fileID: 2356559099000798825}
   currentCorePoints: 0
   maxCorePoints: 100
   pointsForPilotKill: 10
   pointForTitanKill: 50
   coreAbilityKey: 118
+  titanSpwanMaxDistance: 10
+  maxSurfaceAngle: 40
+  playerTitan: {fileID: 0}
 --- !u!54 &2356559099004772137
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -737,6 +743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSwitchButton: 122
+  statsHandler: {fileID: 8491465418516217492}
 --- !u!1001 &2356559098072486884
 PrefabInstance:
   m_ObjectHideFlags: 0

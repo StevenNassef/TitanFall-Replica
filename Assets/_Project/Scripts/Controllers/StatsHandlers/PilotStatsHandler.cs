@@ -4,6 +4,9 @@ using UnityEngine;
 using MyBox;
 public class PilotStatsHandler : CharacterStatsHandler
 {
+    [SerializeField] private float titanSpwanMaxDistance = 10;
+    [SerializeField] private float maxSurfaceAngle = 40;
+    [SerializeField] private GameObject playerTitan;
     public event OnStatsHandlerEvent OnHealing;
 
     //the to wait after the last taken damage to start regenrating health.
@@ -15,11 +18,13 @@ public class PilotStatsHandler : CharacterStatsHandler
     //the time between each regen cycle in seconds
     private float regenCycleTime = 1f;
     private bool regenrating;
-
+    private Vector2 screenCenter;
+    private RaycastHit currentTitanFallHit;
     protected override void InitializeHandler()
     {
         base.InitializeHandler();
         type = ObjectType.Pilot;
+        screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
     }
 
     protected override void Update()
@@ -50,8 +55,34 @@ public class PilotStatsHandler : CharacterStatsHandler
         yield return new WaitForSeconds(timeToRegenHealth);
         StartCoroutine(RegenrateHealth());
     }
+    protected override void CoreAbilityCheck()
+    {
+        if (Input.GetKey(coreAbilityKey) && currentCorePoints >= maxCorePoints)
+        {
+            Ray ray = FPSCamera.ScreenPointToRay(screenCenter);
+            RaycastHit hitInfo;
+            Debug.DrawRay(ray.origin, ray.direction * titanSpwanMaxDistance, Color.yellow, 0.1f);
+            if (Physics.Raycast(ray, out hitInfo, titanSpwanMaxDistance))
+            {
+                if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Vector3.up)) < maxSurfaceAngle)
+                {
+                    currentTitanFallHit = hitInfo;
+                    StartCoreAbility();
+                }
+                else
+                {
+                    //TODO : Can't Make TitanFall Here
+                }
+            }
+        }
+    }
+    protected override void CoreAbilityLogic()
+    {
+        playerTitan.transform.position = currentTitanFallHit.point;
+        playerTitan.SetActive(true);
+    }
 
-    
+
     private IEnumerator RegenrateHealth()
     {
         if (regenrating)
