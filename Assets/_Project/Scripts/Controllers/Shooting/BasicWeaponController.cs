@@ -38,7 +38,7 @@ public class BasicWeaponController : MonoBehaviour
     protected virtual void Start()
     {
         //TODO make this access the player controller instead.
-        fpsCamera = RigidbodyFirstPersonController.instance.cam;
+        fpsCamera = weaponHolder.StatsHandler.FPSCamera;
     }
 
     protected void FixedUpdate()

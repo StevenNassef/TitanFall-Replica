@@ -5,7 +5,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
-public class TitanFirstPersonController : MonoBehaviour
+public class TitanFirstPersonController : BasicFirstPersonController
 {
     [Serializable]
     public class TitanMovementSettings
@@ -155,7 +155,7 @@ public class TitanFirstPersonController : MonoBehaviour
 #endif
         }
     }
-    private void Start()
+    private void Awake()
     {
         m_RigidBody = GetComponent<Rigidbody>();
         m_Capsule = GetComponent<CapsuleCollider>();
@@ -238,7 +238,7 @@ public class TitanFirstPersonController : MonoBehaviour
             // }
             if (input.x > 0 || input.y > 0)
             {
-                PlayWalkingSound();
+                // PlayWalkingSound();
             }
         }
         else //The Player is Airborn.
@@ -327,36 +327,36 @@ public class TitanFirstPersonController : MonoBehaviour
         }
         if (!m_PreviouslyGrounded && m_IsGrounded)
         {
-            PlayLandingSFX();
+            // PlayLandingSFX();
         }
-        PlayBackGroundSFX();
+        // PlayBackGroundSFX();
     }
 
-    private void PlayBackGroundSFX()
-    {
-        if (!m_IsGrounded && m_PreviouslyGrounded)
-        {
-            m_BackGroundAudioSource.clip = m_JumpBackGroundSFX;
-            m_BackGroundAudioSource.Play();
-        }
-        else if (m_IsGrounded)
-        {
-            m_BackGroundAudioSource.Stop();
-        }
-    }
+    // private void PlayBackGroundSFX()
+    // {
+    //     if (!m_IsGrounded && m_PreviouslyGrounded)
+    //     {
+    //         m_BackGroundAudioSource.clip = m_JumpBackGroundSFX;
+    //         m_BackGroundAudioSource.Play();
+    //     }
+    //     else if (m_IsGrounded)
+    //     {
+    //         m_BackGroundAudioSource.Stop();
+    //     }
+    // }
 
-    private void PlayWalkingSound()
-    {
-        if (m_AudioSource.clip == m_WalkingSFX)
-            return;
-        m_AudioSource.clip = m_WalkingSFX;
-        m_BackGroundAudioSource.Play();
-    }
+    // private void PlayWalkingSound()
+    // {
+    //     if (m_AudioSource.clip == m_WalkingSFX)
+    //         return;
+    //     m_AudioSource.clip = m_WalkingSFX;
+    //     m_BackGroundAudioSource.Play();
+    // }
 
-    private void PlayLandingSFX()
-    {
-        m_AudioSource.clip = m_LandingSFX;
-        m_AudioSource.Play();
-    }
+    // private void PlayLandingSFX()
+    // {
+    //     m_AudioSource.clip = m_LandingSFX;
+    //     m_AudioSource.Play();
+    // }
 }
 

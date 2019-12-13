@@ -6,7 +6,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CapsuleCollider))]
-    public class RigidbodyFirstPersonController : MonoBehaviour
+    public class RigidbodyFirstPersonController : BasicFirstPersonController
     {
         [Serializable]
         public class MovementSettings
@@ -179,27 +179,27 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
-        private static RigidbodyFirstPersonController _instance;
+        // private static RigidbodyFirstPersonController _instance;
 
-        public static RigidbodyFirstPersonController instance { get { return _instance; } }
-        void Awake()
-        {
-            //Check if instance already exists
-            if (_instance == null)
+        // public static RigidbodyFirstPersonController instance { get { return _instance; } }
+        // void Awake()
+        // {
+        //     //Check if instance already exists
+        //     if (_instance == null)
 
-                //if not, set instance to this
-                _instance = this;
+        //         //if not, set instance to this
+        //         _instance = this;
 
-            //If instance already exists and it's not this:
-            else if (_instance != this)
+        //     //If instance already exists and it's not this:
+        //     else if (_instance != this)
 
-                //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
-                Destroy(gameObject);
+        //         //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+        //         Destroy(gameObject);
 
-            //Sets this to not be destroyed when reloading scene
-            // DontDestroyOnLoad(gameObject);
-            // GameAnalytics.Initialize(); 
-        }
+        //     //Sets this to not be destroyed when reloading scene
+        //     // DontDestroyOnLoad(gameObject);
+        //     // GameAnalytics.Initialize(); 
+        // }
         private void Start()
         {
             m_RigidBody = GetComponent<Rigidbody>();
@@ -509,48 +509,48 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayJumpSound()
         {
-            if (movementSettings.RemainingJumps == 2)
-            {
-                m_AudioSource.Stop();
-                return;
-            }
-            if (movementSettings.RemainingJumps == 0)
-            {
-                m_AudioSource.clip = m_DoubleJumpSFX;
-            }
-            else if (movementSettings.RemainingJumps == 1)
-            {
-                m_AudioSource.clip = m_jumpSFX;
-            }
+            // if (movementSettings.RemainingJumps == 2)
+            // {
+            //     m_AudioSource.Stop();
+            //     return;
+            // }
+            // if (movementSettings.RemainingJumps == 0)
+            // {
+            //     m_AudioSource.clip = m_DoubleJumpSFX;
+            // }
+            // else if (movementSettings.RemainingJumps == 1)
+            // {
+            //     m_AudioSource.clip = m_jumpSFX;
+            // }
 
-            m_AudioSource.Play();
+            // m_AudioSource.Play();
         }
 
         private void PlayBackGroundSFX()
         {
-            if (!m_IsGrounded && m_PreviouslyGrounded)
-            {
-                m_BackGroundAudioSource.clip = m_JumpBackGroundSFX;
-                m_BackGroundAudioSource.Play();
-            }
-            else if (m_IsGrounded)
-            {
-                m_BackGroundAudioSource.Stop();
-            }
+            // if (!m_IsGrounded && m_PreviouslyGrounded)
+            // {
+            //     m_BackGroundAudioSource.clip = m_JumpBackGroundSFX;
+            //     m_BackGroundAudioSource.Play();
+            // }
+            // else if (m_IsGrounded)
+            // {
+            //     m_BackGroundAudioSource.Stop();
+            // }
         }
 
         private void PlayWalkingSound()
         {
-            if (m_AudioSource.clip == m_WalkingSFX)
-                return;
-            m_AudioSource.clip = m_WalkingSFX;
-            m_BackGroundAudioSource.Play();
+            // if (m_AudioSource.clip == m_WalkingSFX)
+            //     return;
+            // m_AudioSource.clip = m_WalkingSFX;
+            // m_BackGroundAudioSource.Play();
         }
 
         private void PlayLandingSFX()
         {
-            m_AudioSource.clip = m_LandingSFX;
-            m_AudioSource.Play();
+            // m_AudioSource.clip = m_LandingSFX;
+            // m_AudioSource.Play();
         }
     }
 }

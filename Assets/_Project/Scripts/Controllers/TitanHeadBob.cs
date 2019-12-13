@@ -6,7 +6,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     public class TitanHeadBob : MonoBehaviour
     {
-        public Camera Camera;
+        public Camera fpsCamera;
         public CurveControlledBob motionBob = new CurveControlledBob();
         public LerpControlledBob jumpAndLandingBob = new LerpControlledBob();
         public TitanFirstPersonController titanFirstPersonController;
@@ -21,8 +21,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void Start()
         {
-            motionBob.Setup(Camera, StrideInterval);
-            m_OriginalCameraPosition = Camera.transform.localPosition;
+            motionBob.Setup(fpsCamera, StrideInterval);
+            m_OriginalCameraPosition = fpsCamera.transform.localPosition;
        //     m_CameraRefocus = new CameraRefocus(Camera, transform.root.transform, Camera.transform.localPosition);
         }
 
@@ -33,16 +33,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             Vector3 newCameraPosition;
             if (titanFirstPersonController.Velocity.magnitude > 0.1f && titanFirstPersonController.Grounded)
             {
-                Camera.transform.localPosition = motionBob.DoHeadBob(titanFirstPersonController.Velocity.magnitude*(titanFirstPersonController.Running ? RunningStrideLengthen : 1f));
-                newCameraPosition = Camera.transform.localPosition;
-                newCameraPosition.y = Camera.transform.localPosition.y - jumpAndLandingBob.Offset();
+                fpsCamera.transform.localPosition = motionBob.DoHeadBob(titanFirstPersonController.Velocity.magnitude*(titanFirstPersonController.Running ? RunningStrideLengthen : 1f));
+                newCameraPosition = fpsCamera.transform.localPosition;
+                newCameraPosition.y = fpsCamera.transform.localPosition.y - jumpAndLandingBob.Offset();
             }
             else
             {
-                newCameraPosition = Camera.transform.localPosition;
+                newCameraPosition = fpsCamera.transform.localPosition;
                 newCameraPosition.y = m_OriginalCameraPosition.y - jumpAndLandingBob.Offset();
             }
-            Camera.transform.localPosition = newCameraPosition;
+            fpsCamera.transform.localPosition = newCameraPosition;
 
             if ((!m_PreviouslyGrounded && titanFirstPersonController.Grounded))
             {
