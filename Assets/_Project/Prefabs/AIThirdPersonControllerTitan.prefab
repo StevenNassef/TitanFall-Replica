@@ -2406,7 +2406,7 @@ GameObject:
   - component: {fileID: 1410725619102111473}
   - component: {fileID: -3714203804991653775}
   m_Layer: 0
-  m_Name: AIThirdPersonController
+  m_Name: AIThirdPersonControllerTitan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2563,8 +2563,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealthPoints: 0
-  type: 0
-  maxHealthPoints: 100
+  type: 1
+  maxHealthPoints: 400
 --- !u!1 &1410725619102403493
 GameObject:
   m_ObjectHideFlags: 0
