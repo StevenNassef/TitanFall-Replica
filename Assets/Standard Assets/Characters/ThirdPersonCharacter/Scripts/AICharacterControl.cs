@@ -10,7 +10,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public UnityEngine.AI.NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
         public ThirdPersonCharacter character { get; private set; } // the character we are controlling
         public Transform target;                                    // target to aim for
+        public int detectionRadius = 5;
 
+        public Patrol patrolScript;
 
         private void Start()
         {
@@ -26,12 +28,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void Update()
         {
             if (target != null)
-                agent.SetDestination(target.position);
-
-            if (agent.remainingDistance > agent.stoppingDistance)
-                character.Move(agent.desiredVelocity, false, false);
-            else
-                character.Move(Vector3.zero, false, false);
+                CheckPlayer();
+            
+            
         }
 
 
@@ -39,5 +38,28 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             this.target = target;
         }
+
+        private void CheckPlayer()
+    {
+        RaycastHit hitInfo;
+        if (Physics.Raycast(transform.position, target.position - transform.position, out hitInfo, detectionRadius))
+        {
+            if (hitInfo.collider.gameObject.CompareTag("Player"))
+            {
+                target = hitInfo.collider.gameObject.transform;
+                Debug.Log("Patrol should be disabled");
+                agent.SetDestination(target.position);
+                patrolScript.enabled = false;
+                if (agent.remainingDistance > agent.stoppingDistance){
+                    character.Move(agent.desiredVelocity, false, false);
+                }
+                else
+                    character.Move(Vector3.zero, false, false);
+                return;
+            }
+        }
+        patrolScript.enabled = true;
+        character.Move(agent.desiredVelocity, false, false);
+    }
     }
 }
