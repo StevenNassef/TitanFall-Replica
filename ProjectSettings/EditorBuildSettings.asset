@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/_Scenes/Prototyping_Parkour.unity
     guid: ab3550b27135d9d4da73a04a7f0c9640
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Project/_Scenes/Prototyping_GameMechanics.unity
     guid: 511b95b1ae2abe94db25bd0dce16fae9
   - enabled: 1

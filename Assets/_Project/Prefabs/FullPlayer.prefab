@@ -13,7 +13,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 410d050372348a84c9236a3db9e2ec05, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.048
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -773,17 +773,17 @@ PrefabInstance:
     - target: {fileID: 2356559099001348203, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -316.25
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 2356559099001348203, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -175.4
+      value: 5.8
       objectReference: {fileID: 0}
     - target: {fileID: 2356559099001348203, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -221.6
+      value: -220.2
       objectReference: {fileID: 0}
     - target: {fileID: 2356559099001348203, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
@@ -910,6 +910,11 @@ PrefabInstance:
       propertyPath: titanHudController
       value: 
       objectReference: {fileID: 8419743349924001430}
+    - target: {fileID: 8491465418516217492, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+        type: 3}
+      propertyPath: playerTitan
+      value: 
+      objectReference: {fileID: 5209840477889187696}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ff9b0037f6d7e44870dfc08f56001f, type: 3}
 --- !u!4 &6083450452292934226 stripped
@@ -1065,6 +1070,12 @@ PrefabInstance:
       objectReference: {fileID: 8419743349924001430}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bcf19178b0491243b547566956aff38, type: 3}
+--- !u!1 &5209840477889187696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4365674382448382418, guid: 0bcf19178b0491243b547566956aff38,
+    type: 3}
+  m_PrefabInstance: {fileID: 8419743350723354274}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5209840477889549140 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4365674382448414198, guid: 0bcf19178b0491243b547566956aff38,

@@ -55,6 +55,12 @@ public class CharacterStatsHandler : StatsHandler
         base.Update();
 
         CoreAbilityCheck();
+
+        if (Input.GetKey(KeyCode.B)) {
+            currentCorePoints = 100;
+            UpdateCore(ObjectType.Env);
+            InformHudCoreAbility();
+        }
         
         // if (pilotHudController != null) {
         //     Debug.Log("pilot hud exists");
