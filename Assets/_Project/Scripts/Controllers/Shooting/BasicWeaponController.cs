@@ -11,6 +11,7 @@ public class BasicWeaponController : MonoBehaviour
     [SerializeField]
     protected PilotHudController pilotHudController;
     [SerializeField] protected Weapon weapon;
+    public Weapon Weapon => weapon;
     [SerializeField] private LayerMask hitmask;
     [SerializeField] private Transform barrelOpening;
     [SerializeField] private GameObject mazzleFlash;
@@ -324,6 +325,7 @@ public class BasicWeaponController : MonoBehaviour
                                              weapon.AmmoCount,
                                              currentAmmo);
     }
+
 }
 
 public enum WeaponState
