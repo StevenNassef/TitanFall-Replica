@@ -14537,7 +14537,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 935851752}
+      objectReference: {fileID: 935851753}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -20433,6 +20433,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 982471975}
     m_Modifications:
+    - target: {fileID: -3714203804991653775, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
+        type: 3}
+      propertyPath: maxHealthPoints
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: -3714203804991653775, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1410725619102111369, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: m_Name
@@ -20512,7 +20522,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 935851752}
+      objectReference: {fileID: 935851753}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -22826,6 +22836,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 982471975}
     m_Modifications:
+    - target: {fileID: -3714203804991653775, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
+        type: 3}
+      propertyPath: maxHealthPoints
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: -3714203804991653775, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1410725619102111369, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: m_Name
@@ -22905,7 +22925,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 935851752}
+      objectReference: {fileID: 935851753}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -23960,6 +23980,12 @@ PrefabInstance:
 --- !u!4 &935851752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8419743351718539674, guid: 3e38f1459b710c443b9bdd691636077c,
+    type: 3}
+  m_PrefabInstance: {fileID: 935851751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &935851753 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6083450452292934226, guid: 3e38f1459b710c443b9bdd691636077c,
     type: 3}
   m_PrefabInstance: {fileID: 935851751}
   m_PrefabAsset: {fileID: 0}
@@ -25101,7 +25127,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 935851752}
+      objectReference: {fileID: 935851753}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -26043,6 +26069,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 982471975}
     m_Modifications:
+    - target: {fileID: -3714203804991653775, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1410725619102111369, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: m_Name
@@ -26127,7 +26158,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 935851752}
+      objectReference: {fileID: 935851753}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -32588,6 +32619,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 982471975}
     m_Modifications:
+    - target: {fileID: -3714203804991653775, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
+        type: 3}
+      propertyPath: maxHealthPoints
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: -3714203804991653775, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1410725619102111369, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: m_Name
@@ -32662,7 +32703,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 935851752}
+      objectReference: {fileID: 935851753}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -37910,7 +37951,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 935851752}
+      objectReference: {fileID: 935851753}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -40310,7 +40351,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 935851752}
+      objectReference: {fileID: 935851753}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -46524,7 +46565,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 935851752}
+      objectReference: {fileID: 935851753}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -46783,7 +46824,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 935851752}
+      objectReference: {fileID: 935851753}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -47375,6 +47416,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 982471975}
     m_Modifications:
+    - target: {fileID: -3714203804991653775, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
+        type: 3}
+      propertyPath: maxHealthPoints
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: -3714203804991653775, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1410725619102111369, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: m_Name
@@ -47454,7 +47505,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 935851752}
+      objectReference: {fileID: 935851753}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -48579,6 +48630,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 982471975}
     m_Modifications:
+    - target: {fileID: -3714203804991653775, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1410725619102111369, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: m_Name
@@ -48663,7 +48719,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 935851752}
+      objectReference: {fileID: 935851753}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
