@@ -164,6 +164,8 @@ public class MenuController : MonoBehaviour
 	}
     public void OpenPanel (Animator anim)
 	{
+		EventSystem.current.SetSelectedGameObject(null);
+		
 		m_OpenParameterId = Animator.StringToHash (k_OpenTransitionName);
 
 		if (m_Open == anim)
@@ -180,6 +182,7 @@ public class MenuController : MonoBehaviour
 
 		m_Open = anim;
 		m_Open.SetBool(m_OpenParameterId, true);
+
 
 		// GameObject go = FindFirstEnabledSelectable(anim.gameObject);
 
