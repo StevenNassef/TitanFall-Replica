@@ -156,7 +156,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserCore
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6860895033569716450, guid: f0f1c77427e01eb4da3f9c1b95a043c4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f0f1c77427e01eb4da3f9c1b95a043c4, type: 3}
 --- !u!1 &3130747321055601613 stripped
 GameObject:
