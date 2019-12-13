@@ -84,6 +84,9 @@ public class CharacterStatsHandler : StatsHandler
         {
             currentCorePoints = maxCorePoints;
             InformHudCoreAbility();
+            
+            playCoreReadySounds();
+
             //Invoke the OnCoreAvailable to notify listeners
             if (OnCoreAvailable != null)
             {
@@ -104,12 +107,22 @@ public class CharacterStatsHandler : StatsHandler
             currentCorePoints = 0;
             coreActivated = true;
 
+            playCoreFireSounds();
+
             if (OnCoreActivated != null)
             {
                 OnCoreActivated.Invoke();
             }
             CoreAbilityLogic();
         }
+    }
+
+    protected virtual void playCoreFireSounds() {
+
+    }
+
+    protected virtual void playCoreReadySounds() {
+
     }
 
     protected virtual void InformHudCoreAbility() {

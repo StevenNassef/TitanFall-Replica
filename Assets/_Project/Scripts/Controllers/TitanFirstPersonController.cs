@@ -118,6 +118,10 @@ public class TitanFirstPersonController : BasicFirstPersonController
     public MouseLook mouseLook = new MouseLook();
     public AdvancedSettings advancedSettings = new AdvancedSettings();
     [Header("SFX")]
+
+    public TitanSounds titanSounds;
+    public GeneralSounds generalSounds;
+    
     [SerializeField] private AudioSource m_AudioSource;
     [SerializeField] private AudioSource m_BackGroundAudioSource;
     [Space(10)]
