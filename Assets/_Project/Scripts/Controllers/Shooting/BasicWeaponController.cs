@@ -35,6 +35,7 @@ public class BasicWeaponController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         weaponAnimator = GetComponent<Animator>();
         weaponHolder = GetComponentInParent<WeaponHolderController>();
+        pilotHudController = GetComponent<PilotHudController>();
     }
     protected virtual void Start()
     {

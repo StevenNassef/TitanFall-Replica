@@ -4,11 +4,11 @@ using UnityEngine;
 using MyBox;
 public class CharacterStatsHandler : StatsHandler
 {
-    // [MustBeAssigned]
-    // [SerializeField]
+    [MustBeAssigned]
+    [SerializeField]
     protected PilotHudController pilotHudController;
-    // [MustBeAssigned]
-    // [SerializeField]
+    [MustBeAssigned]
+    [SerializeField]
     protected TitanHudController titanHudController;
     [MustBeAssigned]
     [SerializeField]
