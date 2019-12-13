@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -905,7 +905,11 @@ MonoBehaviour:
     Ahmed Adel\n\t\t    Amr Adel\n\n\t\tSounds : \n\t\t\t\t\t\t\t\t\tTitanFall 2
     - sound files\n\t\t\tAudacity\n\t\t\t\t\t  Freesound.org\n\t\t   Youtube\n\n\t\t\tGraphices
     :\n\t\t\t\tPhotoshop\n\t       Blender\n\n         \t\t\t\t\t\t\tModels and Animations
-    : \n\t\t\t\t\tmixamo.com\n\t\t\t\t  free3d.com\n"
+    : \n\t\t\t\t\tmixamo.com\n\t\t\t\t  free3d.com\n\t\t\t\t\t\t\t\t\t\t   UPLN -
+    ProgressBar Pack\n\t\t\t\t\t\t\tUnitySamples: UI\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tDYNAMIC
+    ART - Low Poly Street Pack\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  DMITRII
+    KUTENSENKO - RPG/FPS Game Assets for PC\n\t\t\t\t\t\t gamepedia.com\n\n\n\t\t\t\t\t\t\t\t\t\tBased
+    on TitanFall game made by Electronic Arts"
 --- !u!222 &2005856093
 CanvasRenderer:
   m_ObjectHideFlags: 0
