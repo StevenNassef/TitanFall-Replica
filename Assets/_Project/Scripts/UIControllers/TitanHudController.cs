@@ -92,6 +92,7 @@ public class TitanHudController : MonoBehaviour
 
     [Header("Core Ability Settings")]
     public Text coreAbilityTxt;
+    public Image coreAbilityIcon;
     public Image coreAbilityBar, coreAbilityBarBg;
 
     [Range(1, 100)]
@@ -236,10 +237,14 @@ public class TitanHudController : MonoBehaviour
             audiosource.PlayOneShot(defensiveAbilityTimerSound);
         }
     }
+
+    public void SetCoreAbilityIcon(Sprite icon) {
+        coreAbilityIcon.sprite = icon;
+    }
     
     private void UpdateCoreAbilityValue(float val)
     {
-       
+        
         coreAbilityBar.fillAmount = (val / 100);
 
         if (coreAbilityAlert <= val)
