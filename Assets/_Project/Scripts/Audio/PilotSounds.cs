@@ -10,6 +10,7 @@ public class PilotSounds : MonoBehaviour
     
     private AudioClip walking;
     private AudioClip kill;
+    private AudioClip dead;
     private AudioClip airBorn;
     private List<AudioClip> hit;
 
@@ -20,6 +21,7 @@ public class PilotSounds : MonoBehaviour
         kill = Resources.Load<AudioClip>(pilotFolder + "PlayerPilot/miscsounds_pilot kill");
         walking = Resources.Load<AudioClip>(pilotFolder + "PilotFullWalk");
         airBorn = Resources.Load<AudioClip>(pilotFolder + "airBorn");
+        dead = Resources.Load<AudioClip>(pilotFolder + "Dead");
         hit = new List<AudioClip>(Resources.LoadAll<AudioClip>(pilotFolder + "Hit"));
     }
 
@@ -31,6 +33,11 @@ public class PilotSounds : MonoBehaviour
     [ButtonMethod]
     void playHit(){
         playEffect(hit.GetRandom(), false);
+    }
+
+    [ButtonMethod]
+    void playDead(){
+        playEffect(dead, false);
     }
 
 
