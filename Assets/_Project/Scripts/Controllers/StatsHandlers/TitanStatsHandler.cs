@@ -52,5 +52,8 @@ public class TitanStatsHandler : CharacterStatsHandler
         // TODO
         base.titanHudController.DefensiveAbilityTimerValue = coolDownTimer;
     }
-    
+    // if v call startdefensiveability
+    // time.time
+    // 5 seconds
+    // 
 }

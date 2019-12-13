@@ -11,7 +11,7 @@ public class Weapon : ScriptableObject
     [SerializeField] private Sprite weaponIcon;
     [SerializeField] private string weaponName = "weapon";
     [Tooltip("The amount of damage each bullet deals.")]
-    [ConditionalField(nameof(shootingType), inverse: true, WeaponShootingType.Projectile)]
+    // [ConditionalField(nameof(shootingType), inverse: true, WeaponShootingType.Projectile)]
     [SerializeField] private float damagePerBullet = 4;
     [Tooltip("Automatic (fires by holding)/ Single-shot(Fires on singles press).")]
     [SerializeField] private WeaponFireMode fireMode = WeaponFireMode.Automatic;
@@ -20,7 +20,7 @@ public class Weapon : ScriptableObject
 
     [Tooltip("The maximum amount of bullets a magazine can hold.")]
     [SerializeField] private int ammoCount = 30;
-    [ConditionalField(nameof(shootingType), inverse: true, WeaponShootingType.Projectile)]
+    // [ConditionalField(nameof(shootingType), inverse: true, WeaponShootingType.Projectile)]
     [Tooltip("The distance the bullets is effective for, after which no damage is dealt.")]
     [SerializeField] private float range = 50;
     [Header("Sound Effects")]

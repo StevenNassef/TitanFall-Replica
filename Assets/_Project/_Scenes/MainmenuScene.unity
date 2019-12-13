@@ -13592,8 +13592,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2c724f784f5294b4587b2f11430a0066, type: 2}
   - {fileID: 11400000, guid: 1c304e0a2f546624ab71eb62857073f2, type: 2}
   heavyWeaponData:
+  - {fileID: 11400000, guid: a0ef8b424e3a11d408d91f80b5c4e6e2, type: 2}
   - {fileID: 11400000, guid: 5933ed63bc0919e408bf49b95d64c123, type: 2}
-  - {fileID: 11400000, guid: f874009ca57099247877caafc5b37c01, type: 2}
   titanData:
   - {fileID: 11400000, guid: 62e72db31b2b5804390087621bdb4dc7, type: 2}
   - {fileID: 11400000, guid: fc016b94e44a87541a434e3be4df2b62, type: 2}
