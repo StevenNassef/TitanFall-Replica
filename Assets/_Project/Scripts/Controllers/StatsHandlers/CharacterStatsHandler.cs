@@ -4,6 +4,12 @@ using UnityEngine;
 using MyBox;
 public class CharacterStatsHandler : StatsHandler
 {
+    // [MustBeAssigned]
+    // [SerializeField]
+    protected PilotHudController pilotHudController;
+    // [MustBeAssigned]
+    // [SerializeField]
+    protected TitanHudController titanHudController;
     [MustBeAssigned]
     [SerializeField]
     protected WeaponHolderController weaponHolder;
@@ -98,6 +104,39 @@ public class CharacterStatsHandler : StatsHandler
                 OnCoreActivated.Invoke();
             }
             CoreAbilityLogic();
+        }
+    }
+
+
+    protected void InformHudHp(ObjectType type, float currentHealthPoints, float maxHealthPoints) {
+        switch (type)
+        {
+            case ObjectType.Pilot:
+                pilotHudController.HpValue =
+                    (currentHealthPoints/maxHealthPoints)*100.0f;
+                break;
+            case ObjectType.Titan:
+                titanHudController.HpValue =
+                    (currentHealthPoints/maxHealthPoints)*100.0f;
+                break;
+            default:
+                break;
+        }
+    }
+
+    protected void InformHudCoreAbility(ObjectType type) {
+        switch (type)
+        {
+            case ObjectType.Pilot:
+                pilotHudController.TitanfallValue =
+                    (currentCorePoints/maxCorePoints)*100.0f;
+                break;
+            case ObjectType.Titan:
+                titanHudController.CoreAbilityBarValue =
+                    (currentCorePoints/maxCorePoints)*100.0f;
+                break;
+            default:
+                break;
         }
     }
 }

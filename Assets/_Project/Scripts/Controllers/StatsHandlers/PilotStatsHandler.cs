@@ -7,6 +7,7 @@ public class PilotStatsHandler : CharacterStatsHandler
     [SerializeField] private float titanSpwanMaxDistance = 10;
     [SerializeField] private float maxSurfaceAngle = 40;
     [SerializeField] private GameObject playerTitan;
+
     public event OnStatsHandlerEvent OnHealing;
 
     //the to wait after the last taken damage to start regenrating health.
@@ -115,5 +116,20 @@ public class PilotStatsHandler : CharacterStatsHandler
         regenrating = false;
         Debug.Log("Game Over!");
         // TODO: make GameOver Logic
+    }
+
+    protected void InformHudAmmoCount(int currentAmmoCount) {
+        // TODO
+        base.pilotHudController.AmmoValue = currentAmmoCount;
+    }
+
+    protected void InformHudWeaponSelection(Sprite icon, string weaponName,
+                                            int maxAmmoCount, int currentAmmoCount) {
+        // TODO
+        // base.weaponHolder.
+        base.pilotHudController.ChangeWeapon(icon,
+                                            weaponName,
+                                             maxAmmoCount,
+                                             currentAmmoCount);
     }
 }

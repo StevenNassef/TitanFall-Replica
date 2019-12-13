@@ -24,4 +24,17 @@ public class TitanStatsHandler : CharacterStatsHandler
 
         return damage;
     }
+
+    protected void InformHudDefensiveAbilityCoolDownValue(int coolDownTimer) {
+        base.titanHudController.DefensiveAbilityTimerValue = coolDownTimer;
+    }
+
+    protected void InformHudDashBarStatus(int numOfCurrentAvailableDashes, int coolDownTimer) {
+        base.titanHudController.DashMeterValue = numOfCurrentAvailableDashes;
+        base.titanHudController.DashMeterTime = coolDownTimer;
+    }
+
+    protected void InformHudTitanSelection() {
+        titanHudController.SetCoreAbilityIcon(GameInitializations.Titan.TitanIcon);
+    }
 }
