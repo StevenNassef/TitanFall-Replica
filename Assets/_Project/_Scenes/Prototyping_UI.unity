@@ -33198,11 +33198,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TitanHUD
       objectReference: {fileID: 0}
-    - target: {fileID: 1885967915036941011, guid: b901feee1e6e0844b9cb115ee65927a3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b901feee1e6e0844b9cb115ee65927a3, type: 3}
 --- !u!1 &1948803868743874944
@@ -33673,7 +33668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c81407209f85e4c87c0cda8b32868e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 2356559098427159451}
+  fpsCamera: {fileID: 0}
   motionBob:
     HorizontalBobRange: 0.01
     VerticalBobRange: 0.03
@@ -56365,11 +56360,17 @@ MonoBehaviour:
   currentHealthPoints: 0
   type: 0
   maxHealthPoints: 100
+  weaponHolder: {fileID: 0}
+  fpsController: {fileID: 0}
+  fpsCamera: {fileID: 0}
   currentCorePoints: 0
   maxCorePoints: 100
   pointsForPilotKill: 10
   pointForTitanKill: 50
   coreAbilityKey: 118
+  titanSpwanMaxDistance: 10
+  maxSurfaceAngle: 40
+  playerTitan: {fileID: 0}
 --- !u!137 &8539351454710585317
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -56681,6 +56682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSwitchButton: 122
+  statsHandler: {fileID: 0}
 --- !u!33 &8717241960942448601
 MeshFilter:
   m_ObjectHideFlags: 0

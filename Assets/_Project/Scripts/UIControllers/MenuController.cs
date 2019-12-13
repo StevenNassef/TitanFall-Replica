@@ -46,7 +46,7 @@ public class MenuController : MonoBehaviour
 		GameInitializations.SfxVolume = sfxVolume;
 		GameInitializations.FirstLevelIsParkour = isLevelParkour;
 		if(isLevelParkour) {
-			UnityEngine.SceneManagement.SceneManager.LoadScene("Prototyping_ParkourScene");
+			UnityEngine.SceneManagement.SceneManager.LoadScene("Prototyping_Parkour");
 		} else {
 			UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
 		}
@@ -101,6 +101,20 @@ public class MenuController : MonoBehaviour
 		titanSelectionImage.sprite = titanData[titanPointer].TitanIcon;
 		EventSystem.current.SetSelectedGameObject(null);
 	}
+
+	public void ShowCurrentInitializations() {
+		primaryWeaponSelectionImage.sprite = primaryWeaponData[primaryWeaponPointer].WeaponIcon;
+		heavyWeaponSelectionImage.sprite = heavyWeaponData[heavyWeaponPointer].WeaponIcon;
+		titanSelectionImage.sprite = titanData[titanPointer].TitanIcon;
+	}
+
+	// TODO
+	// public void ShowCurrentVolumes() {
+	// 	masterSlider.value = masterVolume;
+	// 	musicSlider.value = musicVolume;
+	// 	sfxSlider.value = sfxVolume;
+	// }
+
 
 	public void ShowInfo(int typeIndex) {
 		Weapon weaponDataTmp;
@@ -165,7 +179,7 @@ public class MenuController : MonoBehaviour
     public void OpenPanel (Animator anim)
 	{
 		EventSystem.current.SetSelectedGameObject(null);
-		
+
 		m_OpenParameterId = Animator.StringToHash (k_OpenTransitionName);
 
 		if (m_Open == anim)
