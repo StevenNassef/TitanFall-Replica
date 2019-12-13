@@ -10,7 +10,7 @@ public class TitanHudController : MonoBehaviour
     [Header("HP Bar Settings")]
     public Text hpTxt;
     public Image hpBar, hpBarBg;
-    [Range(1, 70)]
+    [Range(1, 100)]
     public int hpAlert = 20;
     public Color hpAlertColor;
     public Color hpBarBgColor;
@@ -18,46 +18,48 @@ public class TitanHudController : MonoBehaviour
     public bool hpBarSoundRepeat = false;
     public float hpBarAlertRepeatRate = 1f;
     private float nextPlayHpSound;
-    private float hpBarValue = 20;
-    public float HpBarValue
+    private float hpValue = 20;
+    public float HpValue
     {
-        get { return hpBarValue; }
+        get { return hpValue; }
 
         set
         {
             value = Mathf.Clamp(value, 0, 100);
-            hpBarValue = value;
-            UpdateHpValue(hpBarValue);
+            hpValue = value;
+            UpdateHpValue(hpValue);
 
         }
     }
 
     [Header("Dash Meter Settings")]
-    public Text dashMeterTxt;
-    public Image dashMeterBar, dashMeterBarBg;
-    [Range(1, 3)]
-    public int dashMeterAlert = 3;
-    public Color dashMeterAlertColor;
-    public Color dashMeterBarBgColor;
-    public AudioClip dashMeterBarSound;
-    public bool dashMeterBarSoundRepeat = false;
-    public float dashMeterBarAlertRepeatRate = 1f;
-    private float nextPlayDashMeterBarSound;
-
-    public int dashMeterMaxValue = 3;
-    private int dashMeterValue = 20;
+    public Text dashMeterTimeTxt;
+    public Image[] dashesIcons;
+    private int dashMeterValue = 1;
     public int DashMeterValue
     {
         get { return dashMeterValue; }
 
         set
         {
-            value = Mathf.Clamp(value, 0, dashMeterMaxValue);
+            value = Mathf.Clamp(value, 0, dashesIcons.Length);
             dashMeterValue = value;
             UpdateDashMeterValue(dashMeterValue);
 
         }
     }
+    private int dashMeterTime;
+    public int DashMeterTime
+    {
+        get {return dashMeterValue;}
+
+        set
+        {
+            dashMeterTime = dashMeterValue;
+            dashMeterTimeTxt.text = dashMeterTime.ToString();
+        }
+    }
+
 
     [Header("Defensive Ability Timer Settings")]
     public Text defensiveAbilityTimerTxt;
@@ -129,14 +131,13 @@ public class TitanHudController : MonoBehaviour
     {
         hpTxt.text = "HP";
         hpBarBg.color = hpBarBgColor;
-        dashMeterTxt.text = "DASH";
-        dashMeterBarBg.color = dashMeterBarBgColor;
+        dashMeterTimeTxt.text = "DASH-TIMER";
         defensiveAbilityTimerTxt.text = "DEF-TIMER";
         defensiveAbilityTimerBg.color = defensiveAbilityTimerBgColor;
         coreAbilityTxt.text = "CORE";
         coreAbilityBarBg.color = coreAbilityBarBgColor;
 
-        UpdateHpValue(hpBarValue);
+        UpdateHpValue(hpValue);
         UpdateDashMeterValue(dashMeterValue);
         UpdateDefensiveAbilityTimerValue(defensiveAbilityTimerValue);  
         UpdateCoreAbilityValue(coreAbilityBarValue);
@@ -166,7 +167,6 @@ public class TitanHudController : MonoBehaviour
         else
         {
             UpdateHpAlertSound();
-            UpdateDashMeterAlertSound();
             UpdateDefensiveAbilityTimerAlertSound();
             UpdateCoreAbilityAlertSound();
         }
@@ -175,7 +175,7 @@ public class TitanHudController : MonoBehaviour
     private void UpdateHpValue(float val)
     {
        
-        hpBar.fillAmount = (val / 100)*0.75f;
+        hpBar.fillAmount = (val / 100)*1.0f;
 
         hpTxt.text = val + "%";
 
@@ -192,7 +192,7 @@ public class TitanHudController : MonoBehaviour
 
     private void UpdateHpAlertSound()
     {
-        if (hpAlert >= hpBarValue && Time.time > nextPlayHpSound)
+        if (hpAlert >= hpValue && Time.time > nextPlayHpSound)
         {
             nextPlayHpSound = Time.time + hpBarAlertRepeatRate;
             audiosource.PlayOneShot(hpBarSound);
@@ -201,35 +201,19 @@ public class TitanHudController : MonoBehaviour
 
     private void UpdateDashMeterValue(int val)
     {
-    
-        dashMeterBar.fillAmount = (val / dashMeterMaxValue)*1.0f;
-
-        dashMeterTxt.text = val.ToString();
-
-        if (dashMeterAlert >= val)
-        {
-            dashMeterBarBg.color = dashMeterAlertColor;
-        }
-        else
-        {
-            dashMeterBarBg.color = dashMeterBarBgColor;
-        }
-
-    }
-
-    private void UpdateDashMeterAlertSound()
-    {
-        if (dashMeterAlert >= dashMeterValue && Time.time > nextPlayDashMeterBarSound)
-        {
-            nextPlayDashMeterBarSound = Time.time + dashMeterBarAlertRepeatRate;
-            audiosource.PlayOneShot(dashMeterBarSound);
+        for(int i=0; i<dashesIcons.Length; i++) {
+            if(i <= val) {
+                dashesIcons[i].enabled = true;
+            } else {
+                dashesIcons[i].enabled = false;
+            }
         }
     }
 
     private void UpdateDefensiveAbilityTimerValue(int val)
     {
     
-        defensiveAbilityTimerBar.fillAmount = 1.0f -(val / defensiveAbilityTimerMaxValue);
+        defensiveAbilityTimerBar.fillAmount = (1.0f - (val / defensiveAbilityTimerMaxValue))*0.7f;
         defensiveAbilityTimerTxt.text = val.ToString();
 
         if (defensiveAbilityTimerAlert <= val)

@@ -12,20 +12,18 @@ public class PilotHudController : MonoBehaviour
     public Text weaponNameTxt;
     public Text ammoCountTxt;
     private int ammoMaxValue;
+    private int ammoValue = 2;
+    public int AmmoValue
+    {
+        get { return ammoValue; }
+        set
+        {
+            value = Mathf.Clamp(value, 0, ammoMaxValue);
+            ammoValue = value;
+            UpdateAmmoValue(ammoValue);
 
-    // private int ammoMaxValue;
-    // private int ammoValue = 2;
-    // public int AmmoValue
-    // {
-    //     get { return ammoValue; }
-    //     set
-    //     {
-    //         value = Mathf.Clamp(value, 0, ammoMaxValue);
-    //         ammoValue = value;
-    //         UpdateAmmoValue(ammoValue);
-
-    //     }
-    // }
+        }
+    }
 
     [Header("Hp Bar Settings")]
     public Text hpTxt;
@@ -40,16 +38,16 @@ public class PilotHudController : MonoBehaviour
     public float hpBarSoundRepeatRate = 1f;
     private float nextPlayHpSound;
 
-    private float hpBarValue = 20;
-    public float HpBarValue
+    private float hpValue = 20;
+    public float HpValue
     {
-        get { return hpBarValue; }
+        get { return hpValue; }
 
         set
         {
             value = Mathf.Clamp(value, 0, 100);
-            hpBarValue = value;
-            UpdateHpValue(hpBarValue);
+            hpValue = value;
+            UpdateHpValue(hpValue);
 
         }
     }
@@ -66,15 +64,15 @@ public class PilotHudController : MonoBehaviour
     public float titanfallBarSoundRepeatRate = 1f;
     private float nextPlayTitanFallSound;
     private AudioSource audiosource;
-    private float titanfallBarValue = 32;
-    public float TitanfallBarValue
+    private float titanfallValue = 32;
+    public float TitanfallValue
     {
-        get { return titanfallBarValue; }
+        get { return titanfallValue; }
         set
         {
             value = Mathf.Clamp(value, 0, 100);
-            titanfallBarValue = value;
-            UpdateTitanfallValue(titanfallBarValue);
+            titanfallValue = value;
+            UpdateTitanfallValue(titanfallValue);
 
         }
     }
@@ -92,10 +90,9 @@ public class PilotHudController : MonoBehaviour
         hpBarBg.color = hpBarBgColor;
         titanfallBarBg.color = titanfallBarBgColor;
 
-        UpdateHpValue(hpBarValue);
-        UpdateTitanfallValue(titanfallBarValue);
-        // JUST FOR DEBUG
-        UpdateAmmoValue(7); 
+        UpdateHpValue(hpValue);
+        UpdateTitanfallValue(titanfallValue);
+        UpdateAmmoValue(ammoValue); 
     }
 
     // Update is called once per frame
@@ -110,7 +107,6 @@ public class PilotHudController : MonoBehaviour
 
             UpdateHpValue(50);
             UpdateTitanfallValue(30);
-            // JUST FOR DEBUG
             UpdateAmmoValue(7);   
         }
         else
@@ -121,20 +117,16 @@ public class PilotHudController : MonoBehaviour
     }
 
     private void UpdateAmmoValue(int val) {
-        if (currentWeaponData != null) {
-            weaponIcon.sprite = currentWeaponData.WeaponIcon;
-            weaponNameTxt.text = currentWeaponData.WeaponName;
-            ammoMaxValue = currentWeaponData.AmmoCount;
-            ammoCountTxt.text = val + "\n" + ammoMaxValue;
-        }
-
+        ammoCountTxt.text = val + "\n" + ammoMaxValue;
     }
 
-    public void UpdateWeaponValues(Sprite icon, string weaponName, int maxAmmoCount, int currentAmmoCount) {
+    public void ChangeWeapon(Sprite icon, string weaponName, int maxAmmoCount, int currentAmmoCount) {
         weaponIcon.sprite = icon;
         weaponNameTxt.text = weaponName;
         ammoMaxValue = maxAmmoCount;
-        ammoCountTxt.text = currentAmmoCount + "\n" + ammoMaxValue;
+        AmmoValue = currentAmmoCount;
+        // ammoCountTxt.text = currentAmmoCount + "\n" + ammoMaxValue;
+
     }
     
     private void UpdateHpValue(float val)
@@ -173,7 +165,7 @@ public class PilotHudController : MonoBehaviour
 
     private void UpdateHpAlertSound()
     {
-        if (hpAlert >= hpBarValue && Time.time > nextPlayHpSound)
+        if (hpAlert >= hpValue && Time.time > nextPlayHpSound)
         {
             nextPlayHpSound = Time.time + hpBarSoundRepeatRate;
             audiosource.PlayOneShot(hpBarSound);
@@ -182,7 +174,7 @@ public class PilotHudController : MonoBehaviour
 
     private void UpdateTitanfallAlertSound()
     {
-        if (titanfallAlert <= titanfallBarValue && Time.time > nextPlayTitanFallSound)
+        if (titanfallAlert <= titanfallValue && Time.time > nextPlayTitanFallSound)
         {
             nextPlayTitanFallSound = Time.time + titanfallBarSoundRepeatRate;
             audiosource.PlayOneShot(titanfallBarSound);
