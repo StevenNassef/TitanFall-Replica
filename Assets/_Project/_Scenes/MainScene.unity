@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 89abba4c87ddcdf429def30837572d47,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -14537,7 +14537,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 935851752}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -20512,7 +20512,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 935851752}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -22905,7 +22905,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 935851752}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -25101,7 +25101,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 935851752}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -26127,7 +26127,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 935851752}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -32662,7 +32662,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 935851752}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -37910,7 +37910,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 935851752}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -40310,7 +40310,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 935851752}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -46524,7 +46524,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 935851752}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -46783,7 +46783,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 935851752}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -47454,7 +47454,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 935851752}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
@@ -48663,7 +48663,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 935851752}
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
