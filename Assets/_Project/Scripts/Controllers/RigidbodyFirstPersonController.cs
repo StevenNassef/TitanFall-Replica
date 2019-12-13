@@ -548,6 +548,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (m_AudioSource.clip == m_WalkingSFX)
                 return;
             m_AudioSource.clip = m_WalkingSFX;
+            // m_BackGroundAudioSource.Play();
             pilotSounds.playWalking();
         }
 
