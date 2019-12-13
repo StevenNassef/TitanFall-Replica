@@ -293,7 +293,7 @@ MonoBehaviour:
     currentNumberOfDashes: 3
     TimeToRefillDash: 5
     DashDuration: 1
-    DashForce: 20
+    DashForce: 2000
     DashKey: 32
     m_Dash: 0
     m_DashTimer: 0
@@ -349,8 +349,8 @@ MonoBehaviour:
     stickToWallHelperDistance: 0.5
     slowDownRate: 20
     airControl: 0
-    shellOffset: 0.1
-    gravityModifier: 4
+    shellOffset: 0.2
+    gravityModifier: 2
   m_AudioSource: {fileID: 0}
   m_BackGroundAudioSource: {fileID: 0}
   m_JumpBackGroundSFX: {fileID: 0}

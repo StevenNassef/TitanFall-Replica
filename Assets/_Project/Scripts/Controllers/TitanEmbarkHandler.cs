@@ -76,6 +76,7 @@ public class TitanEmbarkHandler : MonoBehaviour
     {
         player.transform.localPosition = playerDisembarkPositon;
         player.SetActive(true);
+        player.transform.parent = null;
         titanStatsHandler.enabled = false;
         titanFirstPersonController.enabled = false;
         titanComponents.SetActive(false);

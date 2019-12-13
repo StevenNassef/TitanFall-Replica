@@ -411,7 +411,7 @@ MonoBehaviour:
     RemainingJumps: 0
     RunKey: 304
     CrouchKey: 99
-    JumpForce: 30
+    JumpForce: 100
     SlopeCurveModifier:
       serializedVersion: 2
       m_Curve:
@@ -457,13 +457,13 @@ MonoBehaviour:
     lockCursor: 1
   advancedSettings:
     groundCheckDistance: 0.01
-    wallCheckDistance: 0.05
-    wallCheckRadius: 0.05
-    stickToGroundHelperDistance: 0.5
+    wallCheckDistance: 0.2
+    wallCheckRadius: 0.1
+    stickToGroundHelperDistance: 0.6
     stickToWallHelperDistance: 0.5
     slowDownRate: 20
     airControl: 0
-    shellOffset: 0.1
+    shellOffset: 0.2
     gravityModifier: 2
   m_AudioSource: {fileID: 0}
   m_BackGroundAudioSource: {fileID: 0}

@@ -4725,11 +4725,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Pilot
       objectReference: {fileID: 0}
-    - target: {fileID: 2356559099008338349, guid: d6ff9b0037f6d7e44870dfc08f56001f,
-        type: 3}
-      propertyPath: movementSettings.JumpForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 8491465418516217492, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: playerTitan
