@@ -85,14 +85,14 @@ public class PilotHudController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hpTxt.text = "HP";
+        // hpTxt.text = "HP";
 
-        hpBarBg.color = hpBarBgColor;
-        titanfallBarBg.color = titanfallBarBgColor;
+        // hpBarBg.color = hpBarBgColor;
+        // // titanfallBarBg.color = titanfallBarBgColor;
 
-        UpdateHpValue(hpValue);
-        UpdateTitanfallValue(titanfallValue);
-        UpdateAmmoValue(ammoValue); 
+        // UpdateHpValue(hpValue);
+        // UpdateTitanfallValue(titanfallValue);
+        // UpdateAmmoValue(ammoValue); 
     }
 
     // Update is called once per frame
@@ -111,8 +111,8 @@ public class PilotHudController : MonoBehaviour
         }
         else
         {
-            UpdateHpAlertSound();
-            UpdateTitanfallAlertSound();
+            // UpdateHpAlertSound();
+            // UpdateTitanfallAlertSound();
         }
     }
 
@@ -136,14 +136,14 @@ public class PilotHudController : MonoBehaviour
 
         hpTxt.text = val + "%";
 
-        if (hpAlert >= val)
-        {
-            hpBarBg.color = hpAlertColor;
-        }
-        else
-        {
-            hpBarBg.color = hpBarBgColor;
-        }
+        // if (hpAlert >= val)
+        // {
+        //     hpBarBg.color = hpAlertColor;
+        // }
+        // else
+        // {
+        //     hpBarBg.color = hpBarBgColor;
+        // }
 
     }
 
@@ -152,14 +152,14 @@ public class PilotHudController : MonoBehaviour
        
         titanfallBar.fillAmount = (val / 100);
 
-        if (titanfallAlert <= val)
-        {
-            titanfallBarBg.color = titanfallBarAlertColor;
-        }
-        else
-        {
-            titanfallBarBg.color = titanfallBarBgColor;
-        }
+        // if (titanfallAlert <= val)
+        // {
+        //     titanfallBarBg.color = titanfallBarAlertColor;
+        // }
+        // else
+        // {
+        //     titanfallBarBg.color = titanfallBarBgColor;
+        // }
 
     }
 
@@ -179,5 +179,10 @@ public class PilotHudController : MonoBehaviour
             nextPlayTitanFallSound = Time.time + titanfallBarSoundRepeatRate;
             audiosource.PlayOneShot(titanfallBarSound);
         }
+    }
+
+    public void resetValues() {
+        HpValue = 100;
+        TitanfallValue = 0;
     }
 }

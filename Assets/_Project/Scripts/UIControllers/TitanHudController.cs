@@ -56,7 +56,11 @@ public class TitanHudController : MonoBehaviour
         set
         {
             dashMeterTime = value;
-            dashMeterTimeTxt.text = dashMeterTime.ToString();
+            if(dashMeterTime > 0) {
+                dashMeterTimeTxt.text = dashMeterTime.ToString();
+            } else {
+                dashMeterTimeTxt.text ="";
+            }
         }
     }
 
@@ -267,4 +271,10 @@ public class TitanHudController : MonoBehaviour
         }
     }
 
+    public void ResetValues() {
+        HpValue = 100;
+        CoreAbilityBarValue = 0;
+        DashMeterTime = 0;
+        DashMeterValue = dashesIcons.Length;
+    }
 }

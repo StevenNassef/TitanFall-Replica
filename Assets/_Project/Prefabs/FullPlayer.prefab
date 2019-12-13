@@ -474,31 +474,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Pilot
       objectReference: {fileID: 0}
-    - target: {fileID: 2761661818899202969, guid: d6ff9b0037f6d7e44870dfc08f56001f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2761661818899202971, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: pilotHudController
       value: 
       objectReference: {fileID: 8419743349656144166}
-    - target: {fileID: 3505332793334817153, guid: d6ff9b0037f6d7e44870dfc08f56001f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3505332793334817155, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: pilotHudController
       value: 
       objectReference: {fileID: 8419743349656144166}
-    - target: {fileID: 4370061656162549240, guid: d6ff9b0037f6d7e44870dfc08f56001f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4370061656162549242, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: pilotHudController
@@ -509,21 +494,11 @@ PrefabInstance:
       propertyPath: pilotHudController
       value: 
       objectReference: {fileID: 8419743349656144166}
-    - target: {fileID: 6791213680475637407, guid: d6ff9b0037f6d7e44870dfc08f56001f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8122849843542775833, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: pilotHudController
       value: 
       objectReference: {fileID: 8419743349656144166}
-    - target: {fileID: 8122849843542775835, guid: d6ff9b0037f6d7e44870dfc08f56001f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8491465418516217492, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: pilotHudController
