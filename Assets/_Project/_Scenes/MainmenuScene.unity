@@ -1106,8 +1106,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 1
       - m_Target: {fileID: 8411644612054067599}
-        m_MethodName: GetNextPrimaryWeapon
-        m_Mode: 6
+        m_MethodName: ShowCurrentInitializations
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1126,7 +1126,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 1
+        m_CallState: 0
       - m_Target: {fileID: 8411644612054067599}
         m_MethodName: GetNextTitan
         m_Mode: 6
@@ -1137,7 +1137,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 1
+        m_CallState: 0
 --- !u!222 &380395131
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12561,6 +12561,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 8411644612054067598}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8411644611424256720
 GameObject:
   m_ObjectHideFlags: 0
