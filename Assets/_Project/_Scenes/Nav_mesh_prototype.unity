@@ -508,7 +508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &1336591821
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -836,6 +836,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rob Anim
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 01bb6550265ca8042b77f439a3467dfa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01bb6550265ca8042b77f439a3467dfa, type: 3}
 --- !u!1 &1570921455 stripped
@@ -1135,7 +1140,7 @@ PrefabInstance:
       objectReference: {fileID: 712247494}
     - target: {fileID: 11402594, guid: 54eb5844754051b40a918a84c33b7c1a, type: 3}
       propertyPath: detectionRadius
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54eb5844754051b40a918a84c33b7c1a, type: 3}

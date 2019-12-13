@@ -44,8 +44,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         RaycastHit hitInfo;
         if (Physics.Raycast(transform.position, target.position - transform.position, out hitInfo, detectionRadius))
         {
-            if (hitInfo.collider.gameObject.CompareTag("Player"))
-            {
                 target = hitInfo.collider.gameObject.transform;
                 Debug.Log("Patrol should be disabled");
                 agent.SetDestination(target.position);
@@ -56,7 +54,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 else
                     character.Move(Vector3.zero, false, false);
                 return;
-            }
+            
         }
         patrolScript.enabled = true;
         character.Move(agent.desiredVelocity, false, false);
