@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(TitanFirstPersonController))]
 public class TitanStatsHandler : CharacterStatsHandler
 {
-
+    private float lastDefensiveTime;
+    private float maxCoolDownDefensiveTime = 15.0f;
     protected TitanFirstPersonController controller;
     protected override void InitializeHandler()
     {
@@ -48,12 +49,28 @@ public class TitanStatsHandler : CharacterStatsHandler
     }
 
     
-    protected void InformHudDefensiveAbilityCoolDownValue(int coolDownTimer) {
+    protected void InformHudDefensiveAbilityCoolDownValue(float coolDownTimer) {
         // TODO
         base.titanHudController.DefensiveAbilityTimerValue = coolDownTimer;
     }
-    // if v call startdefensiveability
-    // time.time
-    // 5 seconds
-    // 
+
+    protected void TryToStartDefensiveAbility() {
+
+        float currentTime = Time.time;
+
+        if (currentTime - lastDefensiveTime >= maxCoolDownDefensiveTime) {
+            InformHudDefensiveAbilityCoolDownValue(maxCoolDownDefensiveTime);
+            if(Input.GetKey(KeyCode.V)) {
+                InformHudDefensiveAbilityCoolDownValue(0);
+                lastDefensiveTime = currentTime;
+            }            
+        } else if (currentTime - lastDefensiveTime < maxCoolDownDefensiveTime) {
+            InformHudDefensiveAbilityCoolDownValue(currentTime - lastDefensiveTime);
+        }
+    }
+
+    protected override void Update() {
+        base.Update();
+        TryToStartDefensiveAbility();
+    }
 }

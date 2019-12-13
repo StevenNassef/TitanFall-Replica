@@ -79,9 +79,9 @@ public class TitanHudController : MonoBehaviour
 
     private float nextPlayDefensiveAbilityTimerSound;
 
-    public int defensiveAbilityTimerMaxValue = 15;
-    private int defensiveAbilityTimerValue = 10;
-    public int DefensiveAbilityTimerValue
+    public float defensiveAbilityTimerMaxValue = 15;
+    private float defensiveAbilityTimerValue = 10;
+    public float DefensiveAbilityTimerValue
     {
         get { return defensiveAbilityTimerValue; }
         set
@@ -215,10 +215,10 @@ public class TitanHudController : MonoBehaviour
         }
     }
 
-    private void UpdateDefensiveAbilityTimerValue(int val)
+    private void UpdateDefensiveAbilityTimerValue(float val)
     {
     
-        defensiveAbilityTimerBar.fillAmount = (1.0f - (val / defensiveAbilityTimerMaxValue))*0.7f;
+        defensiveAbilityTimerBar.fillAmount = (val / defensiveAbilityTimerMaxValue)*0.7f;
         defensiveAbilityTimerTxt.text = val.ToString();
 
         if (defensiveAbilityTimerAlert <= val)
