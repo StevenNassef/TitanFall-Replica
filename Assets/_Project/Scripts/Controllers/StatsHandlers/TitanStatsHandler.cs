@@ -14,6 +14,14 @@ public class TitanStatsHandler : CharacterStatsHandler
         controller = GetComponent<TitanFirstPersonController>();
     }
 
+    protected override void playCoreFireSounds() {
+        controller.titanSounds.playCoreFire();
+    }
+
+    protected override void playCoreReadySounds() {
+        controller.titanSounds.playCoreReady();
+    }
+
     protected override float CalculateDamage(float damage, ObjectType type)
     {
         //ignore all damage when the titan is dashing
@@ -24,4 +32,25 @@ public class TitanStatsHandler : CharacterStatsHandler
 
         return damage;
     }
+
+    protected override void InformHudCoreAbility() {
+        base.titanHudController.CoreAbilityBarValue =
+                    (currentCorePoints/maxCorePoints)*100.0f;
+    }
+
+    protected override void InformHudHp() {
+        base.titanHudController.HpValue =
+            (base.currentHealthPoints/base.maxHealthPoints)*100.0f;
+        if (base.currentHealthPoints <= 0) {
+            base.pilotHudController.enabled = true;
+            base.titanHudController.enabled = false;
+        }
+    }
+
+    
+    protected void InformHudDefensiveAbilityCoolDownValue(int coolDownTimer) {
+        // TODO
+        base.titanHudController.DefensiveAbilityTimerValue = coolDownTimer;
+    }
+    
 }

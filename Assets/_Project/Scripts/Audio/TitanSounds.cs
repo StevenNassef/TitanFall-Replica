@@ -62,38 +62,38 @@ public class TitanSounds : MonoBehaviour
     }
 
     [ButtonMethod]
-    void playWelcome() {
+    public void playWelcome() {
         playTalk(welcome.GetRandom(), false);
     }
     
     [ButtonMethod]
-    void playEject() {
+    public void playEject() {
         playTalk(eject.GetRandom(), false);
     }
     
     [ButtonMethod]
-    void playCriticalDamage() {
+    public void playCriticalDamage() {
         playTalk(criticalDamage.GetRandom(), false);
     }
 
     [ButtonMethod]
-    void playCoreReady() {
+    public void playCoreReady() {
         playTalk(coreReady.GetRandom(), false);
     }
 
     [ButtonMethod]
-    void playCoreFire() {
+    public void playCoreFire() {
         playTalk(coreFire.GetRandom(), false);
     }
     
 
     [ButtonMethod]
-    void playDefence() {
+    public void playDefence() {
         playEffect(defence.GetRandom(), false);
     }
 
     [ButtonMethod]
-    void playFire() {
+    public void playFire() {
         StartCoroutine(fireCoroutine());
     }
 
@@ -107,60 +107,60 @@ public class TitanSounds : MonoBehaviour
     }
 
     [ButtonMethod]
-    void playReload() {
+    public void playReload() {
         playEffect(reload, false);
     }
 
     [ButtonMethod]
-    void stopFire(){
+    public void stopFire(){
         playEffect(fireEnd, false);
     }
 
     [ButtonMethod]
-    void playNukeEject() {
+    public void playNukeEject() {
         playEffect(nukeEject, false);
     }
 
     [ButtonMethod]
-    void playExit() {
+    public void playExit() {
         playEffect(exit, false);
     }
 
     [ButtonMethod]
-    void playEjectBeeps() {
+    public void playEjectBeeps() {
         playEffect(ejectBeeps, false);
     }
 
 
     [ButtonMethod]
-    void playWalking() {
+    public void playWalking() {
         playBackground(walking.GetRandom(), true);
     }
 
     [ButtonMethod]
-    void playSprint() {
+    public void playSprint() {
         playBackground(sprint, true);
     }
 
     [ButtonMethod]
-    void playDash() {
+    public void playDash() {
         playBackground(dash.GetRandom(), false);
     }
 
 
-    void playTalk(AudioClip clip, bool loop) {
+    public void playTalk(AudioClip clip, bool loop) {
         talk.GetComponent<AudioSource>().loop = loop;
         talk.GetComponent<AudioSource>().clip = clip;
         talk.GetComponent<AudioSource>().Play();
     }
 
-    void playEffect(AudioClip clip, bool loop) {
+    public void playEffect(AudioClip clip, bool loop) {
         effect.GetComponent<AudioSource>().loop = loop;
         effect.GetComponent<AudioSource>().clip = clip;
         effect.GetComponent<AudioSource>().Play();
     }
 
-    void playBackground(AudioClip clip, bool loop) {
+    public void playBackground(AudioClip clip, bool loop) {
         background.GetComponent<AudioSource>().loop = loop;
         background.GetComponent<AudioSource>().clip = clip;
         background.GetComponent<AudioSource>().Play();
@@ -168,13 +168,13 @@ public class TitanSounds : MonoBehaviour
 
 
     [ButtonMethod]
-    void stopBackground(){
+    public void stopBackground(){
         background.GetComponent<AudioSource>().loop = false;
         background.GetComponent<AudioSource>().Stop();
     }
 
     [ButtonMethod]
-    void stopEffect(){
+    public void stopEffect(){
         effect.GetComponent<AudioSource>().loop = false;
         effect.GetComponent<AudioSource>().Stop();
     }

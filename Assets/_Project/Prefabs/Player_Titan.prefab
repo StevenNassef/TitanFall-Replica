@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebfb7437b3972b4ba9e73aa8c0f36d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titanHudController: {fileID: 0}
   cam: {fileID: 4365674382446875636}
   cameraHolderTransform: {fileID: 4457505475386412857}
   movementSettings:
@@ -371,6 +372,8 @@ MonoBehaviour:
   currentHealthPoints: 0
   type: 0
   maxHealthPoints: 400
+  pilotHudController: {fileID: 0}
+  titanHudController: {fileID: 0}
   weaponHolder: {fileID: 1469577928}
   fpsController: {fileID: 4365674382448382421}
   fpsCamera: {fileID: 4365674382446875636}

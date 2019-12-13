@@ -7,6 +7,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 [RequireComponent(typeof(CapsuleCollider))]
 public class TitanFirstPersonController : BasicFirstPersonController
 {
+    public TitanHudController titanHudController;
+
     [Serializable]
     public class TitanMovementSettings
     {
@@ -116,6 +118,10 @@ public class TitanFirstPersonController : BasicFirstPersonController
     public MouseLook mouseLook = new MouseLook();
     public AdvancedSettings advancedSettings = new AdvancedSettings();
     [Header("SFX")]
+
+    public TitanSounds titanSounds;
+    public GeneralSounds generalSounds;
+    
     [SerializeField] private AudioSource m_AudioSource;
     [SerializeField] private AudioSource m_BackGroundAudioSource;
     [Space(10)]
@@ -168,6 +174,10 @@ public class TitanFirstPersonController : BasicFirstPersonController
         RotateView();
 
         movementSettings.UpdateInput();
+
+        InformHudDashBarStatus(
+            (int) movementSettings.currentNumberOfDashes,
+            (int) (movementSettings.m_DashTimer/movementSettings.maxNumberOfDashes));
     }
 
 
@@ -358,5 +368,11 @@ public class TitanFirstPersonController : BasicFirstPersonController
     //     m_AudioSource.clip = m_LandingSFX;
     //     m_AudioSource.Play();
     // }
+
+    
+    protected void InformHudDashBarStatus(int numOfCurrentAvailableDashes, int coolDownTimer) {
+        titanHudController.DashMeterValue = numOfCurrentAvailableDashes;
+        titanHudController.DashMeterTime = coolDownTimer;
+    }
 }
 

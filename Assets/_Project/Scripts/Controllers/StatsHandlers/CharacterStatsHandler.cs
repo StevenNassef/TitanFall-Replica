@@ -6,6 +6,12 @@ public class CharacterStatsHandler : StatsHandler
 {
     [MustBeAssigned]
     [SerializeField]
+    protected PilotHudController pilotHudController;
+    [MustBeAssigned]
+    [SerializeField]
+    protected TitanHudController titanHudController;
+    [MustBeAssigned]
+    [SerializeField]
     protected WeaponHolderController weaponHolder;
     [MustBeAssigned]
     [SerializeField]
@@ -35,6 +41,11 @@ public class CharacterStatsHandler : StatsHandler
         {
             weaponHolder.OnKillingEnemy += UpdateCore;
         }
+
+        // this.OnCoreActivated += InformHudCoreAbility;
+        // this.OnCoreDeactivated += InformHudCoreAbility;
+        // this.OnCoreAvailable += InformHudCoreAbility;
+        OnDamageTaken += InformHudHp;
     }
 
     protected override void Update()
@@ -72,6 +83,9 @@ public class CharacterStatsHandler : StatsHandler
         if (currentCorePoints >= maxCorePoints)
         {
             currentCorePoints = maxCorePoints;
+            InformHudCoreAbility();
+            
+            playCoreReadySounds();
 
             //Invoke the OnCoreAvailable to notify listeners
             if (OnCoreAvailable != null)
@@ -93,6 +107,8 @@ public class CharacterStatsHandler : StatsHandler
             currentCorePoints = 0;
             coreActivated = true;
 
+            playCoreFireSounds();
+
             if (OnCoreActivated != null)
             {
                 OnCoreActivated.Invoke();
@@ -100,4 +116,21 @@ public class CharacterStatsHandler : StatsHandler
             CoreAbilityLogic();
         }
     }
+
+    protected virtual void playCoreFireSounds() {
+
+    }
+
+    protected virtual void playCoreReadySounds() {
+
+    }
+
+    protected virtual void InformHudCoreAbility() {
+
+    }
+
+    protected virtual void InformHudHp() {
+              
+    }
+    
 }
