@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a2de0e36708f345aa5a267d5d75ca6, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
+  weaponIcon: {fileID: 21300000, guid: 3e24ad87feb10de4cb4cf9abd85fef8f, type: 3}
   weaponName: Shotgun
   damagePerBullet: 70
   fireMode: 1
@@ -24,4 +25,19 @@ MonoBehaviour:
     reloading: {fileID: 8300000, guid: 2e68a1d457700b84999f4e7de5ee891f, type: 3}
     idle: {fileID: 0}
   shootingType: 1
-  weaponProjectile: {fileID: 0}
+  weaponProjectilePrefab: {fileID: 0}
+  projectile:
+    projectileType: 0
+    flyingSpeed: 11
+    maxFlyingDistance: 50
+    damage: 125
+    damangeRange: 4
+    explosiveForce: 20
+    hitMask:
+      serializedVersion: 2
+      m_Bits: 0
+    _GFXPrefab: {fileID: 0}
+    _ExplosionVFXPrefab: {fileID: 0}
+    _FlyingVFXPrefab: {fileID: 0}
+    _FlyingSFX: {fileID: 0}
+    _ExplosionSFX: {fileID: 0}

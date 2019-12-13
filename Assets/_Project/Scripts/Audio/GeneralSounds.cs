@@ -11,6 +11,7 @@ public class GeneralSounds : MonoBehaviour
 
     private AudioClip titanFall;
     private AudioClip healthWarning;
+    private AudioClip bulletHit;
 
 
     // Start is called before the first frame update
@@ -20,6 +21,8 @@ public class GeneralSounds : MonoBehaviour
 
         titanFall = Resources.Load<AudioClip>(generalFolder + "CallTitan");
         healthWarning = Resources.Load<AudioClip>(generalFolder + "HealthWarning");
+        bulletHit = Resources.Load<AudioClip>(generalFolder + "BulletHit");
+
     }
 
     [ButtonMethod]
@@ -30,6 +33,11 @@ public class GeneralSounds : MonoBehaviour
     [ButtonMethod]
     void playHealthWarning(){
         playSFX(healthWarning, false);
+    }
+
+    [ButtonMethod]
+    void playBulletHit(){
+        playSFX(bulletHit, false);
     }
 
 

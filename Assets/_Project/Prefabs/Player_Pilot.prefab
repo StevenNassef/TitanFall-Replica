@@ -487,6 +487,8 @@ MonoBehaviour:
   currentHealthPoints: 0
   type: 0
   maxHealthPoints: 100
+  pilotHudController: {fileID: 0}
+  titanHudController: {fileID: 0}
   weaponHolder: {fileID: 8690443268720148969}
   fpsController: {fileID: 2356559099008338349}
   fpsCamera: {fileID: 2356559099000798825}

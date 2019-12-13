@@ -51,12 +51,16 @@ public class TitanHudController : MonoBehaviour
     private int dashMeterTime;
     public int DashMeterTime
     {
-        get {return dashMeterValue;}
+        get {return dashMeterTime;}
 
         set
         {
-            dashMeterTime = dashMeterValue;
-            dashMeterTimeTxt.text = dashMeterTime.ToString();
+            dashMeterTime = value;
+            if(dashMeterTime > 0) {
+                dashMeterTimeTxt.text = dashMeterTime.ToString();
+            } else {
+                dashMeterTimeTxt.text ="";
+            }
         }
     }
 
@@ -75,9 +79,9 @@ public class TitanHudController : MonoBehaviour
 
     private float nextPlayDefensiveAbilityTimerSound;
 
-    public int defensiveAbilityTimerMaxValue = 15;
-    private int defensiveAbilityTimerValue = 10;
-    public int DefensiveAbilityTimerValue
+    public float defensiveAbilityTimerMaxValue = 15;
+    private float defensiveAbilityTimerValue = 10;
+    public float DefensiveAbilityTimerValue
     {
         get { return defensiveAbilityTimerValue; }
         set
@@ -92,6 +96,7 @@ public class TitanHudController : MonoBehaviour
 
     [Header("Core Ability Settings")]
     public Text coreAbilityTxt;
+    public Image coreAbilityIcon;
     public Image coreAbilityBar, coreAbilityBarBg;
 
     [Range(1, 100)]
@@ -210,10 +215,10 @@ public class TitanHudController : MonoBehaviour
         }
     }
 
-    private void UpdateDefensiveAbilityTimerValue(int val)
+    private void UpdateDefensiveAbilityTimerValue(float val)
     {
     
-        defensiveAbilityTimerBar.fillAmount = (1.0f - (val / defensiveAbilityTimerMaxValue))*0.7f;
+        defensiveAbilityTimerBar.fillAmount = (val / defensiveAbilityTimerMaxValue)*0.7f;
         defensiveAbilityTimerTxt.text = val.ToString();
 
         if (defensiveAbilityTimerAlert <= val)
@@ -236,10 +241,14 @@ public class TitanHudController : MonoBehaviour
             audiosource.PlayOneShot(defensiveAbilityTimerSound);
         }
     }
+
+    public void SetCoreAbilityIcon(Sprite icon) {
+        coreAbilityIcon.sprite = icon;
+    }
     
     private void UpdateCoreAbilityValue(float val)
     {
-       
+        
         coreAbilityBar.fillAmount = (val / 100);
 
         if (coreAbilityAlert <= val)
@@ -262,4 +271,10 @@ public class TitanHudController : MonoBehaviour
         }
     }
 
+    public void ResetValues() {
+        HpValue = 100;
+        CoreAbilityBarValue = 0;
+        DashMeterTime = 0;
+        DashMeterValue = dashesIcons.Length;
+    }
 }

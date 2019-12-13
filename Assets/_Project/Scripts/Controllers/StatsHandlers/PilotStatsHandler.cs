@@ -7,6 +7,7 @@ public class PilotStatsHandler : CharacterStatsHandler
     [SerializeField] private float titanSpwanMaxDistance = 10;
     [SerializeField] private float maxSurfaceAngle = 40;
     [SerializeField] private GameObject playerTitan;
+
     public event OnStatsHandlerEvent OnHealing;
 
     //the to wait after the last taken damage to start regenrating health.
@@ -25,12 +26,14 @@ public class PilotStatsHandler : CharacterStatsHandler
         base.InitializeHandler();
         type = ObjectType.Pilot;
         screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
+        OnHealing += InformHudHp;
     }
 
     protected override void Update()
     {
         base.Update();
     }
+    
     private void OnEnable()
     {
         OnDamageTaken += UpdateHealth;
@@ -80,8 +83,8 @@ public class PilotStatsHandler : CharacterStatsHandler
     {
         playerTitan.transform.position = currentTitanFallHit.point;
         playerTitan.SetActive(true);
+        InformHudTitanSelection();
     }
-
 
     private IEnumerator RegenrateHealth()
     {
@@ -116,4 +119,23 @@ public class PilotStatsHandler : CharacterStatsHandler
         Debug.Log("Game Over!");
         // TODO: make GameOver Logic
     }
+
+
+    protected void InformHudTitanSelection() {
+        base.titanHudController.enabled = true;
+        base.titanHudController.ResetValues();
+        base.titanHudController.SetCoreAbilityIcon(GameInitializations.Titan.TitanIcon);
+        base.pilotHudController.enabled = false;
+    }
+
+    protected override void InformHudCoreAbility() {
+        base.pilotHudController.TitanfallValue =
+                    (currentCorePoints/maxCorePoints)*100.0f;
+    }
+
+    protected override void InformHudHp() {
+        base.pilotHudController.HpValue =
+            (base.currentHealthPoints/base.maxHealthPoints)*100.0f;
+    }
+
 }

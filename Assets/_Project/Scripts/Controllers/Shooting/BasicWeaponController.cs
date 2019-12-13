@@ -7,7 +7,11 @@ using MyBox;
 [RequireComponent(typeof(Animator))]
 public class BasicWeaponController : MonoBehaviour
 {
+    [MustBeAssigned]
+    [SerializeField]
+    protected PilotHudController pilotHudController;
     [SerializeField] protected Weapon weapon;
+    public Weapon Weapon => weapon;
     [SerializeField] private LayerMask hitmask;
     [SerializeField] private Transform barrelOpening;
     [SerializeField] private GameObject mazzleFlash;
@@ -34,6 +38,7 @@ public class BasicWeaponController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         weaponAnimator = GetComponent<Animator>();
         weaponHolder = GetComponentInParent<WeaponHolderController>();
+        // pilotHudController = GetComponent<PilotHudController>();
     }
     protected virtual void Start()
     {
@@ -94,7 +99,7 @@ public class BasicWeaponController : MonoBehaviour
         {
             weaponAnimator.SetBool("Aim", currentlyAiming);
         }
-
+        InformHudAmmoCount();
     }
     void Update()
     {
@@ -223,6 +228,8 @@ public class BasicWeaponController : MonoBehaviour
 
     protected void OnEnable()
     {
+        // pilotHudController = GetComponent<PilotHudController>();
+        InformHudWeaponSelection();
         CloseScope();
         aimLock = false;
         if (fireWait)
@@ -302,6 +309,23 @@ public class BasicWeaponController : MonoBehaviour
         }
         audioSource.Play();
     }
+
+    protected void InformHudAmmoCount() {
+        pilotHudController.AmmoValue = currentAmmo;
+    }
+
+    protected void InformHudWeaponSelection() {
+        // if (pilotHudController != null) {
+        //     Debug.Log("HERE");
+        // } else {
+        //     Debug.Log("IT IS NULL");
+        // }
+        pilotHudController.ChangeWeapon(weapon.WeaponIcon,
+                                            weapon.WeaponName,
+                                             weapon.AmmoCount,
+                                             currentAmmo);
+    }
+
 }
 
 public enum WeaponState

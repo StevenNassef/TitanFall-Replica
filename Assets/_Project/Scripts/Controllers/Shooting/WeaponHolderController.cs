@@ -55,8 +55,17 @@ public class WeaponHolderController : MonoBehaviour
         currentWeapons = new List<GameObject>();
         for (int i = 0; i < transform.childCount; i++)
         {
-            currentWeapons.Add(transform.GetChild(i).gameObject);
-            transform.GetChild(i).gameObject.SetActive(false);
+            Weapon weapon =
+             (transform.GetChild(i).gameObject)
+             .GetComponent<BasicWeaponController>()
+             .Weapon;
+            if(GameInitializations.PrimaryWeapon.WeaponName == weapon.WeaponName ||
+                GameInitializations.HeavyWeapon.WeaponName == weapon.WeaponName) {
+               
+                currentWeapons.Add(transform.GetChild(i).gameObject);
+                transform.GetChild(i).gameObject.SetActive(false);
+            }
+      
         }
         currentWeapons[currentWeaponIndex].SetActive(true);
     }
