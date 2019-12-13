@@ -875,6 +875,11 @@ PrefabInstance:
       propertyPath: m_WalkingSFX
       value: 
       objectReference: {fileID: 8300000, guid: 701a9bd2a6e52b14bb497c46a44a05bd, type: 3}
+    - target: {fileID: 2356559099008338349, guid: d6ff9b0037f6d7e44870dfc08f56001f,
+        type: 3}
+      propertyPath: advancedSettings.airControl
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2761661818899202971, guid: d6ff9b0037f6d7e44870dfc08f56001f,
         type: 3}
       propertyPath: pilotHudController
