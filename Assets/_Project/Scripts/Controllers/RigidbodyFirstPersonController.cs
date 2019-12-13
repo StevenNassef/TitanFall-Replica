@@ -130,6 +130,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public MouseLook mouseLook = new MouseLook();
         public AdvancedSettings advancedSettings = new AdvancedSettings();
         [Header("SFX")]
+
+        public PilotSounds pilotSounds;
+        public GeneralSounds generalSounds;
+
         [SerializeField] private AudioSource m_AudioSource;
         [SerializeField] private AudioSource m_BackGroundAudioSource;
         [Space(10)]
@@ -509,48 +513,48 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayJumpSound()
         {
-            // if (movementSettings.RemainingJumps == 2)
-            // {
-            //     m_AudioSource.Stop();
-            //     return;
-            // }
-            // if (movementSettings.RemainingJumps == 0)
-            // {
-            //     m_AudioSource.clip = m_DoubleJumpSFX;
-            // }
-            // else if (movementSettings.RemainingJumps == 1)
-            // {
-            //     m_AudioSource.clip = m_jumpSFX;
-            // }
+            if (movementSettings.RemainingJumps == 2)
+            {
+                m_AudioSource.Stop();
+                return;
+            }
+            if (movementSettings.RemainingJumps == 0)
+            {
+                m_AudioSource.clip = m_DoubleJumpSFX;
+            }
+            else if (movementSettings.RemainingJumps == 1)
+            {
+                m_AudioSource.clip = m_jumpSFX;
+            }
 
-            // m_AudioSource.Play();
+            m_AudioSource.Play();
         }
 
         private void PlayBackGroundSFX()
         {
-            // if (!m_IsGrounded && m_PreviouslyGrounded)
-            // {
-            //     m_BackGroundAudioSource.clip = m_JumpBackGroundSFX;
-            //     m_BackGroundAudioSource.Play();
-            // }
-            // else if (m_IsGrounded)
-            // {
-            //     m_BackGroundAudioSource.Stop();
-            // }
+            if (!m_IsGrounded && m_PreviouslyGrounded)
+            {
+                // m_BackGroundAudioSource.clip = m_JumpBackGroundSFX;
+                pilotSounds.playAirBorn();
+            }
+            else if (m_IsGrounded)
+            {
+                pilotSounds.stopBackground();
+            }
         }
 
         private void PlayWalkingSound()
         {
-            // if (m_AudioSource.clip == m_WalkingSFX)
-            //     return;
-            // m_AudioSource.clip = m_WalkingSFX;
-            // m_BackGroundAudioSource.Play();
+            if (m_AudioSource.clip == m_WalkingSFX)
+                return;
+            m_AudioSource.clip = m_WalkingSFX;
+            pilotSounds.playWalking();
         }
 
         private void PlayLandingSFX()
         {
-            // m_AudioSource.clip = m_LandingSFX;
-            // m_AudioSource.Play();
+            m_AudioSource.clip = m_LandingSFX;
+            m_AudioSource.Play();
         }
     }
 }
