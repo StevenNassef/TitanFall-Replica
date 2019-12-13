@@ -41,6 +41,11 @@ public class CharacterStatsHandler : StatsHandler
         {
             weaponHolder.OnKillingEnemy += UpdateCore;
         }
+
+        // this.OnCoreActivated += InformHudCoreAbility;
+        // this.OnCoreDeactivated += InformHudCoreAbility;
+        // this.OnCoreAvailable += InformHudCoreAbility;
+        OnDamageTaken += InformHudHp;
     }
 
     protected override void Update()
@@ -78,7 +83,7 @@ public class CharacterStatsHandler : StatsHandler
         if (currentCorePoints >= maxCorePoints)
         {
             currentCorePoints = maxCorePoints;
-
+            InformHudCoreAbility();
             //Invoke the OnCoreAvailable to notify listeners
             if (OnCoreAvailable != null)
             {
@@ -107,36 +112,12 @@ public class CharacterStatsHandler : StatsHandler
         }
     }
 
+    protected virtual void InformHudCoreAbility() {
 
-    protected void InformHudHp(ObjectType type, float currentHealthPoints, float maxHealthPoints) {
-        switch (type)
-        {
-            case ObjectType.Pilot:
-                pilotHudController.HpValue =
-                    (currentHealthPoints/maxHealthPoints)*100.0f;
-                break;
-            case ObjectType.Titan:
-                titanHudController.HpValue =
-                    (currentHealthPoints/maxHealthPoints)*100.0f;
-                break;
-            default:
-                break;
-        }
     }
 
-    protected void InformHudCoreAbility(ObjectType type) {
-        switch (type)
-        {
-            case ObjectType.Pilot:
-                pilotHudController.TitanfallValue =
-                    (currentCorePoints/maxCorePoints)*100.0f;
-                break;
-            case ObjectType.Titan:
-                titanHudController.CoreAbilityBarValue =
-                    (currentCorePoints/maxCorePoints)*100.0f;
-                break;
-            default:
-                break;
-        }
+    protected virtual void InformHudHp() {
+              
     }
+    
 }

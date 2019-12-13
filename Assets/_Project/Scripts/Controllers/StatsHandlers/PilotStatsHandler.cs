@@ -26,12 +26,14 @@ public class PilotStatsHandler : CharacterStatsHandler
         base.InitializeHandler();
         type = ObjectType.Pilot;
         screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
+        OnHealing += InformHudHp;
     }
 
     protected override void Update()
     {
         base.Update();
     }
+    
     private void OnEnable()
     {
         OnDamageTaken += UpdateHealth;
@@ -81,8 +83,8 @@ public class PilotStatsHandler : CharacterStatsHandler
     {
         playerTitan.transform.position = currentTitanFallHit.point;
         playerTitan.SetActive(true);
+        InformHudTitanSelection();
     }
-
 
     private IEnumerator RegenrateHealth()
     {
@@ -118,18 +120,21 @@ public class PilotStatsHandler : CharacterStatsHandler
         // TODO: make GameOver Logic
     }
 
-    protected void InformHudAmmoCount(int currentAmmoCount) {
-        // TODO
-        base.pilotHudController.AmmoValue = currentAmmoCount;
+
+    protected void InformHudTitanSelection() {
+        base.titanHudController.enabled = true;
+        base.titanHudController.SetCoreAbilityIcon(GameInitializations.Titan.TitanIcon);
+        base.pilotHudController.enabled = false;
     }
 
-    protected void InformHudWeaponSelection(Sprite icon, string weaponName,
-                                            int maxAmmoCount, int currentAmmoCount) {
-        // TODO
-        // base.weaponHolder.
-        base.pilotHudController.ChangeWeapon(icon,
-                                            weaponName,
-                                             maxAmmoCount,
-                                             currentAmmoCount);
+    protected override void InformHudCoreAbility() {
+        base.pilotHudController.TitanfallValue =
+                    (currentCorePoints/maxCorePoints)*100.0f;
     }
+
+    protected override void InformHudHp() {
+        base.pilotHudController.HpValue =
+            (base.currentHealthPoints/base.maxHealthPoints)*100.0f;
+    }
+
 }
