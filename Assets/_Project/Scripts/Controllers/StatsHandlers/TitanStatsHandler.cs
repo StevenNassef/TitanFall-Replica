@@ -14,6 +14,14 @@ public class TitanStatsHandler : CharacterStatsHandler
         controller = GetComponent<TitanFirstPersonController>();
     }
 
+    protected override void playCoreFireSounds() {
+        controller.titanSounds.playCoreFire();
+    }
+
+    protected override void playCoreReadySounds() {
+        controller.titanSounds.playCoreReady();
+    }
+
     protected override float CalculateDamage(float damage, ObjectType type)
     {
         //ignore all damage when the titan is dashing

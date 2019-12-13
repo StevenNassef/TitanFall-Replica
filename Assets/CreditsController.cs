@@ -19,4 +19,8 @@ public class CreditsController : MonoBehaviour
             Debug.Log("Main menu!");
         }
     }
+
+    public void BackToMainMenu(){
+        SceneManager.LoadScene("MainmenuScene");
+    }
 }
