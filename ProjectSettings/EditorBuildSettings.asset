@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/_Scenes/Prototyping_Sounds.unity
     guid: 413b52720f4b67142b3ee9bee2d5cbb7
+  - enabled: 1
+    path: Assets/_Project/_Scenes/Credits_Scene.unity
+    guid: f729c7d03f1c8bf47af8bdb6ed9c9d0e
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3998f32f31d6f6647a9ba081bb8bd218,
       type: 2}

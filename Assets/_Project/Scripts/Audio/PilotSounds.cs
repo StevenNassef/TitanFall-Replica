@@ -36,7 +36,7 @@ public class PilotSounds : MonoBehaviour
 
     [ButtonMethod]
     public void playKill(){
-        playEffect(kill, false);
+        playBackground(kill, false);
     }
 
     [ButtonMethod]
@@ -47,7 +47,7 @@ public class PilotSounds : MonoBehaviour
     [ButtonMethod]
     public void playDead(){
         playEffect(dead, false);
-        playBackground(death, false);
+        playBackground(kill, false);
     }
 
 
