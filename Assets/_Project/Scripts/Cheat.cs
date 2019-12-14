@@ -14,20 +14,12 @@ public class Cheat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I)){
+        if(Input.GetKeyDown(KeyCode.F10)){
             SceneManager.LoadScene("Prototyping_Parkour");
         }
 
-        if(Input.GetKeyDown(KeyCode.N)){
-            Application.LoadLevel("Prototyping_Parkour");
-        }
-
-        if(Input.GetKeyDown(KeyCode.U)){
+        if(Input.GetKeyDown(KeyCode.F11)){
             SceneManager.LoadScene("Prototyping_Sounds");
-        }
-
-        if(Input.GetKeyDown(KeyCode.U)){
-            Application.LoadLevel("Prototyping_Sounds");
         }
     }
 }
