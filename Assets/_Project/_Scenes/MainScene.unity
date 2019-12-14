@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 89abba4c87ddcdf429def30837572d47,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -23960,6 +23960,36 @@ PrefabInstance:
       propertyPath: pauseController
       value: 
       objectReference: {fileID: 5970937855367616531}
+    - target: {fileID: 2518899485346469667, guid: 3e38f1459b710c443b9bdd691636077c,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -459415190059749672, guid: 80fb905d7be27154eb01d4f6f935a795,
+        type: 2}
+    - target: {fileID: 3383346581139737434, guid: 3e38f1459b710c443b9bdd691636077c,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -459415190059749672, guid: 80fb905d7be27154eb01d4f6f935a795,
+        type: 2}
+    - target: {fileID: 3747831536179574075, guid: 3e38f1459b710c443b9bdd691636077c,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -459415190059749672, guid: 80fb905d7be27154eb01d4f6f935a795,
+        type: 2}
+    - target: {fileID: 5507516391739387965, guid: 3e38f1459b710c443b9bdd691636077c,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -459415190059749672, guid: 80fb905d7be27154eb01d4f6f935a795,
+        type: 2}
+    - target: {fileID: 7127989586582974137, guid: 3e38f1459b710c443b9bdd691636077c,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -459415190059749672, guid: 80fb905d7be27154eb01d4f6f935a795,
+        type: 2}
     - target: {fileID: 8419743351718539674, guid: 3e38f1459b710c443b9bdd691636077c,
         type: 3}
       propertyPath: m_LocalPosition.x
