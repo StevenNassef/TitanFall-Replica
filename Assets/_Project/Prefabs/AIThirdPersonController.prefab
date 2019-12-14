@@ -2405,7 +2405,7 @@ GameObject:
   - component: {fileID: 1410725619102111368}
   - component: {fileID: 1410725619102111473}
   - component: {fileID: -3714203804991653775}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AIThirdPersonController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
