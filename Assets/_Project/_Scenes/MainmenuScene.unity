@@ -6834,7 +6834,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Controls:\n    W+A+S+D  and mouse to move around.\n    left-click to fire,
     right-click to aim\n    'Z' to change weapon\n    'C' to crouch, 'R' to reload\n   
-    'SPACE' to jump 'SHIFT' to sprint,\n    ' ' for TitanFall"
+    'SPACE' to jump 'SHIFT' to sprint,\n    'V' for TitanFall"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
