@@ -32,6 +32,7 @@ public class PilotStatsHandler : CharacterStatsHandler
     protected override void Update()
     {
         base.Update();
+        
     }
     
     private void OnEnable()

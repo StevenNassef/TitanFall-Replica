@@ -6,6 +6,10 @@ public class CharacterStatsHandler : StatsHandler
 {
     [MustBeAssigned]
     [SerializeField]
+    protected PauseController pauseController;
+
+    [MustBeAssigned]
+    [SerializeField]
     protected PilotHudController pilotHudController;
     [MustBeAssigned]
     [SerializeField]
@@ -60,6 +64,10 @@ public class CharacterStatsHandler : StatsHandler
             currentCorePoints = 100;
             UpdateCore(ObjectType.Env);
             InformHudCoreAbility();
+        }
+
+        if(Input.GetKey(KeyCode.Escape)) {
+            pauseController.Pause(this);
         }
         
         // if (pilotHudController != null) {
@@ -153,6 +161,10 @@ public class CharacterStatsHandler : StatsHandler
 
     protected virtual void InformHudHp() {
               
+    }
+
+    public virtual void ResumeBack() {
+        base.ResumeGame();
     }
     
 }

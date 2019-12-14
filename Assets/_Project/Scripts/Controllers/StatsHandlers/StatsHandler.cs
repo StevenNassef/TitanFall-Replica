@@ -85,6 +85,7 @@ public class StatsHandler : MonoBehaviour
     protected void PauseGame()
     {
         Time.timeScale = 0;
+
     }
     [ButtonMethod]
     protected void ResumeGame()
