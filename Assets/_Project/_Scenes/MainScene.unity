@@ -14541,7 +14541,7 @@ PrefabInstance:
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7, type: 3}
@@ -20526,7 +20526,7 @@ PrefabInstance:
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7, type: 3}
@@ -22929,7 +22929,7 @@ PrefabInstance:
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7, type: 3}
@@ -25094,7 +25094,7 @@ PrefabInstance:
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7, type: 3}
@@ -26125,7 +26125,7 @@ PrefabInstance:
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7, type: 3}
@@ -32670,7 +32670,7 @@ PrefabInstance:
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7, type: 3}
@@ -37918,7 +37918,7 @@ PrefabInstance:
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7, type: 3}
@@ -40318,7 +40318,7 @@ PrefabInstance:
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7, type: 3}
@@ -46532,7 +46532,7 @@ PrefabInstance:
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7, type: 3}
@@ -46791,7 +46791,7 @@ PrefabInstance:
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7, type: 3}
@@ -47472,7 +47472,7 @@ PrefabInstance:
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7, type: 3}
@@ -48686,7 +48686,7 @@ PrefabInstance:
     - target: {fileID: 1410725619102111479, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7,
         type: 3}
       propertyPath: detectionRadius
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dee9a3a38e7ad844b9076e2ad0ea4d7, type: 3}
